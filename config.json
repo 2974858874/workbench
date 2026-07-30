@@ -1,0 +1,84 @@
+{
+  "version": "1.0.0",
+  "owner": "🍅",
+  "createdAt": "2026-07-30",
+  "weekStart": "2026-07-27",
+  "user_profile": {
+    "height_cm": 174,
+    "weight_kg_range": [65, 66],
+    "weight_kg_baseline": 65.5,
+    "bmi": 21.6,
+    "bmi_category": "正常范围",
+    "goal": "减脂塑形（非大幅减重），重点降体脂、保留肌肉",
+    "daily_calorie_target": [1600, 1800],
+    "daily_calorie_baseline": 1700,
+    "deficit_kcal": 300,
+    "cheat_meal_budget_kcal": 900,
+    "cheat_meal_rotation": [
+      {"week": 1, "type": "火锅", "tips": "清汤/番茄锅底；多涮蔬菜菌菇虾滑；少肥牛肥羊；蘸料用醋+蒜不用麻酱"},
+      {"week": 2, "type": "烧烤", "tips": "多烤蔬菜串+鸡腿肉串+烤茄子；少五花肉；少刷油"},
+      {"week": 3, "type": "奶茶", "tips": "三分糖鲜奶茶+小料一份；搭配一份低卡主食正餐"},
+      {"week": 4, "type": "炸鸡", "tips": "空气炸锅复热去皮；配大份沙拉；选原味非裹酱"},
+      {"week": 5, "type": "家常菜外卖", "tips": "点清炒时蔬+蒸鱼+番茄炒蛋；米饭小碗；备注少油少盐"},
+      {"week": 6, "type": "自由选", "tips": "任选一项，但控量；吃完记得周日称重"}
+    ]
+  },
+  "modules": {
+    "weight_loss": {
+      "name": "减肥计划",
+      "icon": "🥗",
+      "weekday_meals_enabled": true,
+      "weekend_cheat_meal_enabled": true,
+      "meals_per_day": ["breakfast", "lunch", "snack", "dinner"],
+      "meals_calorie_split": {"breakfast": 380, "lunch": 620, "snack": 200, "dinner": 500},
+      "exercise_plan": {
+        "monday": {"type": "帕梅拉 + 拉伸", "duration": "30min"},
+        "tuesday": {"type": "力量训练", "duration": "20min"},
+        "wednesday": {"type": "帕梅拉 + 拉伸", "duration": "30min"},
+        "thursday": {"type": "力量训练", "duration": "20min"},
+        "friday": {"type": "帕梅拉 + 拉伸", "duration": "30min"},
+        "saturday": {"type": "户外散步/瑜伽", "duration": "40min"},
+        "sunday": {"type": "拉伸 + 休息", "duration": "15min"}
+      }
+    },
+    "douyin_ops": {
+      "name": "账号运营",
+      "icon": "📱",
+      "platform": "抖音",
+      "niche": "做饭类 / 减脂餐 / 烘焙 / 家常菜",
+      "handle": "@TODO",
+      "weekly_videos_target": "2-3 条"
+    },
+    "english": {
+      "name": "每天学习英语",
+      "icon": "📖",
+      "daily_minutes": 20,
+      "core_outputs": ["30 单词", "5 句烹饪口语", "1 句核心口语"]
+    },
+    "finance": {
+      "name": "我的账户",
+      "icon": "👛",
+      "savings_pool": 0,
+      "currency": "CNY",
+      "daily_log_time": "20:00"
+    }
+  },
+  "schedule_template": [
+    {"time": "07:00", "tag": "🥗", "title": "起床 / 喝水 / 拉伸", "duration": "10min"},
+    {"time": "07:30", "tag": "🥗", "title": "今日三餐减脂餐灵感（早/午/晚，1700 kcal）", "duration": "30min"},
+    {"time": "08:30", "tag": "📱", "title": "抖音美食热点 + 选题建议", "duration": "10min"},
+    {"time": "09:00", "tag": "📖", "title": "英语学习任务", "duration": "20min"},
+    {"time": "12:00", "tag": "🥗", "title": "午餐打卡（上传/备注）", "duration": "5min"},
+    {"time": "15:00", "tag": "📱", "title": "拍摄 / 剪辑今日视频", "duration": "60min"},
+    {"time": "18:00", "tag": "🥗", "title": "晚餐打卡 + 运动提醒", "duration": "5min"},
+    {"time": "20:00", "tag": "👛", "title": "录入今日开支 + 存款更新", "duration": "5min"},
+    {"time": "21:00", "tag": "📱", "title": "发布今日视频（按计划）", "duration": "10min"}
+  ],
+  "weekly_extra": {
+    "sunday_21_00": [
+      "总结本周体重变化",
+      "复盘本周抖音视频数据",
+      "更新本周开智汇总"
+    ]
+  }
+}
