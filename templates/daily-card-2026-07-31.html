@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>2026-07-31 固定行程 · 🍅 的工作台</title>
+<style>
+:root {
+  --bg: #eef0e0;
+  --card: #ffffff;
+  --line: #d8dec6;
+  --ink: #2b3a2c;
+  --ink-soft: #5e6b59;
+  --ink-mute: #8a9585;
+  --green: #7ba05b;
+  --green-deep: #5b8042;
+  --green-soft: #c8d8b0;
+  --accent: #c4623a;
+  --shadow: 0 1px 3px rgba(60,70,30,.06), 0 8px 24px rgba(60,70,30,.08);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; padding: 24px;
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.frame {
+  max-width: 460px;
+  width: 100%;
+  background: var(--card);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+/* Header */
+.head {
+  background: linear-gradient(135deg, #7ba05b 0%, #5b8042 100%);
+  color: #fff;
+  padding: 20px 22px 18px;
+}
+.head .date {
+  font-size: 30px;
+  font-weight: 800;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.head .date small { font-size: 14px; font-weight: 500; opacity: 0.85; }
+.head .sub {
+  font-size: 12px;
+  margin-top: 4px;
+  opacity: 0.9;
+  letter-spacing: 0.5px;
+}
+.head .brand { font-size: 12px; margin-top: 10px; opacity: 0.85; }
+
+/* Calendar */
+.cal {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  padding: 16px 18px 4px;
+  text-align: center;
+}
+.cal-cell {
+  aspect-ratio: 1.3 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--ink-soft);
+  border-radius: 8px;
+}
+.cal-cell.wk { font-weight: 600; color: var(--ink-mute); }
+.cal-cell.dim { opacity: 0.4; }
+.cal-cell.today {
+  background: var(--green);
+  color: #fff;
+  font-weight: 800;
+  border-radius: 50%;
+  width: 30px; height: 30px;
+  margin: auto;
+}
+.cal-cell.event::after {
+  content: "•";
+  color: var(--accent);
+  position: absolute;
+  font-size: 18px;
+  line-height: 0;
+  margin-top: 14px;
+}
+.cal-cell { position: relative; }
+
+/* Section title */
+.sec-title {
+  padding: 18px 22px 8px;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.sec-title::before {
+  content: "📋";
+}
+
+/* Todos */
+.todo-list { list-style: none; margin: 0; padding: 0 14px 14px; }
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 8px;
+  border-bottom: 1px dashed var(--line);
+}
+.todo-item:last-child { border-bottom: 0; }
+.check {
+  width: 18px; height: 18px;
+  border: 2px solid var(--green);
+  border-radius: 4px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+.check.done {
+  background: var(--green);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+.todo-time {
+  font-family: "SF Mono", monospace;
+  font-size: 12.5px;
+  color: var(--green-deep);
+  font-weight: 700;
+  min-width: 44px;
+}
+.todo-title { flex: 1; font-size: 13.5px; }
+.todo-tag { font-size: 14px; }
+
+/* Footer note */
+.note {
+  margin: 0 14px 18px;
+  padding: 10px 12px;
+  background: var(--green-soft);
+  border-radius: 10px;
+  font-size: 12px;
+  color: var(--green-deep);
+  line-height: 1.5;
+}
+.note b { color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="frame">
+  <div class="head">
+    <div class="date">2026-07-31 <small>周五</small></div>
+    <div class="sub">MENU 17 · 7 月最后一周</div>
+    <div class="brand">🍅 的工作台 · Daily Workbench</div>
+  </div>
+
+  <div class="cal">
+    <div class="cal-cell wk">日</div>
+    <div class="cal-cell wk">一</div>
+    <div class="cal-cell wk">二</div>
+    <div class="cal-cell wk">三</div>
+    <div class="cal-cell wk">四</div>
+    <div class="cal-cell wk">五</div>
+    <div class="cal-cell wk">六</div>
+
+    <div class="cal-cell dim">28</div>
+    <div class="cal-cell dim">29</div>
+    <div class="cal-cell dim">30</div>
+    <div class="cal-cell event">1</div>
+    <div class="cal-cell event">2</div>
+    <div class="cal-cell event">3</div>
+    <div class="cal-cell event">4</div>
+
+    <div class="cal-cell event">5</div>
+    <div class="cal-cell event">6</div>
+    <div class="cal-cell event">7</div>
+    <div class="cal-cell event">8</div>
+    <div class="cal-cell event">9</div>
+    <div class="cal-cell event">10</div>
+    <div class="cal-cell event">11</div>
+
+    <div class="cal-cell event">12</div>
+    <div class="cal-cell event">13</div>
+    <div class="cal-cell event">14</div>
+    <div class="cal-cell event">15</div>
+    <div class="cal-cell event">16</div>
+    <div class="cal-cell event">17</div>
+    <div class="cal-cell event">18</div>
+
+    <div class="cal-cell event">19</div>
+    <div class="cal-cell event">20</div>
+    <div class="cal-cell event">21</div>
+    <div class="cal-cell event">22</div>
+    <div class="cal-cell event">23</div>
+    <div class="cal-cell event">24</div>
+    <div class="cal-cell event">25</div>
+
+    <div class="cal-cell event">26</div>
+    <div class="cal-cell event">27</div>
+    <div class="cal-cell event">28</div>
+    <div class="cal-cell event">29</div>
+    <div class="cal-cell event">30</div>
+    <div class="cal-cell today">31</div>
+    <div class="cal-cell dim">1</div>
+  </div>
+
+  <div class="sec-title">今日固定行程</div>
+  <ul class="todo-list">
+    <li class="todo-item">
+      <span class="check done">✓</span>
+      <span class="todo-time">07:00</span>
+      <span class="todo-tag">🥗</span>
+      <span class="todo-title">起床 / 喝水 / 简单拉伸（10min）</span>
+    </li>
+    <li class="todo-item">
+      <span class="check"></span>
+      <span class="todo-time">07:30</span>
+      <span class="todo-tag">🥗</span>
+      <span class="todo-title">今日三餐减脂餐（1700 kcal）— 早:燕麦杯 / 午:虾仁藜麦碗 / 晚:鸡胸彩椒碗</span>
+    </li>
+    <li class="todo-item">
+      <span class="check"></span>
+      <span class="todo-time">08:30</span>
+      <span class="todo-tag">📱</span>
+      <span class="todo-title">抖音热点：#国家出手教减肥了# + #泰式椒麻鸡#</span>
+    </li>
+    <li class="todo-item">
+      <span class="check"></span>
+      <span class="todo-time">09:00</span>
+      <span class="todo-tag">📖</span>
+      <span class="todo-title">英语：30 单词 + 5 句烹饪口语（20min）</span>
+    </li>
+    <li class="todo-item">
+      <span class="check"></span>
+      <span class="todo-time">12:00</span>
+      <span class="todo-tag">🥗</span>
+      <span class="todo-title">午餐打卡（备注/拍照）</span>
+    </li>
+    <li class="todo-item">
+      <span class="check"></span>
+      <span class="todo-time">15:00</span>
+      <span class="todo-tag">📱</span>
+      <span class="todo-title">拍摄：彩椒碗置顶视频（白天自然光）</span>
+    </li>
+    <li class="todo-item">
+      <span class="check"></span>
+      <span class="todo-time">18:00</span>
+      <span class="todo-tag">🥗</span>
+      <span class="todo-title">晚餐 + 帕梅拉 30min（周五 cardio）</span>
+    </li>
+    <li class="todo-item">
+      <span class="check"></span>
+      <span class="todo-time">20:00</span>
+      <span class="todo-tag">👛</span>
+      <span class="todo-title">录入今日开支 + 存款更新</span>
+    </li>
+    <li class="todo-item">
+      <span class="check"></span>
+      <span class="todo-time">21:00</span>
+      <span class="todo-tag">📱</span>
+      <span class="todo-title">剪辑彩椒碗视频（如今天发）</span>
+    </li>
+  </ul>
+
+  <div class="note">
+    <b>📌 今日重点：</b><br>
+    🥗 早餐：<b>隔夜燕麦杯</b>（燕麦+牛奶+蓝莓，380 kcal）<br>
+    🥗 午餐：<b>泰式虾仁藜麦碗</b>（藜麦+虾仁+彩椒+牛油果，620 kcal）<br>
+    🥗 加餐：<b>希腊酸奶+杏仁</b>（200 kcal）<br>
+    🥗 晚餐：<b>鸡胸彩椒碗</b>（鸡胸+彩椒+土豆，500 kcal）<br>
+    📱 拍摄：彩椒碗置顶视频（蹭 #关晓彤同款彩椒碗# 1亿+ 流量）<br>
+    🏃 运动：帕梅拉 30min + 拉伸<br>
+    📖 核心口语：<b>"Cook once, eat all week."</b>（一次备餐，吃一整周。）
+  </div>
+</div>
+</body>
+</html>
