@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#7ba05b" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<title>🍅 的工作台 · 个人全能工作台</title>
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+<div class="app">
+  <!-- 左侧导航栏 -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-emoji">🍅</div>
+      <div class="brand-text">
+        <div class="brand-title">🍅 的工作台</div>
+        <div class="brand-sub">Daily Workbench</div>
+      </div>
+    </div>
+
+    <div class="today-badge">
+      <div class="badge-month">MENU 17</div>
+      <div class="badge-date">今日计划</div>
+    </div>
+
+    <nav class="nav">
+      <button class="nav-item active" data-module="overview">
+        <span class="nav-ico">📅</span>
+        <span class="nav-label">今日计划</span>
+      </button>
+      <button class="nav-item" data-module="weight">
+        <span class="nav-ico">🥗</span>
+        <span class="nav-label">减肥计划</span>
+      </button>
+      <button class="nav-item" data-module="douyin">
+        <span class="nav-ico">📱</span>
+        <span class="nav-label">账号运营</span>
+      </button>
+      <button class="nav-item" data-module="english">
+        <span class="nav-ico">📖</span>
+        <span class="nav-label">英语学习</span>
+      </button>
+      <button class="nav-item" data-module="finance">
+        <span class="nav-ico">👛</span>
+        <span class="nav-label">我的账户</span>
+      </button>
+      <button class="nav-item" data-module="openmind">
+        <span class="nav-ico">💡</span>
+        <span class="nav-label">开智汇总</span>
+      </button>
+      <button class="nav-item" data-module="weekly">
+        <span class="nav-ico">🔁</span>
+        <span class="nav-label">每周复盘</span>
+      </button>
+    </nav>
+  </aside>
+
+  <!-- 主内容 -->
+  <main class="main">
+    <!-- 顶部头条：日历 + 标题 -->
+    <section class="card calendar-card" id="module-overview">
+      <header class="card-head">
+        <h2>📅 今日计划</h2>
+        <div class="head-date" id="todayLabel">2026-07-31 周五</div>
+      </header>
+      <div class="calendar" id="calendar"></div>
+    </section>
+
+    <!-- 今日固定行程 -->
+    <section class="card">
+      <header class="card-head">
+        <h2>📋 今日固定行程</h2>
+        <div class="head-tip">点击复选框打勾</div>
+      </header>
+      <ul class="todo-list" id="todayTodos"></ul>
+    </section>
+
+    <!-- 模块容器：动态注入 -->
+    <section class="module-host" id="moduleHost"></section>
+
+    <footer class="footer">
+      <span>🍅 的工作台 · v1.0</span>
+      <span>每日 07:00 推送今日行程卡</span>
+    </footer>
+  </main>
+</div>
+
+<script src="./scripts.js"></script>
+</body>
+</html>
