@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>抖音美食热点 · 2026-07-31</title>
+  <style>
+    :root {
+      --green: #7ba05b;
+      --green-dark: #5b8042;
+      --bg: #eef0e0;
+      --card: #ffffff;
+      --accent: #c4623a;
+      --text: #2f3326;
+      --text-light: #5c6152;
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    h1 {
+      margin: 10px 0 6px;
+      font-size: 26px;
+      color: var(--green-dark);
+    }
+    .subtitle { color: var(--text-light); font-size: 14px; }
+
+    .summary {
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+      color: #fff;
+      padding: 18px 20px;
+      border-radius: var(--radius);
+      margin-bottom: 20px;
+      box-shadow: 0 8px 20px rgba(91,128,66,0.18);
+    }
+    .summary p { margin: 0; font-size: 15px; }
+
+    .section-title {
+      font-size: 17px;
+      font-weight: 700;
+      margin: 26px 0 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title::before {
+      content: "";
+      width: 5px;
+      height: 20px;
+      background: var(--green);
+      border-radius: 3px;
+    }
+
+    .topic-list { display: grid; gap: 14px; }
+    .topic-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      box-shadow: 0 4px 12px rgba(47,51,38,0.06);
+      border-left: 5px solid var(--green);
+    }
+    .topic-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+    .tag {
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--green-dark);
+    }
+    .views {
+      flex-shrink: 0;
+      background: #f3f6ec;
+      color: var(--green-dark);
+      font-size: 12px;
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+    .trend {
+      margin-top: 6px;
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .angle {
+      margin-top: 8px;
+      font-size: 14px;
+      color: var(--text-light);
+    }
+
+    .music-grid {
+      display: grid;
+      gap: 12px;
+    }
+    .music-item {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 14px 16px;
+      box-shadow: 0 4px 10px rgba(47,51,38,0.05);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .music-icon {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: #f3f6ec;
+      display: grid; place-items: center;
+      color: var(--green-dark); font-size: 18px;
+    }
+    .music-info h4 { margin: 0; font-size: 15px; }
+    .music-info p { margin: 2px 0 0; font-size: 12px; color: var(--text-light); }
+
+    .shoot-list { display: grid; gap: 16px; }
+    .shoot-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 6px 16px rgba(47,51,38,0.07);
+    }
+    .shoot-card h3 {
+      margin: 0 0 6px;
+      font-size: 16px;
+      color: var(--green-dark);
+    }
+    .hook {
+      background: #fdf7f3;
+      color: var(--accent);
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+    .shoot-card p { margin: 0 0 10px; font-size: 14px; color: var(--text-light); }
+    .meta {
+      display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+      font-size: 12px; color: var(--text-light);
+    }
+    .tag-pill {
+      background: #f3f6ec;
+      color: var(--green-dark);
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+
+    footer {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-light);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="badge">抖音美食热点</span>
+      <h1>2026.07.31 热点简报</h1>
+      <div class="subtitle">减脂餐 / 烘焙 / 家常菜 · 拍摄灵感</div>
+    </header>
+
+    <section class="summary">
+      <p>三伏天末尾 + 健康主食改造持续高热：果蔬泥和面、低卡彩椒碗、瘦子饮食挑战是本周三大流量密码；背景音乐以舒缓生活感和轻快烹饪节奏为主。</p>
+    </section>
+
+    <h2 class="section-title">今日爆款标签</h2>
+    <div class="topic-list">
+      <div class="topic-card">
+        <div class="topic-header">
+          <div class="tag">#不加一滴水的南瓜锅贴</div>
+          <div class="views">7.9亿+</div>
+        </div>
+        <div class="trend">趋势：上升中</div>
+        <div class="angle">把南瓜泥替代清水和面，做减脂版主食；可拍“无水面团”翻车+成功对比，突出低糖高纤。</div>
+      </div>
+      <div class="topic-card">
+        <div class="topic-header">
+          <div class="tag">#大暑吃凉皮</div>
+          <div class="views">87亿+</div>
+        </div>
+        <div class="trend">趋势：夏季稳定爆款</div>
+        <div class="angle">推出低卡凉拌魔芋凉皮/鸡丝凉皮，主打“消暑不胖”，适合三伏天收尾。</div>
+      </div>
+      <div class="topic-card">
+        <div class="topic-header">
+          <div class="tag">#彩椒碗</div>
+          <div class="views">1.1亿+</div>
+        </div>
+        <div class="trend">趋势：稳定高热度</div>
+        <div class="angle">211减脂餐经典选题，蒸制+轻煎，突出260大卡饱腹4小时。</div>
+      </div>
+      <div class="topic-card">
+        <div class="topic-header">
+          <div class="tag">#跟着瘦子吃饭</div>
+          <div class="views">十万+讨论</div>
+        </div>
+        <div class="trend">趋势：爆发期</div>
+        <div class="angle">做一日vlog挑战，最后给出“不饿版瘦子食谱”，避免盲目少吃。</div>
+      </div>
+      <div class="topic-card">
+        <div class="topic-header">
+          <div class="tag">#海胆自由挑战</div>
+          <div class="views">12亿+</div>
+        </div>
+        <div class="trend">趋势：区域尝鲜潮</div>
+        <div class="angle">可蹭“海鲜自由”概念，做平价替代版（蒸蛋/豆腐）或减脂海鲜碗。</div>
+      </div>
+    </div>
+
+    <h2 class="section-title">热门背景音乐</h2>
+    <div class="music-grid">
+      <div class="music-item">
+        <div class="music-icon">♪</div>
+        <div class="music-info">
+          <h4>《烟火人间》· 流行民谣</h4>
+          <p>2026上半年抖音热门BGM Top10，适合家常菜温馨感与生活vlog。</p>
+        </div>
+      </div>
+      <div class="music-item">
+        <div class="music-icon">♫</div>
+        <div class="music-info">
+          <h4>《锅铲协奏曲》· 轻快烹饪节奏</h4>
+          <p>抖音精选APP美食制作区推荐，翻炒/淋酱/ASMR 画面适配。</p>
+        </div>
+      </div>
+      <div class="music-item">
+        <div class="music-icon">♬</div>
+        <div class="music-info">
+          <h4>《蛋糕店里卖蛋糕》· 魔性治愈</h4>
+          <p>2026 viral meme，适合烘焙反转或“翻车再成功”的轻松内容。</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title">本账号拍摄建议</h2>
+    <div class="shoot-list">
+      <div class="shoot-card">
+        <h3>1. 爆款合并：南瓜泥锅贴 + 彩椒碗减脂餐</h3>
+        <div class="hook">把两个爆款合成一顿 260 大卡？</div>
+        <p>用南瓜泥和面做少油锅贴（慢碳），搭配彩椒碗盛装的鸡胸+时蔬，强调 211 比例；前 3 秒给成品特写+大字幕热量。</p>
+        <div class="meta">
+          <span>BGM：</span><span class="tag-pill">《锅铲协奏曲》</span>
+          <span>时长：</span><span class="tag-pill">60-90s</span>
+          <span class="tag-pill">#不加一滴水的南瓜锅贴</span>
+          <span class="tag-pill">#彩椒碗</span>
+          <span class="tag-pill">#减脂餐</span>
+          <span class="tag-pill">#家常菜</span>
+        </div>
+      </div>
+      <div class="shoot-card">
+        <h3>2. 挑战改良：跟着瘦子吃一天（烘焙/家常菜版）</h3>
+        <div class="hook">瘦子一天吃得少，我改成吃饱版</div>
+        <p>复刻瘦子三餐但加一份自制低卡烘焙零食（如南瓜燕麦饼干），避免低血糖和暴食，最后给出改良版热量表。</p>
+        <div class="meta">
+          <span>BGM：</span><span class="tag-pill">《烟火人间》</span>
+          <span>时长：</span><span class="tag-pill">90-120s</span>
+          <span class="tag-pill">#跟着瘦子吃饭</span>
+          <span class="tag-pill">#减脂餐</span>
+          <span class="tag-pill">#低卡烘焙</span>
+          <span class="tag-pill">#一天吃什么</span>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      数据来源于网络搜索整理 · 仅供参考 · 🍅 的工作台
+    </footer>
+  </div>
+</body>
+</html>
