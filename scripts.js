@@ -13,7 +13,7 @@ const todayKey = (d = new Date()) => d.toISOString().slice(0, 10);
 
 // -------- 状态 --------
 const STATE = {
-  date: new Date(2026, 6, 31), // 2026-07-31（演示日）
+  date: new Date(), // 动态今天
   todos: JSON.parse(localStorage.getItem('wb_todos') || '{}'),
   weight: JSON.parse(localStorage.getItem('wb_weight') || '[]'),
   expenses: JSON.parse(localStorage.getItem('wb_expenses') || '[]'),
@@ -228,7 +228,7 @@ function countDoneWorkouts() {
   return STATE.weight.length;
 }
 
-const TODAY_MEALS = {
+let TODAY_MEALS = {
   date: '2026-07-31',
   total_calorie: 1700,
   calorie_target: '1600-1800',
@@ -410,7 +410,7 @@ function renderDouyin() {
   });
 }
 
-const HOT = {
+let HOT = {
   date: '2026-07-31',
   summary: '三伏天 + 国家卫健委下场 + 减脂话题持续走高；本周适合做"官方食谱平价复刻"或"跟着瘦子吃一天"挑战复刻。',
   hot_topics: [
@@ -505,7 +505,7 @@ function renderEnglish() {
   });
 }
 
-const ENGLISH = {
+let ENGLISH = {
   sentences: [
     { en: "Bring a large pot of water to a rolling boil.", phonetic: '/brɪŋ ə lɑːrdʒ pɑt əv ˈwɔːtər tu ə ˈroʊlɪŋ bɔɪl/', cn: '把一大锅水烧到完全沸腾。' },
     { en: "Dice the chicken breast into bite-sized cubes.", phonetic: '/daɪs ðə ˈtʃɪkɪn brest ˈɪntu baɪt saɪzd kjubz/', cn: '把鸡胸肉切成一口大小的丁。' },
@@ -771,8 +771,100 @@ function weeklyInsights(videos, totalViews, totalLikes) {
   return out;
 }
 
+// -------- 数据加载（动态读取 data/*.json） --------
+let activeModule = 'overview';
+
+const MEAL_SLOT = {
+  breakfast: { slot: '早餐', icon: '🌅', time: '07:30' },
+  lunch: { slot: '午餐', icon: '☀️', time: '12:00' },
+  snack: { slot: '加餐', icon: '🍎', time: '15:00' },
+  dinner: { slot: '晚餐', icon: '🌙', time: '18:00' }
+};
+
+function transformMeal(raw) {
+  const order = ['breakfast', 'lunch', 'snack', 'dinner'];
+  const meals = order.filter(k => raw.meals && raw.meals[k]).map(k => {
+    const m = raw.meals[k];
+    const meta = MEAL_SLOT[k];
+    return {
+      slot: meta.slot, icon: meta.icon, time: meta.time,
+      title: m.title, calorie: m.calorie, macros: m.macros || {},
+      ingredients: m.ingredients || [], steps: m.steps || [], tip: m.tip || ''
+    };
+  });
+  return {
+    date: raw.date || raw.id,
+    total_calorie: raw.total_calorie || 0,
+    calorie_target: raw.calorie_target || '1600-1800',
+    daily_summary: raw.daily_summary || '',
+    meals
+  };
+}
+
+function transformHot(raw) {
+  return {
+    date: raw.date || '',
+    summary: raw.summary || '',
+    hot_topics: (raw.hot_topics || []).map(t => ({
+      tag: t.tag, views: t.views || '', trend: t.trend || '', angle: t.angle || ''
+    })),
+    audio_suggestion: (raw.audio_suggestions || []).map(a => `${a.name}（${a.style}）— ${a.scene}`).join('；') || raw.audio_suggestion || '',
+    recommended_shoot_this_week: (raw.shoot_ideas || []).map(s => `${s.title}：${s.hook}`) || raw.recommended_shoot_this_week || []
+  };
+}
+
+function transformEnglish(raw) {
+  return {
+    sentences: (raw.phrases || []).map(p => ({ en: p.en, phonetic: p.phonetic || '', cn: p.zh })),
+    words: (raw.words || []).map(w => ({ en: w.en, phonetic: w.phonetic || '', cn: w.zh })),
+    core: { en: raw.core_phrase ? raw.core_phrase.en : '', cn: raw.core_phrase ? raw.core_phrase.zh : '' }
+  };
+}
+
+async function loadData() {
+  const today = todayKey(STATE.date);
+  const tasks = [];
+
+  // 减脂餐：取今天或最新一条
+  tasks.push(
+    fetch('data/meals/meal-log.json').then(r => r.ok ? r.json() : null).then(arr => {
+      if (arr && arr.length) {
+        const match = arr.find(m => m.id === today) || arr[arr.length - 1];
+        if (match) TODAY_MEALS = transformMeal(match);
+      }
+    }).catch(() => {})
+  );
+
+  // 热点：按今天日期，404 则尝试昨天
+  tasks.push(
+    (async () => {
+      for (const d of [today, todayKey(new Date(Date.now() - 86400000))]) {
+        try {
+          const r = await fetch(`data/hot-topics/${d}.json`);
+          if (r.ok) { HOT = transformHot(await r.json()); break; }
+        } catch(e) {}
+      }
+    })()
+  );
+
+  // 英语：取今天或最新一条
+  tasks.push(
+    fetch('data/english/english-log.json').then(r => r.ok ? r.json() : null).then(arr => {
+      if (arr && arr.length) {
+        const match = arr.find(e => e.date === today) || arr[arr.length - 1];
+        if (match) ENGLISH = transformEnglish(match);
+      }
+    }).catch(() => {})
+  );
+
+  await Promise.all(tasks);
+  // 数据加载完后重新渲染当前模块
+  if (activeModule !== 'overview') activateModule(activeModule);
+}
+
 // -------- 路由 --------
 function activateModule(name) {
+  activeModule = name;
   $$('.nav-item').forEach(el => el.classList.toggle('active', el.dataset.module === name));
   if (name === 'overview') {
     $('#moduleHost').innerHTML = '';
@@ -789,4 +881,5 @@ document.addEventListener('DOMContentLoaded', () => {
     el.addEventListener('click', () => activateModule(el.dataset.module));
   });
   activateModule('overview');
+  loadData(); // 异步加载最新数据，加载完自动刷新当前模块
 });
