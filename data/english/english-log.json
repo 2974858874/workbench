@@ -1,1 +1,102 @@
-[]
+[
+  {
+    "date": "2026-07-31",
+    "day": 1,
+    "level": "初级",
+    "topic": "烹饪基础 & 食材处理",
+    "words": [
+      { "en": "sauté", "phonetic": "/soʊˈteɪ/", "zh": "翻炒；嫩煎" },
+      { "en": "simmer", "phonetic": "/ˈsɪmər/", "zh": "小火慢炖" },
+      { "en": "marinate", "phonetic": "/ˈmærɪneɪt/", "zh": "腌制（肉/菜）" },
+      { "en": "chop", "phonetic": "/tʃɑːp/", "zh": "切碎；剁" },
+      { "en": "dice", "phonetic": "/daɪs/", "zh": "切成丁" },
+      { "en": "mince", "phonetic": "/mɪns/", "zh": "剁碎（蒜/肉末）" },
+      { "en": "whisk", "phonetic": "/wɪsk/", "zh": "搅打；打蛋器" },
+      { "en": "knead", "phonetic": "/niːd/", "zh": "揉（面团）" },
+      { "en": "season", "phonetic": "/ˈsiːzən/", "zh": "调味；加调料" },
+      { "en": "garnish", "phonetic": "/ˈɡɑːrnɪʃ/", "zh": "装饰；点缀（摆盘）" },
+      { "en": "blanch", "phonetic": "/blæntʃ/", "zh": "焯水；汆烫" },
+      { "en": "roast", "phonetic": "/roʊst/", "zh": "烘烤（肉/蔬菜）" },
+      { "en": "grill", "phonetic": "/ɡrɪl/", "zh": "烧烤；炙烤" },
+      { "en": "steam", "phonetic": "/stiːm/", "zh": "蒸" },
+      { "en": "stir-fry", "phonetic": "/ˈstɜːr fraɪ/", "zh": "爆炒；翻炒" },
+      { "en": "poach", "phonetic": "/poʊtʃ/", "zh": "水煮（低温慢煮）" },
+      { "en": "braise", "phonetic": "/breɪz/", "zh": "红烧；焖炖" },
+      { "en": "broil", "phonetic": "/brɔɪl/", "zh": "上火烤；炙烤" },
+      { "en": "fillet", "phonetic": "/fɪˈleɪ/", "zh": "去骨鱼柳；肉片" },
+      { "en": "zest", "phonetic": "/zest/", "zh": "柑橘皮屑（调味用）" },
+      { "en": "protein", "phonetic": "/ˈproʊtiːn/", "zh": "蛋白质" },
+      { "en": "fiber", "phonetic": "/ˈfaɪbər/", "zh": "膳食纤维" },
+      { "en": "calorie", "phonetic": "/ˈkæləri/", "zh": "卡路里；热量" },
+      { "en": "portion", "phonetic": "/ˈpɔːrʃən/", "zh": "份量；食量控制" },
+      { "en": "lean", "phonetic": "/liːn/", "zh": "瘦的（瘦肉/低脂）" },
+      { "en": "leafy greens", "phonetic": "/ˈliːfi ɡriːnz/", "zh": "绿叶蔬菜" },
+      { "en": "whole grain", "phonetic": "/hoʊl ɡreɪn/", "zh": "全谷物" },
+      { "en": "seasoning", "phonetic": "/ˈsiːzənɪŋ/", "zh": "调味料；佐料" },
+      { "en": "texture", "phonetic": "/ˈtekstʃər/", "zh": "口感；质地" },
+      { "en": "drizzle", "phonetic": "/ˈdrɪzəl/", "zh": "淋（油/酱汁）" }
+    ],
+    "phrases": [
+      { "en": "Can you pass me the salt?", "phonetic": "/kæn ju pæs mi ðə sɔːlt/", "zh": "能把盐递给我吗？" },
+      { "en": "Let it simmer for about ten minutes.", "phonetic": "/let ɪt ˈsɪmər fɔːr əˈbaʊt ten ˈmɪnɪts/", "zh": "小火炖十分钟左右。" },
+      { "en": "Don't overcook the vegetables.", "phonetic": "/doʊnt ˌoʊvərˈkʊk ðə ˈvedʒtəbəlz/", "zh": "别把蔬菜煮过头了。" },
+      { "en": "This could use a little more seasoning.", "phonetic": "/ðɪs kʊd juːz ə ˈlɪtəl mɔːr ˈsiːzənɪŋ/", "zh": "这个还可以再加点调味。" },
+      { "en": "I'll prep the ingredients while you preheat the pan.", "phonetic": "/aɪl prep ði ɪnˈɡriːdiənts waɪl ju priːˈhiːt ðə pæn/", "zh": "你预热锅，我来备菜。" }
+    ],
+    "core_phrase": {
+      "en": "A little less oil, a lot more flavor.",
+      "phonetic": "/ə ˈlɪtəl les ɔɪl, ə lɑːt mɔːr ˈfleɪvər/",
+      "zh": "少一点油，多一分味。"
+    }
+  },
+  {
+    "date": "2026-08-01",
+    "day": 2,
+    "level": "中级",
+    "topic": "调味艺术 & 火候掌控",
+    "words": [
+      { "en": "caramelize", "phonetic": "/ˈkɑːrməlaɪz/", "zh": "焦糖化；炒出焦香" },
+      { "en": "sear", "phonetic": "/sɪr/", "zh": "煎封（大火锁汁）" },
+      { "en": "deglaze", "phonetic": "/diːˈɡleɪz/", "zh": "去底汁（加酒刮锅）" },
+      { "en": "reduce", "phonetic": "/rɪˈduːs/", "zh": "收汁；熬浓" },
+      { "en": "emulsify", "phonetic": "/ɪˈmʌlsɪfaɪ/", "zh": "乳化（油水融合）" },
+      { "en": "fold", "phonetic": "/foʊld/", "zh": "翻拌（轻柔拌入）" },
+      { "en": "tenderize", "phonetic": "/ˈtendəraɪz/", "zh": "嫩化（肉）" },
+      { "en": "glaze", "phonetic": "/ɡleɪz/", "zh": "挂釉；浇亮汁" },
+      { "en": "infuse", "phonetic": "/ɪnˈfjuːz/", "zh": "浸泡入味" },
+      { "en": "cure", "phonetic": "/kjʊr/", "zh": "盐渍；风干腌制" },
+      { "en": "thicken", "phonetic": "/ˈθɪkən/", "zh": "勾芡；增稠" },
+      { "en": "julienne", "phonetic": "/ˌdʒuːliˈen/", "zh": "切丝（蔬菜/肉）" },
+      { "en": "brunoise", "phonetic": "/bruːˈnwɑːz/", "zh": "切细丁（法式切法）" },
+      { "en": "concasse", "phonetic": "/kɑːnˈkɑːseɪ/", "zh": "番茄去皮切丁" },
+      { "en": "rest", "phonetic": "/rest/", "zh": "醒（肉出锅后静置）" },
+      { "en": "herb", "phonetic": "/hɜːrb/", "zh": "香草（罗勒/迷迭香）" },
+      { "en": "spice", "phonetic": "/spaɪs/", "zh": "香料（孜然/八角）" },
+      { "en": "marinade", "phonetic": "/ˌmærɪˈneɪd/", "zh": "腌汁（名词）" },
+      { "en": "umami", "phonetic": "/uːˈmɑːmi/", "zh": "鲜味" },
+      { "en": "acidity", "phonetic": "/əˈsɪdəti/", "zh": "酸度（调味平衡）" },
+      { "en": "aroma", "phonetic": "/əˈroʊmə/", "zh": "香气" },
+      { "en": "satiety", "phonetic": "/səˈtaɪəti/", "zh": "饱腹感" },
+      { "en": "metabolism", "phonetic": "/məˈtæbəlɪzəm/", "zh": "新陈代谢" },
+      { "en": "nutrient-dense", "phonetic": "/ˈnuːtriənt dens/", "zh": "营养密集的" },
+      { "en": "macronutrient", "phonetic": "/ˌmækroʊˈnuːtriənt/", "zh": "宏量营养素" },
+      { "en": "meal prep", "phonetic": "/miːl prep/", "zh": "备餐（提前准备）" },
+      { "en": "batch cook", "phonetic": "/bætʃ kʊk/", "zh": "批量烹饪" },
+      { "en": "low-carb", "phonetic": "/loʊ ˈkɑːrb/", "zh": "低碳水" },
+      { "en": "antioxidant", "phonetic": "/ˌæntiˈɑːksɪdənt/", "zh": "抗氧化剂" },
+      { "en": "hydrate", "phonetic": "/ˈhaɪdreɪt/", "zh": "补水；补充水分" }
+    ],
+    "phrases": [
+      { "en": "Turn the heat down to medium-low.", "phonetic": "/tɜːrn ðə hiːt daʊn tə ˈmiːdiəm loʊ/", "zh": "把火调到中低火。" },
+      { "en": "Let the sauce reduce until it coats a spoon.", "phonetic": "/let ðə sɔːs rɪˈduːs ənˈtɪl ɪt koʊts ə spuːn/", "zh": "把酱汁收到能挂勺。" },
+      { "en": "Rest the meat for five minutes before slicing.", "phonetic": "/rest ðə miːt fɔːr faɪv ˈmɪnɪts bɪˈfɔːr ˈslaɪsɪŋ/", "zh": "肉切之前先醒五分钟。" },
+      { "en": "You want a nice sear on both sides.", "phonetic": "/ju wɑːnt ə naɪs sɪr ɑːn boʊθ saɪdz/", "zh": "两面都要煎出焦香。" },
+      { "en": "Taste and adjust the seasoning as you go.", "phonetic": "/teɪst ənd əˈdʒʌst ðə ˈsiːzənɪŋ æz ju ɡoʊ/", "zh": "边做边尝，随时调味。" }
+    ],
+    "core_phrase": {
+      "en": "Low and slow, that's how flavor grows.",
+      "phonetic": "/loʊ ænd sloʊ, ðæts haʊ ˈfleɪvər ɡroʊz/",
+      "zh": "慢工出细活，味道自然来。"
+    }
+  }
+]
