@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>2026-08-02 固定行程 · 🍅 的工作台</title>
+<style>
+:root {
+  --bg: #eef0e0;
+  --card: #ffffff;
+  --line: #d8dec6;
+  --ink: #2b3a2c;
+  --ink-soft: #5e6b59;
+  --ink-mute: #8a9585;
+  --green: #7ba05b;
+  --green-deep: #5b8042;
+  --green-soft: #c8d8b0;
+  --accent: #c4623a;
+  --shadow: 0 1px 3px rgba(60,70,30,.06), 0 8px 24px rgba(60,70,30,.08);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; padding: 24px;
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.frame {
+  max-width: 460px;
+  width: 100%;
+  background: var(--card);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+/* Header */
+.head {
+  background: linear-gradient(135deg, #7ba05b 0%, #5b8042 100%);
+  color: #fff;
+  padding: 20px 22px 18px;
+}
+.head .date {
+  font-size: 30px;
+  font-weight: 800;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.head .date small { font-size: 14px; font-weight: 500; opacity: 0.85; }
+.head .sub {
+  font-size: 12px;
+  margin-top: 4px;
+  opacity: 0.9;
+  letter-spacing: 0.5px;
+}
+.head .brand { font-size: 12px; margin-top: 10px; opacity: 0.85; }
+
+/* Calendar */
+.cal {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  padding: 16px 18px 4px;
+  text-align: center;
+}
+.cal-cell {
+  aspect-ratio: 1.3 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--ink-soft);
+  border-radius: 8px;
+}
+.cal-cell.wk { font-weight: 600; color: var(--ink-mute); }
+.cal-cell.dim { opacity: 0.4; }
+.cal-cell.today {
+  background: var(--green);
+  color: #fff;
+  font-weight: 800;
+  border-radius: 50%;
+  width: 30px; height: 30px;
+  margin: auto;
+}
+.cal-cell.event::after {
+  content: "\2022";
+  color: var(--accent);
+  position: absolute;
+  font-size: 18px;
+  line-height: 0;
+  margin-top: 14px;
+}
+.cal-cell { position: relative; }
+
+/* Section title */
+.sec-title {
+  padding: 18px 22px 8px;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.sec-title::before {
+  content: "\1F4CB";
+}
+
+/* Todos */
+.todo-list { list-style: none; margin: 0; padding: 0 14px 14px; }
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 8px;
+  border-bottom: 1px dashed var(--line);
+}
+.todo-item:last-child { border-bottom: 0; }
+.todo-item.highlight {
+  background: #fdf6f0;
+  border-radius: 10px;
+  padding: 11px 10px;
+  margin: 2px 0;
+  border-bottom: 0;
+}
+.check {
+  width: 18px; height: 18px;
+  border: 2px solid var(--green);
+  border-radius: 4px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+.check.done {
+  background: var(--green);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+.todo-time {
+  font-family: "SF Mono", monospace;
+  font-size: 12.5px;
+  color: var(--green-deep);
+  font-weight: 700;
+  min-width: 44px;
+}
+.todo-title { flex: 1; font-size: 13.5px; }
+.todo-tag { font-size: 14px; }
+
+/* Footer note */
+.note {
+  margin: 0 14px 18px;
+  padding: 10px 12px;
+  background: var(--green-soft);
+  border-radius: 10px;
+  font-size: 12px;
+  color: var(--green-deep);
+  line-height: 1.5;
+}
+.note b { color: var(--ink); }
+
+/* Badges */
+.cheat-badge {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+.review-badge {
+  display: inline-block;
+  background: #4a6fa5;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+/* Print styles */
+@media print {
+  body { padding: 0; background: #fff; }
+  .frame { box-shadow: none; border-radius: 0; max-width: 100%; }
+}
+</style>
+</head>
+<body>
+<div class="frame">
+  <div class="head">
+    <div class="date">2026-08-02 <small>周日</small></div>
+    <div class="sub">MENU 19 · 8 月第 1 周 · 周日复盘日 <span class="review-badge">周复盘</span></div>
+    <div class="brand">🍅 的工作台 · Daily Workbench</div>
+  </div>
+
+  <div class="cal">
+    <div class="cal-cell wk">日</div>
+    <div class="cal-cell wk">一</div>
+    <div class="cal-cell wk">二</div>
+    <div class="cal-cell wk">三</div>
+    <div class="cal-cell wk">四</div>
+    <div class="cal-cell wk">五</div>
+    <div class="cal-cell wk">六</div>
+
+    <div class="cal-cell dim">26</div>
+    <div class="cal-cell dim">27</div>
+    <div class="cal-cell dim">28</div>
+    <div class="cal-cell dim">29</div>
+    <div class="cal-cell dim">30</div>
+    <div class="cal-cell dim">31</div>
+    <div class="cal-cell event">1</div>
+
+    <div class="cal-cell today">2</div>
+    <div class="cal-cell event">3</div>
+    <div class="cal-cell event">4</div>
+    <div class="cal-cell event">5</div>
+    <div class="cal-cell event">6</div>
+    <div class="cal-cell event">7</div>
+    <div class="cal-cell event">8</div>
+
+    <div class="cal-cell event">9</div>
+    <div class="cal-cell event">10</div>
+    <div class="cal-cell event">11</div>
+    <div class="cal-cell event">12</div>
+    <div class="cal-cell event">13</div>
+    <div class="cal-cell event">14</div>
+    <div class="cal-cell event">15</div>
+
+    <div class="cal-cell event">16</div>
+    <div class="cal-cell event">17</div>
+    <div class="cal-cell event">18</div>
+    <div class="cal-cell event">19</div>
+    <div class="cal-cell event">20</div>
+    <div class="cal-cell event">21</div>
+    <div class="cal-cell event">22</div>
+
+    <div class="cal-cell event">23</div>
+    <div class="cal-cell event">24</div>
+    <div class="cal-cell event">25</div>
+    <div class="cal-cell event">26</div>
+    <div class="cal-cell event">27</div>
+    <div class="cal-cell event">28</div>
+    <div class="cal-cell event">29</div>
+
+    <div class="cal-cell event">30</div>
+    <div class="cal-cell event">31</div>
+  </div>
+
+  <div class="sec-title">明日固定行程（周日版）</div>
+  <ul class="todo-list">
+    <li class="todo-item">
+      <span class="check"></span>
+      <span class="todo-time">07:00</span>
+      <span class="todo-tag">🥗</span>
+      <span class="todo-title">起床 / 喝水 / 简单拉伸（10min）— 昨晚火锅别赖床</span>
+    </li>
+    <li class="todo-item">
+      <span class="check"></span>
+      <span class="todo-time">07:30</span>
+      <span class="todo-tag">🥗</span>
+      <span class="todo-title">早餐：全麦牛油果煎蛋三明治 + 黑咖啡（380 kcal）消水肿</span>
+    </li>
+    <li class="todo-item">
+      <span class="check"></span>
+      <span class="todo-time">08:30</span>
+      <span class="todo-tag">📱</span>
+      <span class="todo-title">刷本周热点：#不加一滴水的南瓜锅贴# 7.9亿+ / #大暑吃凉皮# 87亿+</span>
+    </li>
+    <li class="todo-item">
+      <span class="check"></span>
+      <span class="todo-time">09:00</span>
+      <span class="todo-tag">📖</span>
+      <span class="todo-title">英语 Day 2：30 单词 + 5 句口语 + 1 句核心（20min）</span>
+    </li>
+    <li class="todo-item">
+      <span class="check"></span>
+      <span class="todo-time">12:00</span>
+      <span class="todo-tag">🥗</span>
+      <span class="todo-title">午餐：鸡丝魔芋凉面 + 蒸南瓜（~600 kcal）— 蹭 #大暑吃凉皮# 热度</span>
+    </li>
+    <li class="todo-item">
+      <span class="check"></span>
+      <span class="todo-time">15:00</span>
+      <span class="todo-tag">📱</span>
+      <span class="todo-title">周复盘准备：整理本周视频素材 / 定下周选题方向</span>
+    </li>
+    <li class="todo-item">
+      <span class="check"></span>
+      <span class="todo-time">16:00</span>
+      <span class="todo-tag">🧘</span>
+      <span class="todo-title">拉伸 + 休息（15min）— 周日恢复日，别硬练</span>
+    </li>
+    <li class="todo-item">
+      <span class="check"></span>
+      <span class="todo-time">18:00</span>
+      <span class="todo-tag">🥗</span>
+      <span class="todo-title">晚餐：番茄豆腐鱼汤 + 凉拌黑木耳 + 糙米饭小碗（~520 kcal）</span>
+    </li>
+    <li class="todo-item">
+      <span class="check"></span>
+      <span class="todo-time">20:00</span>
+      <span class="todo-tag">👛</span>
+      <span class="todo-title">录入今日开支 + 存款更新（养老基金 ¥0 / ¥30,000）</span>
+    </li>
+    <li class="todo-item highlight">
+      <span class="check"></span>
+      <span class="todo-time">21:00</span>
+      <span class="todo-tag">📊</span>
+      <span class="todo-title"><b>【周复盘】</b>称重记录 + 本周视频数据复盘 + 开智汇总</span>
+    </li>
+  </ul>
+
+  <div class="note">
+    <b>📌 明日重点（周日 · 复盘日 · 火锅后恢复）：</b><br>
+    🥗 早餐：<b>全麦牛油果煎蛋三明治</b>（全麦吐司2片+牛油果半个+水煮蛋1个，380 kcal）— 黑咖啡消昨晚火锅水肿<br>
+    🥗 午餐：<b>鸡丝魔芋凉面</b>（魔芋面+鸡胸丝+黄瓜丝+花生碎，~600 kcal）+ 蒸南瓜 100g — 超低卡饱腹，蹭 #大暑吃凉皮# 流量<br>
+    🥗 加餐：<b>绿豆百合汤</b>一碗 + 小番茄 5 颗（~200 kcal）— 夏末消暑<br>
+    🥗 晚餐：<b>番茄豆腐鱼汤</b>（龙利鱼+嫩豆腐+番茄）+ 凉拌黑木耳 + 糙米饭小碗（~520 kcal）— 清淡收尾<br>
+    📊 全天合计：~1700 kcal（火锅后回归正常节奏）<br><br>
+    🧘 运动：<b>拉伸 + 休息 15min</b>（周日恢复日，别硬练，给身体回血）<br>
+    📖 英语重点：Day 2 继续烹饪场景 — 核心口语待 09:00 推送<br>
+    📱 视频复盘：本周目标 2-3 条，检查已发视频数据 / 定下周选题<br>
+    👛 提醒：存款池目前 <b>¥0 / ¥30,000</b>（养老基金）— 开支连续记录中<br>
+    📱 热点速览：<b>#不加一滴水的南瓜锅贴# 7.9亿+</b>（上升中）/ <b>#大暑吃凉皮# 87亿+</b>（夏季稳定爆款）/ <b>#海胆自由挑战# 12亿+</b> / <b>#跟着瘦子吃饭#</b>（爆发期）<br><br>
+    <b>⚠️ 21:00 周复盘三件事：</b><br>
+    1️⃣ 称重 — 记录本周体重变化（上周基线 65.5kg）<br>
+    2️⃣ 视频数据 — 本周发布了几条？播放/点赞/评论数据<br>
+    3️⃣ 开智汇总 — 本周学到了什么值得记下来的
+  </div>
+</div>
+</body>
+</html>
