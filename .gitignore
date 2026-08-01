@@ -11,6 +11,11 @@ desktop.ini
 # WorkBuddy internal
 .workbuddy/
 
+# Secrets — never upload
+.github-token
+*.token
+*.secret
+
 # Node (if added later)
 node_modules/
 package-lock.json
