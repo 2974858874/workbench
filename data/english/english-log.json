@@ -98,5 +98,55 @@
       "phonetic": "/loʊ ænd sloʊ, ðæts haʊ ˈfleɪvər ɡroʊz/",
       "zh": "慢工出细活，味道自然来。"
     }
+  },
+  {
+    "date": "2026-08-02",
+    "day": 3,
+    "level": "中级",
+    "topic": "厨房工具 & 食材选购",
+    "words": [
+      { "en": "colander", "phonetic": "/ˈkʌləndər/", "zh": "滤锅；沥水篮" },
+      { "en": "spatula", "phonetic": "/ˈspætʃələ/", "zh": "锅铲；刮刀" },
+      { "en": "tongs", "phonetic": "/tɔːŋz/", "zh": "食物夹" },
+      { "en": "mandoline", "phonetic": "/ˈmændəliːn/", "zh": "切片器（菜刨）" },
+      { "en": "thermometer", "phonetic": "/θərˈmɑːmɪtər/", "zh": "温度计（食品用）" },
+      { "en": "scale", "phonetic": "/skeɪl/", "zh": "厨房秤" },
+      { "en": "blender", "phonetic": "/ˈblendər/", "zh": "搅拌机" },
+      { "en": "steamer", "phonetic": "/ˈstiːmər/", "zh": "蒸锅" },
+      { "en": "grater", "phonetic": "/ˈɡreɪtər/", "zh": "擦丝器" },
+      { "en": "peeler", "phonetic": "/ˈpiːlər/", "zh": "削皮器" },
+      { "en": "fresh", "phonetic": "/freʃ/", "zh": "新鲜的" },
+      { "en": "organic", "phonetic": "/ɔːrˈɡænɪk/", "zh": "有机的" },
+      { "en": "ripe", "phonetic": "/raɪp/", "zh": "成熟的（水果）" },
+      { "en": "raw", "phonetic": "/rɔː/", "zh": "生的" },
+      { "en": "frozen", "phonetic": "/ˈfroʊzən/", "zh": "冷冻的" },
+      { "en": "canned", "phonetic": "/kænd/", "zh": "罐装的" },
+      { "en": "lean meat", "phonetic": "/liːn miːt/", "zh": "瘦肉" },
+      { "en": "free-range", "phonetic": "/friː reɪndʒ/", "zh": "散养的（鸡蛋/鸡）" },
+      { "en": "wild-caught", "phonetic": "/waɪld kɔːt/", "zh": "野生捕捞的（鱼）" },
+      { "en": "seasonal", "phonetic": "/ˈsiːzənəl/", "zh": "应季的" },
+      { "en": "pantry", "phonetic": "/ˈpæntri/", "zh": "食品储藏柜" },
+      { "en": "shelf life", "phonetic": "/ʃɛlf laɪf/", "zh": "保质期" },
+      { "en": "expiry date", "phonetic": "/ɪkˈspaɪəri deɪt/", "zh": "过期日期" },
+      { "en": "batch", "phonetic": "/bætʃ/", "zh": "一批（备餐量）" },
+      { "en": "leftover", "phonetic": "/ˈlɛftoʊvər/", "zh": "剩菜剩饭" },
+      { "en": "marinate", "phonetic": "/ˈmærɪneɪt/", "zh": "腌制" },
+      { "en": "defrost", "phonetic": "/diːˈfrɔːst/", "zh": "解冻" },
+      { "en": "portion out", "phonetic": "/ˈpɔːrʃn aʊt/", "zh": "分装（按份量）" },
+      { "en": "meal prep", "phonetic": "/miːl prep/", "zh": "备餐" },
+      { "en": "food storage", "phonetic": "/fuːd ˈstɔːrɪdʒ/", "zh": "食材储存" }
+    ],
+    "phrases": [
+      { "en": "Could you grab the colander from the cabinet?", "phonetic": "/kʊd ju ɡræb ðə ˈkʌləndər frʌm ðə ˈkæbɪnət/", "zh": "能把沥水篮从柜子里拿一下吗？" },
+      { "en": "Make sure the oil is hot before you add the garlic.", "phonetic": "/meɪk ʃʊr ði ɔɪl ɪz hɑːt bɪˈfɔr ju æd ðə ˈɡɑːrlɪk/", "zh": "下蒜之前确认油温够热。" },
+      { "en": "Let's portion out the rice into four containers.", "phonetic": "/lɛts ˈpɔːrʃn aʊt ðə raɪs ˈɪntu fɔːr kənˈteɪnərz/", "zh": "把米饭分装成四盒吧。" },
+      { "en": "These tomatoes are perfectly ripe.", "phonetic": "/ðiːz təˈmeɪtoʊz ɑːr ˈpɜːrfɪktli raɪp/", "zh": "这些番茄熟得正好。" },
+      { "en": "I always buy seasonal produce — it's cheaper and fresher.", "phonetic": "/aɪ ˈɔːlweɪz baɪ ˈsiːzənəl ˈprɑːduːs/", "zh": "我总买应季蔬果——又便宜又新鲜。" }
+    ],
+    "core_phrase": {
+      "en": "Fresh ingredients need less seasoning.",
+      "phonetic": "/frɛʃ ɪnˈɡriːdiənts niːd lɛs ˈsiːzənɪŋ/",
+      "zh": "食材够新鲜，调味就省心。"
+    }
   }
 ]
