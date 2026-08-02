@@ -9,7 +9,13 @@
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 const fmt = n => '¥' + Number(n).toLocaleString('zh-CN', { maximumFractionDigits: 2 });
-const todayKey = (d = new Date()) => d.toISOString().slice(0, 10);
+const todayKey = (d = new Date()) => {
+  // 使用本地时区日期，避免 UTC 偏移导致日期错位（如 UTC+8 凌晨 0-8 点 toISOString 返回前一天）
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+};
 
 // -------- 状态 --------
 const STATE = {
@@ -823,11 +829,12 @@ function transformEnglish(raw) {
 
 async function loadData() {
   const today = todayKey(STATE.date);
+  const _v = `?t=${Date.now()}`; // 缓存破坏：确保每次加载最新数据
   const tasks = [];
 
   // 减脂餐：取今天或最新一条
   tasks.push(
-    fetch('data/meals/meal-log.json').then(r => r.ok ? r.json() : null).then(arr => {
+    fetch('data/meals/meal-log.json' + _v).then(r => r.ok ? r.json() : null).then(arr => {
       if (arr && arr.length) {
         const match = arr.find(m => m.id === today) || arr[arr.length - 1];
         if (match) TODAY_MEALS = transformMeal(match);
@@ -840,7 +847,7 @@ async function loadData() {
     (async () => {
       for (const d of [today, todayKey(new Date(Date.now() - 86400000))]) {
         try {
-          const r = await fetch(`data/hot-topics/${d}.json`);
+          const r = await fetch(`data/hot-topics/${d}.json${_v}`);
           if (r.ok) { HOT = transformHot(await r.json()); break; }
         } catch(e) {}
       }
@@ -849,7 +856,7 @@ async function loadData() {
 
   // 英语：取今天或最新一条
   tasks.push(
-    fetch('data/english/english-log.json').then(r => r.ok ? r.json() : null).then(arr => {
+    fetch('data/english/english-log.json' + _v).then(r => r.ok ? r.json() : null).then(arr => {
       if (arr && arr.length) {
         const match = arr.find(e => e.date === today) || arr[arr.length - 1];
         if (match) ENGLISH = transformEnglish(match);
