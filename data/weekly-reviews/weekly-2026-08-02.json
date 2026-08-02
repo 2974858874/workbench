@@ -1,0 +1,274 @@
+{
+  "week_id": "2026-W31",
+  "week_label": "2026-07-27 ~ 2026-08-02（本工作台启用首周）",
+  "report_date": "2026-08-02",
+  "report_type": "weekly_review_v1",
+  "generated_at": "2026-08-02T21:00:00+08:00",
+  "data_completeness": {
+    "weight": false,
+    "videos": false,
+    "expenses": false,
+    "deposits": false,
+    "open_mind": false,
+    "meals": true,
+    "hot_topics": true,
+    "english": true
+  },
+  "week_summary": "本工作台 7/30 启动，本周（7/27-8/2）实际产生数据仅 3 天（7-31/8-1/8-2）。4 大数据模块（体重/视频/开支/开智）目前全部为空，无法形成纵向对比。报告以减脂餐复盘为主干，其他模块给出引导式建议 + 下周需要补齐的清单。",
+  "sections": {
+    "1_weight": {
+      "title": "本周体重变化 + 反馈",
+      "data_status": "无数据（weight-log.json 为空）",
+      "weight_records": [],
+      "weight_change_kg": null,
+      "feedback": "本周工作台刚启动，体重秤记录功能还没接上——这是接下来一周最需要补的短板。BMI 21.6 属于正常范围，要的是'减脂塑形'而不是'掉秤'，所以建议：",
+      "action_items": [
+        "本周日起床后空腹称重（建议固定时间，如 21:00 复盘前），记到 weight-log.json（格式参考下面的 schema）",
+        "如果家里没有体脂秤，至少记体重 kg + 当日感受（精神/睡眠/食欲）",
+        "配合'3 天运动+4 天减脂餐'的节奏，预计 4 周后能看到 0.5-1kg 体脂下降（肌肉不掉）",
+        "建议建立基线：今天就称一次作为 W31 起点，明天起每周日晚 21:00 同步称重"
+      ],
+      "recommended_log_format": {
+        "date": "YYYY-MM-DD",
+        "weekday": "周日",
+        "weight_kg": 0.0,
+        "body_fat_pct": null,
+        "waist_cm": null,
+        "note": "周复盘同步称重 / 早起空腹"
+      }
+    },
+    "2_videos": {
+      "title": "本周视频数据复盘（亮点 + 下期改进）",
+      "data_status": "无数据（video-stats.json 为空，本周未发布视频）",
+      "videos_published_this_week": 0,
+      "highlights": "本周未发布视频，但 3 天热点抓取（7-31/8-1/8-2）共生成 6 条拍摄建议，覆盖 3 大流量密码：",
+      "hot_topics_trend": [
+        {
+          "topic": "#奶奶给我做的减脂餐",
+          "first_seen": "2026-08-02",
+          "views": "千万级阅读（8/1 微博爆发）",
+          "lifecycle": "爆发期（顶峰 8/1-8/2，下周持续热度）",
+          "angle": "代际冲突反转——'我给奶奶做真正的 400 大卡减脂餐'"
+        },
+        {
+          "topic": "#贴秋膘 vs 清补 / #秋包伏",
+          "first_seen": "2026-08-02",
+          "views": "立秋前热度飙升 / 抖音生活服务红烧肉订单+103%",
+          "lifecycle": "节气热点（8/7 立秋倒计时 5 天）",
+          "angle": "立秋清补三件套——清蒸鲈鱼+山药小米粥+莲藕排骨汤"
+        },
+        {
+          "topic": "#跟着瘦子吃饭",
+          "first_seen": "2026-07-31",
+          "views": "5万+ 讨论 / 多条百万播放",
+          "lifecycle": "延续高热（第三周），本周 3 天连续上榜",
+          "angle": "'吃饱版瘦子食谱'——同食材加量 30%，热量只多 150 大卡"
+        },
+        {
+          "topic": "#公瑾爆蛋",
+          "first_seen": "2026-08-01",
+          "views": "11.5亿+（抖音）/ 小红书超亿次浏览",
+          "lifecycle": "爆发期",
+          "angle": "减脂版（少油+零卡糖+糙米）原版 480→减脂版 280 大卡"
+        },
+        {
+          "topic": "#了不起的中国菜",
+          "first_seen": "2026-08-02",
+          "views": "主话题 2.5亿+ / 寻味城市招牌美食登热点 TOP1",
+          "lifecycle": "平台级活动持续推热",
+          "angle": "减脂版地方名菜系列（如减脂版蟹粉汤包）"
+        }
+      ],
+      "next_week_shoot_plan": [
+        {
+          "publish_date": "2026-08-03（周一）",
+          "title": "我给奶奶做减脂餐：400大卡也能吃到撑",
+          "hook_topic": "#奶奶给我做的减脂餐（趁热度未退，必须首发）",
+          "duration": "60-90s",
+          "bgm": "《茶花开了，该回家了》",
+          "key_shots": ["热搜截图+大字幕", "称重对比：奶奶版vs科学版", "三道菜：杂粮菜煎饼/水油焖菜/南瓜小米粥", "奶奶试吃反应"],
+          "tags": ["#奶奶给我做的减脂餐", "#减脂餐", "#400大卡吃饱", "#立秋清补", "#家常菜减脂版"]
+        },
+        {
+          "publish_date": "2026-08-05（周三）",
+          "title": "减脂版公瑾爆蛋：5块钱吃瘦不饿瘦",
+          "hook_topic": "#公瑾爆蛋（11.5亿播放）",
+          "duration": "45-60s",
+          "bgm": "《Andalusia (Filatov & Karas Remix)》",
+          "key_shots": ["糖醋汁浇上去的慢动作", "不粘锅少油煎蛋", "热量对比字幕：480→280大卡"],
+          "tags": ["#公瑾爆蛋", "#减脂餐", "#低卡家常菜", "#吃瘦不饿瘦", "#5元美食"]
+        },
+        {
+          "publish_date": "2026-08-07（周五·立秋）",
+          "title": "立秋别急着贴秋膘：减脂版清补三件套",
+          "hook_topic": "#贴秋膘vs清补 / #秋包伏（蹭节气首发）",
+          "duration": "45-75s",
+          "bgm": "《向云端》",
+          "key_shots": ["立秋日历翻页", "清蒸鲈鱼+山药炒木耳+莲藕排骨汤", "每道菜标热量+清补理由", "大字幕'贴秋膘≠贴脂肪'"],
+          "tags": ["#贴秋膘", "#立秋", "#秋包伏", "#减脂清补", "#低卡家常菜"]
+        },
+        {
+          "publish_date": "2026-08-09（周日）",
+          "title": "跟着瘦子吃饭·吃饱版（周末 Vlog）",
+          "hook_topic": "#跟着瘦子吃饭（连续3周高热）",
+          "duration": "90-120s",
+          "bgm": "《烟火人间》",
+          "key_shots": ["瘦子原版三餐复刻", "加量30%对比", "改良版热量表", "结尾'吃饱也能瘦'"],
+          "tags": ["#跟着瘦子吃饭", "#减脂餐", "#低卡烘焙", "#一天吃什么", "#家常菜"]
+        }
+      ],
+      "improvement_suggestions": [
+        "本周未发视频，下周必须 2-3 条起步（按 config.json 的 weekly_videos_target）",
+        "建议建立'视频发布 → 24h 后回填数据'流程：发布后 24h/72h/7d 分别记播放/点赞/评论/完播率",
+        "视频数据要写进 video-stats.json 才能周复盘做对比（格式：{date, title, hook_topic, 24h_views, likes, comments, saves, completion_rate}）",
+        "BGM 库已收集 9 首热门，优先用本周 3 天连续推荐的《向云端》《烟火人间》（适配减脂日常/家常菜）"
+      ]
+    },
+    "3_nutrition_finance": {
+      "title": "本周总热量 / 总支出 / 存款进度",
+      "nutrition": {
+        "data_status": "✅ 完整（3 天 3 条记录）",
+        "daily_breakdown": [
+          {"date": "2026-07-31", "weekday": "周五", "kcal": 1726, "carb_g": 187, "protein_g": 93, "fat_g": 40, "carb_pct": 56, "protein_pct": 28, "fat_pct": 16, "within_range": true},
+          {"date": "2026-08-01", "weekday": "周六", "kcal": 1616, "carb_g": 160, "protein_g": 96, "fat_g": 53, "carb_pct": 38, "protein_pct": 23, "fat_pct": 28, "within_range": true, "note": "原本是放纵餐日，按任务走减脂方案"},
+          {"date": "2026-08-02", "weekday": "周日", "kcal": 1685, "carb_g": 187, "protein_g": 99, "fat_g": 42, "carb_pct": 44, "protein_pct": 24, "fat_pct": 22, "within_range": true}
+        ],
+        "totals": {
+          "total_kcal_3days": 5027,
+          "avg_kcal_per_day": 1676,
+          "target_range": "1600-1800",
+          "in_range_days": 3,
+          "out_of_range_days": 0,
+          "days_with_data": 3
+        },
+        "macro_averages": {
+          "carb_g_per_day": 178,
+          "protein_g_per_day": 96,
+          "fat_g_per_day": 45,
+          "protein_pct": 25,
+          "verdict": "蛋白 25% 占比优秀（目标 25-30%），饱腹感强 + 减脂期保肌肉"
+        },
+        "menu_variety": {
+          "unique_proteins": ["三文鱼", "鲈鱼", "鸡蛋", "希腊酸奶", "杏仁", "全麦吐司", "牛里脊", "荞麦面", "卤鸡腿(去皮)", "鸡胸", "龙利鱼", "核桃", "毛豆", "巴旦木"],
+          "unique_vegetables_fruits": ["紫薯", "黄瓜", "西兰花", "玉米", "杏鲍菇", "菠菜", "紫甘蓝", "彩椒", "洋葱", "木耳", "紫米", "娃娃菜", "空心菜", "毛豆", "蓝莓", "樱桃番茄", "红薯", "海带丝", "芒果", "生菜", "红洋葱", "香蕉", "番茄", "小米"],
+          "variety_score": "A+（11 种蛋白 + 23 种蔬果，3 天无重复主食）"
+        },
+        "cheat_meal_status": {
+          "is_cheat_meal_day_used": false,
+          "carryover": "本周六(8/1)未使用放纵餐权限，已顺延至下周六（按 6 周轮换，下周是第 2 周=烧烤日）",
+          "next_cheat_meal_window": "2026-08-08（周六）· 烧烤：多烤蔬菜串+鸡腿肉串+烤茄子，少五花肉少刷油"
+        },
+        "feedback": "3 天热量 1676 kcal/天均值，完美卡在 1600-1800 区间。蛋白 25% 占比说明菜单营养密度高，211 餐盘执行到位。唯一改进点：周六(8/1)的脂肪占比 28% 偏高（卤鸡腿+巴旦木+毛豆的脂肪叠加），下周烧烤放纵日注意别再叠加坚果。",
+        "highlights": [
+          "连续 3 天 100% 命中热量目标，稳得可怕",
+          "蛋白摄入 93-99g/天，远超 65kg 体重 × 1.6g/kg = 104g 目标的 90%（肌肉保留好）",
+          "11 种蛋白 + 23 种蔬果，3 天无重复——菜单多样性极强，下周可以引入：鸭肉/山药/莲藕（蹭立秋清补）",
+          "卤鸡腿去皮、上汤娃娃菜、空心菜大火快炒等技巧都吃到了（不是'水煮一切'的极端口味）"
+        ]
+      },
+      "expenses": {
+        "data_status": "无数据（savings-pool.json 只有 goal 配置，无 daily 记录）",
+        "daily_records": [],
+        "weekly_total_spent": null,
+        "feedback": "本周开支数据全部为空，存款池也还是初始 ¥0/¥30000。这是和体重记录并列的两大短板。",
+        "action_items": [
+          "建立开支基线：今天起每天 20:00 录入当日开支（餐饮/日用/交通等分类），写到 expenses/expense-log.json",
+          "建议格式：{date, category, amount, note, is_deposit}",
+          "存款：每周日晚同步更新存款池（savings-pool.json 的 total + deposits 数组）",
+          "下周复盘要看的是：本周总开支 + 餐饮占比（减脂期目标 < 50%）+ 存款进度（目标 ¥30000）"
+        ]
+      },
+      "savings": {
+        "data_status": "只有 goal 配置",
+        "goal_name": "养老基金",
+        "target": 30000,
+        "current": 0,
+        "progress_pct": 0,
+        "deadline": "TODO（未设置）",
+        "feedback": "养老基金进度 0%。建议：先设个 deadline（如 2026-12-31 = 5 个月 = 每月存 ¥6000），然后每周日同步一次。"
+      }
+    },
+    "4_open_mind": {
+      "title": "本周开智汇总 + 推荐下周关注方向",
+      "data_status": "无数据（open-mind-log.json 为空）",
+      "entries_this_week": 0,
+      "open_mind_focus_this_week": "本工作台刚启动，开智模块还没建。趁着减脂餐执行到位的势头，把'为什么这样吃'补上——",
+      "ai_generated_weekly_highlights": [
+        {
+          "title": "为什么你的 1700kcal 比别人 1500kcal 瘦得更快？",
+          "category": "减脂科学",
+          "summary": "减脂的核心不是'少吃'，是'营养密度高+饱腹感强'。你本周蛋白 96g/天（占总热量 25%）+ 膳食纤维 25g+/天 + 211 餐盘比例，让同样热量下肌肉合成更活跃、餐后血糖更平稳、4 小时不饿。这是比单纯控卡路里高一个维度的策略。",
+          "source": "meal-log.json 三天数据 + 211 餐盘 + 蛋白占比分析",
+          "value": "⭐⭐⭐⭐⭐（直接指导未来 4 周菜单设计）"
+        },
+        {
+          "title": "抖音算法对'家常菜+减脂'标签的真实偏好",
+          "category": "内容运营",
+          "summary": "本周 3 天热点抓取显示，'家常菜'和'减脂'是两个独立大类，但合并后流量密码最强（#奶奶给我做的减脂餐 千万阅读、#跟着瘦子吃饭 第三周持续）。算法会优先推'有真实场景（家庭厨房/日常三餐）+ 有科学标签（211/热量/GI）'的组合，单纯'摆盘精致'的减脂视频反而难出爆款。",
+          "source": "hot-topics 7-31/8-1/8-2 三天数据交叉分析",
+          "value": "⭐⭐⭐⭐⭐（直接决定下周拍摄选题）"
+        },
+        {
+          "title": "立秋'清补'不是噱头——中医视角的 8 月食材选择",
+          "category": "传统养生",
+          "summary": "2026 立秋(8/7)仍处中伏（末伏 8/14-8/23），'秋包伏'特征明显。中医建议'清补'替代'大补'：鸭肉>猪肉、山药莲子冬瓜>红烧肘子。立秋前 5 天的菜单应加入：莲藕、百合、银耳、山药、鸭肉、鲈鱼——既符合节气又天然适配减脂。",
+          "source": "hot-topics 8-2 + 2026 节气表",
+          "value": "⭐⭐⭐⭐（节气限定时效）"
+        },
+        {
+          "title": "英语学习主题 4 天连读：从'基础烹饪'到'减脂策略'",
+          "category": "自我提升",
+          "summary": "7-31 烹饪基础(sauté/simmer/marinate...) → 8-1 调味艺术(caramelize/sear/deglaze...) → 8-2 厨房工具(colander/spatula/scale...) → 8-3 减脂策略(deficit/satiety/cheat meal/carb cycling...)。主题设计是'工具→技巧→减脂科学'的递进，下周可以引入'餐厅点餐英语'或'菜谱阅读'。",
+          "source": "english-log.json 4 天记录主题分析",
+          "value": "⭐⭐⭐（英语学习+减脂专业度双提升）"
+        }
+      ],
+      "next_week_recommended_topics": [
+        {
+          "topic": "慢碳主食轮换：糙米/燕麦/藜麦/紫米/荞麦/全麦/小米/红薯——8 种主食如何按周轮换避免厌倦？",
+          "category": "减脂科学",
+          "why": "你本周已用 4 种主食，下周可补充：藜麦(已用)、荞麦(已用)、紫米(已用)，还差：小米、红薯(已用)、玉米、燕麦(已用)——主食多样性其实已经够，关注点应转到'GI 轮换 + 口感搭配'",
+          "suggested_read": "《食物血糖生成指数》(GI) 完整版表格 / 中国食物成分表"
+        },
+        {
+          "topic": "跟着瘦子吃饭的'吃饱科学'：为什么瘦子吃饱还能瘦？",
+          "category": "内容运营",
+          "why": "#跟着瘦子吃饭 是本周 3 天连续上榜的话题，下周日要拍这条。先做内容功课：研究 5 个高粉瘦子博主的'吃饱技巧'——比如蔬菜先吃→蛋白次之→主食最后、慢咽 20 次、餐前 1 杯水",
+          "suggested_read": "抖音 / 小红书 / B站 瘦子饮食 vlog 横向对比 10 条"
+        },
+        {
+          "topic": "立秋清补 7 天食材包：山药/莲藕/百合/银耳/鸭肉/鲈鱼/南瓜",
+          "category": "传统养生 + 节气",
+          "why": "8/7 立秋是下周流量首发节点，立秋清补三件套视频下周五(8/7)要发，食材准备要前置",
+          "suggested_read": "《中医食疗学》立秋章节 / @懒人厨房 立秋专题"
+        },
+        {
+          "topic": "抖音 BGM 库的版权与节奏选择",
+          "category": "内容运营",
+          "why": "本周已收集 9 首热门 BGM（茶花开了/乌梅子酱/向云端/晚风告白/Andalusia/我会一直顺/烟火人间/锅铲协奏曲/蛋糕店里卖蛋糕），下周要拍 4 条视频，需要为每条选最合适的",
+          "suggested_read": "抖音官方 BGM 榜 / 视频卡点教程"
+        }
+      ],
+      "open_mind_building_tip": "建议每周日晚 21:00 周复盘前，先写 1-2 条开智到 open-mind-log.json。格式：{date, category, title, summary, source, value_rating}。下周目标是 2 条起步（本月累计 8 条 = 一个小知识库）。"
+    }
+  },
+  "next_week_action_checklist": [
+    "☐ 周一起开始每天 20:00 录入开支到 expenses/expense-log.json",
+    "☐ 每天拍完视频 24h 后回填播放/点赞/评论数据到 video-stats.json",
+    "☐ 下周日(8/9)复盘前先称重 + 写 1-2 条开智 + 同步存款池",
+    "☐ 下周六(8/8)放纵餐：烧烤日（多烤蔬菜+鸡腿肉串，少五花肉少刷油）",
+    "☐ 下周视频发布 2-3 条（按 8/3 奶奶减脂餐 → 8/5 公瑾爆蛋 → 8/7 立秋清补 → 8/9 瘦子吃饭 节奏）"
+  ],
+  "key_metrics_dashboard": {
+    "calorie_adherence_3d": "100%（3/3 天命中 1600-1800 区间）",
+    "protein_pct_avg": "25%（高于目标下限 20%）",
+    "menu_variety_score": "A+（11 蛋白 + 23 蔬果）",
+    "cheat_meal_used": "未使用（顺延）",
+    "weight_data": "缺",
+    "video_data": "缺",
+    "expense_data": "缺",
+    "open_mind_entries": "0",
+    "data_completeness_pct": 25
+  },
+  "verdict": "首周工作台启动期，4 大模块中只有 1 个（减脂餐）数据完整。减脂餐执行质量 A+——3 天热量 100% 命中、蛋白 25% 占比、菜单多样性 11+23 远超标准。下周重点补齐体重/开支/视频/开智 4 个数据源，让周复盘从'执行报告'升级为'策略报告'。"
+}

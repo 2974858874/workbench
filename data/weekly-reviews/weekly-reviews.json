@@ -1,1 +1,21 @@
-[]
+[
+  {
+    "id": "2026-08-02",
+    "date": "2026-08-02",
+    "week_id": "2026-W31",
+    "week_label": "2026-07-27 ~ 2026-08-02（本工作台启用首周）",
+    "file": "data/weekly-reviews/weekly-2026-08-02.json",
+    "verdict": "首周启动期，减脂餐执行 A+，下周补齐体重/开支/视频/开智 4 个数据源",
+    "calorie_adherence_3d": "100%（3/3 天命中 1600-1800 区间）",
+    "total_kcal_3days": 5027,
+    "data_completeness_pct": 25,
+    "key_metrics": {
+      "weight": "缺",
+      "videos_published": 0,
+      "expense_total": "缺",
+      "savings_total": 0,
+      "savings_target": 30000,
+      "open_mind_entries": 0
+    }
+  }
+]
