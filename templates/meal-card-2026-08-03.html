@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<title>🍅 2026-08-03 周一 减脂餐 · 1709 kcal</title>
+<style>
+  :root {
+    --green: #7ba05b;
+    --green-deep: #5b8042;
+    --green-soft: #a3c489;
+    --bg: #eef0e0;
+    --paper: #fbfbf2;
+    --ink: #2d3a1f;
+    --muted: #6b7a52;
+    --accent: #c4623a;
+    --warn: #d9a441;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    padding: 20px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .hero {
+    background: linear-gradient(135deg, var(--green) 0%, var(--green-deep) 100%);
+    color: #fff;
+    padding: 28px 32px;
+    border-radius: 22px;
+    box-shadow: 0 8px 24px rgba(91,128,66,0.18);
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "🥗";
+    position: absolute;
+    right: -10px;
+    top: -20px;
+    font-size: 160px;
+    opacity: 0.18;
+  }
+  .hero h1 { margin: 0 0 6px 0; font-size: 26px; font-weight: 600; letter-spacing: 0.5px; }
+  .hero .sub { font-size: 14px; opacity: 0.92; }
+  .hero .badges { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .badge {
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 12.5px;
+    backdrop-filter: blur(6px);
+  }
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+  .summary-card {
+    background: var(--paper);
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(91,128,66,0.10);
+    border: 1px solid #e2e6c8;
+  }
+  .summary-card .num { font-size: 24px; font-weight: 700; color: var(--green-deep); }
+  .summary-card .lbl { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .meal {
+    background: var(--paper);
+    border-radius: 20px;
+    padding: 22px 26px;
+    margin-bottom: 18px;
+    box-shadow: 0 6px 20px rgba(91,128,66,0.10);
+    border: 1px solid #e2e6c8;
+    position: relative;
+  }
+  .meal-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1.5px dashed #d6dbb8;
+  }
+  .meal-title { font-size: 19px; font-weight: 600; color: var(--green-deep); }
+  .meal-cal {
+    background: var(--green);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .meta {
+    font-size: 12.5px;
+    padding: 4px 10px;
+    background: #f1f3e2;
+    color: var(--muted);
+    border-radius: 8px;
+    border: 1px solid #e2e6c8;
+  }
+  .meta b { color: var(--green-deep); }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .section h4 {
+    margin: 0 0 8px 0;
+    font-size: 13.5px;
+    color: var(--green-deep);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .section ul, .section ol { margin: 0; padding-left: 20px; }
+  .section li { font-size: 13.5px; margin-bottom: 5px; color: #3d4a2a; }
+  .tip {
+    margin-top: 14px;
+    padding: 10px 14px;
+    background: linear-gradient(90deg, #fef5e3 0%, #fff8e8 100%);
+    border-left: 3px solid var(--warn);
+    border-radius: 8px;
+    font-size: 13px;
+    color: #6b5a25;
+  }
+  .tip::before { content: "💡 "; }
+  .footer-card {
+    background: var(--paper);
+    border-radius: 18px;
+    padding: 20px 24px;
+    box-shadow: 0 4px 14px rgba(91,128,66,0.08);
+    border: 1px solid #e2e6c8;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .footer-card .item h5 {
+    margin: 0 0 6px 0;
+    font-size: 13px;
+    color: var(--green-deep);
+    font-weight: 600;
+  }
+  .footer-card .item p { margin: 0; font-size: 13px; color: #4a5a32; }
+  .macros-bar {
+    height: 8px;
+    background: #e2e6c8;
+    border-radius: 999px;
+    overflow: hidden;
+    display: flex;
+    margin-top: 8px;
+  }
+  .macros-bar > div { height: 100%; }
+  @media (max-width: 720px) {
+    .summary-grid { grid-template-columns: repeat(2, 1fr); }
+    .grid-2 { grid-template-columns: 1fr; }
+    .footer-card { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="hero">
+    <h1>🍅 2026-08-03 · 周一减脂餐</h1>
+    <div class="sub">身高 174cm · 体重 65.5kg · BMI 21.6 · 目标减脂塑形 · 工作日清淡启动</div>
+    <div class="badges">
+      <span class="badge">🥗 工作日</span>
+      <span class="badge">☀️ 夏季盛夏</span>
+      <span class="badge">🎯 1700 kcal 基线</span>
+      <span class="badge">🍱 211 餐盘比例</span>
+      <span class="badge">💧 饮水 2000-2500ml</span>
+    </div>
+  </div>
+
+  <div class="summary-grid">
+    <div class="summary-card"><div class="num">376</div><div class="lbl">早餐 kcal</div></div>
+    <div class="summary-card"><div class="num">621</div><div class="lbl">午餐 kcal</div></div>
+    <div class="summary-card"><div class="num">207</div><div class="lbl">加餐 kcal</div></div>
+    <div class="summary-card"><div class="num">505</div><div class="lbl">晚餐 kcal</div></div>
+  </div>
+
+  <div class="meal">
+    <div class="meal-head">
+      <div class="meal-title">🌅 早餐 · 山药鸡蛋饼 + 凉拌黄瓜胡萝卜丝 + 苹果 + 牛奶</div>
+      <div class="meal-cal">376 kcal</div>
+    </div>
+    <div class="meta-row">
+      <span class="meta">🍚 碳水 <b>38g</b></span>
+      <span class="meta">🥚 蛋白质 <b>18g</b></span>
+      <span class="meta">🥑 脂肪 <b>16g</b></span>
+      <span class="meta">📐 211（山药1拳 + 鸡蛋1掌 + 黄瓜胡萝卜2拳）</span>
+    </div>
+    <div class="grid-2">
+      <div class="section">
+        <h4>🛒 食材清单</h4>
+        <ul>
+          <li>铁棍山药 80g</li>
+          <li>鸡蛋 2 个 100g</li>
+          <li>苹果 80g（半个）</li>
+          <li>黄瓜 80g + 胡萝卜 30g</li>
+          <li>橄榄油 5g</li>
+          <li>低脂牛奶 150ml</li>
+          <li>盐 + 黑胡椒少许</li>
+        </ul>
+      </div>
+      <div class="section">
+        <h4>👩‍🍳 操作步骤</h4>
+        <ol>
+          <li>山药去皮切片上锅蒸 12 分钟至软烂，趁热压成泥</li>
+          <li>山药泥里打入 2 个鸡蛋 + 少许盐 + 黑胡椒，搅匀成糊</li>
+          <li>平底锅 5g 橄榄油小火热锅，倒入山药蛋糊铺平，中小火煎 3 分钟翻面再煎 2 分钟</li>
+          <li>黄瓜拍碎切段 + 胡萝卜切丝，淋陈醋+少许盐拌匀</li>
+          <li>装盘：山药蛋饼切块 + 凉拌双丝 + 苹果切片 + 1 杯低脂奶</li>
+        </ol>
+      </div>
+    </div>
+    <div class="tip">山药前一晚蒸好冷藏早晨只需 5 分钟复热+煎；山药含黏液蛋白护胃，比土豆更适合做饼；低脂奶选 250ml 小包装避免浪费。</div>
+  </div>
+
+  <div class="meal">
+    <div class="meal-head">
+      <div class="meal-title">☀️ 午餐 · 番茄虾仁意面 + 蒜蓉荷兰豆 + 凉拌黄瓜胡萝卜 + 法棍小片</div>
+      <div class="meal-cal">621 kcal</div>
+    </div>
+    <div class="meta-row">
+      <span class="meta">🍚 碳水 <b>86g</b></span>
+      <span class="meta">🥚 蛋白质 <b>28g</b></span>
+      <span class="meta">🥑 脂肪 <b>14g</b></span>
+      <span class="meta">📐 211（意面1拳 + 虾仁1掌 + 荷兰豆黄瓜2拳）</span>
+    </div>
+    <div class="grid-2">
+      <div class="section">
+        <h4>🛒 食材清单</h4>
+        <ul>
+          <li>意面 75g 干重</li>
+          <li>虾仁 120g（去虾线）</li>
+          <li>鸡蛋 1 个 50g（混入意面）</li>
+          <li>番茄 150g（2 个中等，切丁）</li>
+          <li>荷兰豆 100g（去筋）</li>
+          <li>黄瓜 80g + 胡萝卜 40g</li>
+          <li>法棍 25g（约 1 小片）</li>
+          <li>橄榄油 8g + 洋葱 30g + 蒜末 + 番茄酱 10g + 海盐 + 黑胡椒</li>
+        </ul>
+      </div>
+      <div class="section">
+        <h4>👩‍🍳 操作步骤</h4>
+        <ol>
+          <li>沸水下意面 + 少许盐煮 8 分钟至 al dente，捞出沥干保留 30ml 煮面水</li>
+          <li>虾仁用料酒+黑胡椒腌 3 分钟，鸡蛋打散加少许盐</li>
+          <li>锅热 5g 橄榄油爆香洋葱+蒜末，下番茄丁炒出汁，加番茄酱+煮面水 30ml 煮 2 分钟</li>
+          <li>倒入虾仁炒 1 分钟至变红，倒入意面 + 蛋液翻匀 30 秒出锅</li>
+          <li>另锅 3g 橄榄油+蒜末炒荷兰豆 1 分钟加盐出锅；黄瓜胡萝卜丝+陈醋凉拌</li>
+          <li>装盘：意面 + 荷兰豆 + 凉拌菜 + 法棍小片</li>
+        </ol>
+      </div>
+    </div>
+    <div class="tip">意面比挂面 GI 低；煮面水里含淀粉淋意面更挂汁；虾仁大火快炒超 2 分钟会老；法棍可换杂粮小馒头。</div>
+  </div>
+
+  <div class="meal">
+    <div class="meal-head">
+      <div class="meal-title">🍎 加餐 · 火龙果牛奶杯 + 水煮鸡蛋白 + 腰果</div>
+      <div class="meal-cal">207 kcal</div>
+    </div>
+    <div class="meta-row">
+      <span class="meta">🍚 碳水 <b>22g</b></span>
+      <span class="meta">🥚 蛋白质 <b>16g</b></span>
+      <span class="meta">🥑 脂肪 <b>8g</b></span>
+      <span class="meta">📐 加餐：水果 + 蛋白 + 少量坚果</span>
+    </div>
+    <div class="grid-2">
+      <div class="section">
+        <h4>🛒 食材清单</h4>
+        <ul>
+          <li>红心火龙果 150g</li>
+          <li>鸡蛋白 2 个 70g（蛋黄留晚餐用）</li>
+          <li>腰果 8g（约 5 颗）</li>
+          <li>低脂牛奶 100ml</li>
+        </ul>
+      </div>
+      <div class="section">
+        <h4>👩‍🍳 操作步骤</h4>
+        <ol>
+          <li>火龙果去皮切丁</li>
+          <li>玻璃杯底层铺火龙果丁</li>
+          <li>倒入低脂奶 100ml</li>
+          <li>鸡蛋白冷水下锅煮 5 分钟至全熟捞出剥壳</li>
+          <li>另放小碟装鸡蛋白 + 腰果防受潮</li>
+        </ol>
+      </div>
+    </div>
+    <div class="tip">下午 15:00-16:00 吃最扛饿；火龙果含水量高+白蛋白助消化；鸡蛋白纯蛋白不增加脂肪负担；腰果一次 5 颗约 45 大卡别超。</div>
+  </div>
+
+  <div class="meal">
+    <div class="meal-head">
+      <div class="meal-title">🌙 晚餐 · 清蒸鳕鱼 + 山药炒蛋 + 蒜蓉西葫芦荷兰豆 + 米饭</div>
+      <div class="meal-cal">505 kcal</div>
+    </div>
+    <div class="meta-row">
+      <span class="meta">🍚 碳水 <b>55g</b></span>
+      <span class="meta">🥚 蛋白质 <b>32g</b></span>
+      <span class="meta">🥑 脂肪 <b>14g</b></span>
+      <span class="meta">📐 211（米饭1拳 + 鳕鱼1掌 + 西葫芦山药2拳）</span>
+    </div>
+    <div class="grid-2">
+      <div class="section">
+        <h4>🛒 食材清单</h4>
+        <ul>
+          <li>米饭 40g 干重（粳米，蒸熟约 110g）</li>
+          <li>鳕鱼 120g（1 块）</li>
+          <li>铁棍山药 80g（切片）</li>
+          <li>西葫芦 100g（切片）</li>
+          <li>荷兰豆 80g</li>
+          <li>鸡蛋 1 个 50g（加餐蛋黄 + 这个蛋）</li>
+          <li>橄榄油 8g</li>
+          <li>蒸鱼豉油 5ml + 姜 3 片 + 葱段 + 蒜末 + 海盐</li>
+        </ul>
+      </div>
+      <div class="section">
+        <h4>👩‍🍳 操作步骤</h4>
+        <ol>
+          <li>米饭淘洗加 1.2 倍水电饭煲蒸 25 分钟</li>
+          <li>鳕鱼放姜片+葱段，水开后大火蒸 6 分钟（鳕鱼薄易老）</li>
+          <li>山药切片泡水防氧化，沸水焯 2 分钟</li>
+          <li>锅热 5g 橄榄油下蒜末+山药片+鸡蛋炒散，加盐出锅</li>
+          <li>另锅 3g 橄榄油+蒜末炒西葫芦+荷兰豆 2 分钟</li>
+          <li>鳕鱼出锅淋蒸鱼豉油+少许热油；配米饭+山药炒蛋+西葫芦荷兰豆</li>
+        </ol>
+      </div>
+    </div>
+    <div class="tip">鳕鱼蒸 6 分钟足够（超 8 分钟会柴）；山药配蛋是优质蛋白+淀粉组合扛饿；晚餐 18:30 前吃完给消化留足时间，19:00 后可做 30min 帕梅拉。</div>
+  </div>
+
+  <div class="footer-card">
+    <div class="item">
+      <h5>📊 宏量营养素</h5>
+      <p>碳水 201g (47%) · 蛋白 94g (22%) · 脂肪 52g (27%)</p>
+      <div class="macros-bar">
+        <div style="width:47%; background:#7ba05b;"></div>
+        <div style="width:22%; background:#c4623a;"></div>
+        <div style="width:27%; background:#d9a441;"></div>
+      </div>
+    </div>
+    <div class="item">
+      <h5>🏃 今日运动</h5>
+      <p>周一 · 帕梅拉 + 拉伸 30min<br>建议 19:00 晚餐后 30 分钟，凉爽时段室内进行</p>
+    </div>
+    <div class="item">
+      <h5>💧 饮水计划</h5>
+      <p>目标 2000-2500ml<br>上午 500ml 温开水+午餐前 300ml+下午加餐时 300ml 绿茶+晚餐后 500ml</p>
+    </div>
+  </div>
+
+  <div class="footer-card" style="margin-top:14px;">
+    <div class="item" style="grid-column: 1 / -1;">
+      <h5>🆕 菜单避重</h5>
+      <p>已避开 7-31 / 8-1 / 8-2 用过的所有菜品。今日新增：铁棍山药（早+晚双用）/山药鸡蛋饼/意面/虾仁/荷兰豆/法棍/火龙果/鸡蛋白/腰果/鳕鱼/西葫芦/低脂牛奶。</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
