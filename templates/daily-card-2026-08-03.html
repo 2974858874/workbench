@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🍅 今日固定行程 · 2026-08-03</title>
+<style>
+/* ===========================
+   🍅 今日行程卡 · 内联样式
+   打印友好 + 移动端适配
+   =========================== */
+:root {
+  --bg: #eef0e0;
+  --bg-2: #e3e8d0;
+  --card: #ffffff;
+  --ink: #2b3a2c;
+  --ink-soft: #5e6b59;
+  --ink-mute: #8a9585;
+  --green: #7ba05b;
+  --green-deep: #5b8042;
+  --green-soft: #c8d8b0;
+  --line: #d8dec6;
+  --accent: #c4623a;
+  --warn: #d68a3c;
+  --shadow: 0 1px 3px rgba(60, 70, 30, 0.06), 0 8px 24px rgba(60, 70, 30, 0.06);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 13.5px;
+  line-height: 1.55;
+  min-height: 100vh;
+  padding: 16px;
+}
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ===== 头部品牌 ===== */
+.brand-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.brand-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand-emoji { font-size: 26px; line-height: 1; }
+.brand-title { font-weight: 700; font-size: 15px; }
+.brand-sub { font-size: 11px; color: var(--ink-mute); }
+.date-pill {
+  background: var(--green);
+  color: #fff;
+  border-radius: 999px;
+  padding: 4px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* ===== 卡片通用 ===== */
+.card {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 16px 18px;
+  box-shadow: var(--shadow);
+  margin-bottom: 14px;
+}
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 8px;
+}
+.card-head h2 { font-size: 14px; margin: 0; font-weight: 600; }
+.head-tip { font-size: 11px; color: var(--ink-mute); }
+
+/* ===== 行程时间轴 ===== */
+.timeline { list-style: none; margin: 0; padding: 0; }
+.timeline-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 4px;
+  border-bottom: 1px dashed var(--line);
+}
+.timeline-item:last-child { border-bottom: 0; }
+.timeline-time {
+  font-family: "SF Mono", monospace;
+  font-size: 12px;
+  color: var(--green-deep);
+  font-weight: 700;
+  min-width: 42px;
+}
+.timeline-tag { font-size: 15px; min-width: 20px; text-align: center; }
+.timeline-title { flex: 1; font-size: 13px; }
+.timeline-dur {
+  font-size: 10.5px;
+  color: var(--ink-mute);
+  background: var(--bg-2);
+  padding: 2px 6px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+/* ===== 数据摘要条 ===== */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.summary-cell {
+  background: linear-gradient(135deg, #fafbf6 0%, #eef2e0 100%);
+  border: 1px solid var(--green-soft);
+  border-radius: 12px;
+  padding: 12px 10px;
+  text-align: center;
+}
+.summary-cell .lbl { font-size: 10.5px; color: var(--ink-mute); }
+.summary-cell .val { font-size: 18px; font-weight: 800; color: var(--accent); margin-top: 2px; }
+.summary-cell .sub { font-size: 10.5px; color: var(--ink-soft); margin-top: 2px; }
+
+/* ===== 餐卡 ===== */
+.meal-strip {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.meal-chip {
+  background: var(--bg-2);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 12px;
+  flex: 1;
+  min-width: 120px;
+}
+.meal-chip .slot { font-weight: 700; color: var(--green-deep); font-size: 11px; }
+.meal-chip .name { color: var(--ink); margin-top: 2px; }
+.meal-chip .cal { font-size: 11px; color: var(--accent); font-weight: 700; margin-top: 2px; }
+
+/* ===== 热点 ===== */
+.hot-list { list-style: none; margin: 0; padding: 0; }
+.hot-list li {
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--line);
+  font-size: 12px;
+}
+.hot-list li:last-child { border-bottom: 0; }
+.hot-tag { color: var(--accent); font-weight: 700; font-size: 12px; }
+.hot-meta { font-size: 10.5px; color: var(--ink-mute); margin: 2px 0; }
+.hot-angle { color: var(--ink-soft); font-size: 11.5px; }
+
+/* ===== 英语 ===== */
+.english-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+.word-pill {
+  background: #fafbf6;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 3px 8px;
+  font-size: 11.5px;
+}
+.word-pill b { color: var(--green-deep); }
+.word-pill i { color: var(--ink-mute); font-style: normal; font-size: 10.5px; }
+.core-box {
+  background: linear-gradient(135deg, #c8d8b0 0%, #b4c898 100%);
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+}
+.core-box .en { font-size: 16px; font-weight: 700; color: var(--ink); }
+.core-box .cn { font-size: 11.5px; color: var(--ink-soft); margin-top: 4px; }
+
+/* ===== 运动 ===== */
+.exercise-banner {
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-deep) 100%);
+  color: #fff;
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.exercise-banner .left { font-size: 12.5px; opacity: 0.9; }
+.exercise-banner .right { font-size: 20px; font-weight: 800; }
+
+/* ===== 记账提醒 ===== */
+.remind-box {
+  background: linear-gradient(135deg, #fafbf6 0%, #eef2e0 100%);
+  border: 1px dashed var(--green-soft);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 12px;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.remind-box .ico { font-size: 20px; }
+
+/* ===== 打印优化 ===== */
+@media print {
+  body { background: #fff; padding: 0; }
+  .card {
+    box-shadow: none;
+    border: 1px solid var(--line);
+    page-break-inside: avoid;
+  }
+  .no-print { display: none !important; }
+  .page { max-width: 100%; }
+}
+
+/* ===== 移动端 ===== */
+@media (max-width: 600px) {
+  body { padding: 10px; }
+  .card { border-radius: 14px; padding: 14px; }
+  .summary-grid { grid-template-columns: repeat(2, 1fr); }
+  .timeline-time { min-width: 38px; font-size: 11px; }
+  .timeline-title { font-size: 12px; }
+  .brand-title { font-size: 14px; }
+}
+@media (max-width: 380px) {
+  .summary-grid { grid-template-columns: 1fr; }
+  .exercise-banner { flex-direction: column; text-align: center; gap: 4px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 头部 -->
+  <div class="brand-bar">
+    <div class="brand-left">
+      <div class="brand-emoji">🍅</div>
+      <div>
+        <div class="brand-title">今日固定行程</div>
+        <div class="brand-sub">Daily Workbench · 周一</div>
+      </div>
+    </div>
+    <div class="date-pill">2026-08-03</div>
+  </div>
+
+  <!-- 数据摘要 -->
+  <div class="card">
+    <div class="summary-grid">
+      <div class="summary-cell">
+        <div class="lbl">今日热量</div>
+        <div class="val">1700</div>
+        <div class="sub">kcal 目标</div>
+      </div>
+      <div class="summary-cell">
+        <div class="lbl">今日运动</div>
+        <div class="val">30min</div>
+        <div class="sub">帕梅拉 + 拉伸</div>
+      </div>
+      <div class="summary-cell">
+        <div class="lbl">英语学习</div>
+        <div class="val">20min</div>
+        <div class="sub">30 词 + 5 句 + 1 核心</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 今日固定行程 -->
+  <div class="card">
+    <div class="card-head">
+      <h2>📋 今日固定行程</h2>
+      <span class="head-tip">点击打勾 · 手机端同步</span>
+    </div>
+    <ul class="timeline" id="timeline">
+      <li class="timeline-item">
+        <span class="timeline-time">07:00</span>
+        <span class="timeline-tag">🥗</span>
+        <span class="timeline-title">起床 / 喝水 / 拉伸</span>
+        <span class="timeline-dur">10min</span>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-time">07:30</span>
+        <span class="timeline-tag">🥗</span>
+        <span class="timeline-title">今日三餐减脂餐灵感（早/午/晚，1700 kcal）</span>
+        <span class="timeline-dur">30min</span>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-time">08:30</span>
+        <span class="timeline-tag">📱</span>
+        <span class="timeline-title">抖音美食热点 + 选题建议</span>
+        <span class="timeline-dur">10min</span>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-time">09:00</span>
+        <span class="timeline-tag">📖</span>
+        <span class="timeline-title">英语学习任务</span>
+        <span class="timeline-dur">20min</span>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-time">12:00</span>
+        <span class="timeline-tag">🥗</span>
+        <span class="timeline-title">午餐打卡（上传/备注）</span>
+        <span class="timeline-dur">5min</span>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-time">15:00</span>
+        <span class="timeline-tag">📱</span>
+        <span class="timeline-title">拍摄 / 剪辑今日视频</span>
+        <span class="timeline-dur">60min</span>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-time">18:00</span>
+        <span class="timeline-tag">🥗</span>
+        <span class="timeline-title">晚餐打卡 + 运动提醒</span>
+        <span class="timeline-dur">5min</span>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-time">20:00</span>
+        <span class="timeline-tag">👛</span>
+        <span class="timeline-title">录入今日开支 + 存款更新</span>
+        <span class="timeline-dur">5min</span>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-time">21:00</span>
+        <span class="timeline-tag">📱</span>
+        <span class="timeline-title">发布今日视频（按计划）</span>
+        <span class="timeline-dur">10min</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 减脂餐概览 -->
+  <div class="card">
+    <div class="card-head">
+      <h2>🥗 今日减脂餐（1700 kcal）</h2>
+      <span class="head-tip">碳水 172g / 蛋白质 100g / 脂肪 46g</span>
+    </div>
+    <div class="meal-strip">
+      <div class="meal-chip">
+        <div class="slot">🌅 早餐 · 07:30</div>
+        <div class="name">隔夜燕麦杯</div>
+        <div class="cal">380 kcal</div>
+      </div>
+      <div class="meal-chip">
+        <div class="slot">☀️ 午餐 · 12:00</div>
+        <div class="name">泰式虾仁藜麦碗</div>
+        <div class="cal">620 kcal</div>
+      </div>
+      <div class="meal-chip">
+        <div class="slot">🍎 加餐 · 15:00</div>
+        <div class="name">希腊酸奶 + 杏仁</div>
+        <div class="cal">200 kcal</div>
+      </div>
+      <div class="meal-chip">
+        <div class="slot">🌙 晚餐 · 18:00</div>
+        <div class="name">鸡胸彩椒碗</div>
+        <div class="cal">500 kcal</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 运动提醒 -->
+  <div class="card no-print">
+    <div class="exercise-banner">
+      <div class="left">🏃 周一运动计划<br><span style="font-size:11px;opacity:.75">帕梅拉 + 拉伸 · 全身燃脂</span></div>
+      <div class="right">30 min</div>
+    </div>
+  </div>
+
+  <!-- 抖音热点 -->
+  <div class="card">
+    <div class="card-head">
+      <h2>📱 今日抖音美食热点</h2>
+      <span class="head-tip">08:30 更新</span>
+    </div>
+    <ul class="hot-list">
+      <li>
+        <div class="hot-tag">#国家出手教减肥了#</div>
+        <div class="hot-meta">12亿+ · 趋势：上升中</div>
+        <div class="hot-angle">📌 可拍"国家1200千卡食谱 × 我家的平价复刻"</div>
+      </li>
+      <li>
+        <div class="hot-tag">#跟着瘦子吃饭#</div>
+        <div class="hot-meta">5万+讨论/多条百万播放 · 趋势：爆发期</div>
+        <div class="hot-angle">📌 复刻"瘦子一天饮食"挑战 vlog</div>
+      </li>
+      <li>
+        <div class="hot-tag">#泰式椒麻鸡#</div>
+        <div class="hot-meta">12.7亿+ · 趋势：夏季续命款</div>
+        <div class="hot-angle">📌 鸡腿去骨 + 万能蘸料公式，ASMR 慢动作</div>
+      </li>
+    </ul>
+    <div style="margin-top:10px;font-size:11.5px;color:var(--ink-soft);background:#fafbf6;border-radius:8px;padding:10px 12px;border:1px solid var(--line);">
+      <b>🎵 音频建议：</b>舒缓鼓点 BGM，前 3 秒使用"画面 + 大字幕反差"hook，例如「这碗 260 大卡，吃撑也不胖」。
+    </div>
+  </div>
+
+  <!-- 英语学习 -->
+  <div class="card">
+    <div class="card-head">
+      <h2>📖 英语学习（09:00 推送）</h2>
+      <span class="head-tip">30 词 + 5 句 + 1 核心</span>
+    </div>
+    <div style="font-size:12px;font-weight:600;color:var(--green-deep);margin-bottom:8px;">🍳 烹饪口语 5 句</div>
+    <ul class="hot-list">
+      <li>Bring a large pot of water to a rolling boil. <span style="color:var(--ink-mute)">把一大锅水烧到完全沸腾。</span></li>
+      <li>Dice the chicken breast into bite-sized cubes. <span style="color:var(--ink-mute)">把鸡胸肉切成一口大小的丁。</span></li>
+      <li>Sauté the garlic until fragrant, about 30 seconds. <span style="color:var(--ink-mute)">蒜末炒出香味，大约 30 秒。</span></li>
+      <li>Season with salt and pepper to taste. <span style="color:var(--ink-mute)">按个人口味加盐和黑胡椒调味。</span></li>
+      <li>Let it rest for 5 minutes before serving. <span style="color:var(--ink-mute)">装盘前静置 5 分钟。</span></li>
+    </ul>
+    <div style="font-size:12px;font-weight:600;color:var(--green-deep);margin:12px 0 8px;">📚 今日单词（精选 10 个）</div>
+    <div class="english-strip">
+      <span class="word-pill"><b>simmer</b> <i>/ˈsɪmər/</i> 煨</span>
+      <span class="word-pill"><b>sauté</b> <i>/sɔːˈteɪ/</i> 炒</span>
+      <span class="word-pill"><b>whisk</b> <i>/wɪsk/</i> 打蛋</span>
+      <span class="word-pill"><b>marinate</b> <i>/ˈmærɪneɪt/</i> 腌</span>
+      <span class="word-pill"><b>garnish</b> <i>/ˈɡɑːrnɪʃ/</i> 装饰</span>
+      <span class="word-pill"><b>preheat</b> <i>/ˌpriːˈhiːt/</i> 预热</span>
+      <span class="word-pill"><b>al dente</b> <i>/ɑːl ˈdɛnteɪ/</i> 弹牙</span>
+      <span class="word-pill"><b>crispy</b> <i>/ˈkrɪspi/</i> 酥脆</span>
+      <span class="word-pill"><b>portion</b> <i>/ˈpɔːrʃn/</i> 一份</span>
+      <span class="word-pill"><b>moderation</b> <i>/ˌmɑːdəˈreɪʃn/</i> 适度</span>
+    </div>
+    <div class="core-box">
+      <div style="font-size:11px;color:var(--green-deep);font-weight:600;letter-spacing:1px;margin-bottom:4px;">今日核心口语</div>
+      <div class="en">"Cook once, eat all week."</div>
+      <div class="cn">一次备餐，吃一整周。</div>
+    </div>
+  </div>
+
+  <!-- 记账提醒 -->
+  <div class="card">
+    <div class="remind-box">
+      <span class="ico">👛</span>
+      <div>
+        <div style="font-weight:600;color:var(--ink);">20:00 记账提醒</div>
+        <div>录入今日开支 + 更新存款池（养老基金 · 目标 ¥30,000）</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 底部 -->
+  <div style="text-align:center;font-size:11px;color:var(--ink-mute);padding:8px 0 20px;">
+    🍅 的工作台 · v1.0 · 每日 07:00 自动生成<br>
+    <span class="no-print">手机访问：<a href="https://2974858874.github.io/workbench/" style="color:var(--green-deep);">https://2974858874.github.io/workbench/</a></span>
+  </div>
+
+</div>
+</body>
+</html>
