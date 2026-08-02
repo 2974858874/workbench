@@ -148,5 +148,55 @@
       "phonetic": "/frɛʃ ɪnˈɡriːdiənts niːd lɛs ˈsiːzənɪŋ/",
       "zh": "食材够新鲜，调味就省心。"
     }
+  },
+  {
+    "date": "2026-08-03",
+    "day": 4,
+    "level": "中高级",
+    "topic": "饮食搭配 & 减脂策略",
+    "words": [
+      { "en": "deficit", "phonetic": "/ˈdefɪsɪt/", "zh": "热量缺口（赤字）" },
+      { "en": "surplus", "phonetic": "/ˈsɜːrpləs/", "zh": "热量盈余" },
+      { "en": "intake", "phonetic": "/ˈɪnteɪk/", "zh": "摄入量" },
+      { "en": "expenditure", "phonetic": "/ɪkˈspendɪtʃər/", "zh": "消耗量" },
+      { "en": "refeed", "phonetic": "/riːˈfiːd/", "zh": "补碳日（高碳恢复日）" },
+      { "en": "cutting", "phonetic": "/ˈkʌtɪŋ/", "zh": "减脂期" },
+      { "en": "maintenance", "phonetic": "/ˈmeɪntənəns/", "zh": "维持期" },
+      { "en": "plateau", "phonetic": "/plæˈtoʊ/", "zh": "平台期（停滞不降）" },
+      { "en": "carb cycling", "phonetic": "/kɑːrb ˈsaɪklɪŋ/", "zh": "碳水循环法" },
+      { "en": "intermittent fasting", "phonetic": "/ˌɪntərˈmɪtənt ˈfæstɪŋ/", "zh": "间歇性断食" },
+      { "en": "glycemic index", "phonetic": "/ɡlaɪˈsiːmɪk ˈɪndɛks/", "zh": "升糖指数（GI 值）" },
+      { "en": "blood sugar", "phonetic": "/blʌd ˈʃʊɡər/", "zh": "血糖" },
+      { "en": "insulin", "phonetic": "/ˈɪnsəlɪn/", "zh": "胰岛素" },
+      { "en": "cholesterol", "phonetic": "/kəˈlɛstərɔːl/", "zh": "胆固醇" },
+      { "en": "sodium", "phonetic": "/ˈsoʊdiəm/", "zh": "钠（盐分）" },
+      { "en": "potassium", "phonetic": "/pəˈtæsiəm/", "zh": "钾" },
+      { "en": "saturated fat", "phonetic": "/ˈsætʃəreɪtɪd fæt/", "zh": "饱和脂肪" },
+      { "en": "trans fat", "phonetic": "/træns fæt/", "zh": "反式脂肪" },
+      { "en": "electrolyte", "phonetic": "/ɪˈlɛktrəlaɪt/", "zh": "电解质" },
+      { "en": "probiotic", "phonetic": "/ˌproʊbaɪˈɒtɪk/", "zh": "益生菌" },
+      { "en": "craving", "phonetic": "/ˈkreɪvɪŋ/", "zh": "馋念（强烈食欲）" },
+      { "en": "binge", "phonetic": "/bɪndʒ/", "zh": "暴食" },
+      { "en": "cheat meal", "phonetic": "/tʃiːt miːl/", "zh": "放纵餐" },
+      { "en": "mindful eating", "phonetic": "/ˈmaɪndfəl ˈiːtɪŋ/", "zh": "正念饮食" },
+      { "en": "empty calories", "phonetic": "/ˈɛmpti ˈkæləriz/", "zh": "空热量（无营养高热量）" },
+      { "en": "whole food", "phonetic": "/hoʊl fuːd/", "zh": "全食物（未加工）" },
+      { "en": "ultra-processed", "phonetic": "/ˌʌltrəˈprɑːsest/", "zh": "超加工的" },
+      { "en": "refined sugar", "phonetic": "/rɪˈfaɪnd ˈʃʊɡər/", "zh": "精制糖" },
+      { "en": "serving size", "phonetic": "/ˈsɜːrvɪŋ saɪz/", "zh": "食用份量（标签上）" },
+      { "en": "gut health", "phonetic": "/ɡʌt hɛlθ/", "zh": "肠道健康" }
+    ],
+    "phrases": [
+      { "en": "I'm in a calorie deficit this week.", "phonetic": "/aɪm ɪn ə ˈkæləri ˈdefɪsɪt ðɪs wiːk/", "zh": "我这周在制造热量缺口。" },
+      { "en": "Let's keep the macros balanced — high protein, low fat.", "phonetic": "/lɛts kiːp ðə ˈmækroʊz ˈbælənst — haɪ ˈproʊtiːn, loʊ fæt/", "zh": "宏量保持均衡——高蛋白、低脂。" },
+      { "en": "Watch out for hidden sugars in sauces.", "phonetic": "/wɑːtʃ aʊt fɔːr ˈhɪdən ˈʃʊɡərz ɪn ˈsɔːsɪz/", "zh": "小心酱料里的隐形糖。" },
+      { "en": "Read the label before you toss it in the cart.", "phonetic": "/riːd ðə ˈleɪbəl bɪˈfɔːr ju tɔːs ɪt ɪn ðə kɑːrt/", "zh": "扔进购物车前先看配料表。" },
+      { "en": "Eating clean is 80 percent of the work.", "phonetic": "/ˈiːtɪŋ kliːn ɪz eɪti pərˈsɛnt ʌv ðə wɜːrk/", "zh": "吃得干净就完成了八成功夫。" }
+    ],
+    "core_phrase": {
+      "en": "You can't out-train a bad diet.",
+      "phonetic": "/ju kænt aʊt-treɪn ə bæd ˈdaɪət/",
+      "zh": "训练再猛，也抵不过乱吃。"
+    }
   }
 ]
