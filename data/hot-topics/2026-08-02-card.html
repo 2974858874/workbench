@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>抖音美食热点 · 2026-08-02</title>
+  <style>
+    :root {
+      --green: #7ba05b;
+      --green-dark: #5b8042;
+      --bg: #eef0e0;
+      --card: #ffffff;
+      --accent: #c4623a;
+      --text: #2f3326;
+      --text-light: #5c6152;
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    h1 {
+      margin: 10px 0 6px;
+      font-size: 26px;
+      color: var(--green-dark);
+    }
+    .subtitle { color: var(--text-light); font-size: 14px; }
+
+    .summary {
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+      color: #fff;
+      padding: 18px 20px;
+      border-radius: var(--radius);
+      margin-bottom: 20px;
+      box-shadow: 0 8px 20px rgba(91,128,66,0.18);
+    }
+    .summary p { margin: 0; font-size: 15px; }
+
+    .section-title {
+      font-size: 17px;
+      font-weight: 700;
+      margin: 26px 0 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title::before {
+      content: "";
+      width: 5px;
+      height: 20px;
+      background: var(--green);
+      border-radius: 3px;
+    }
+
+    .topic-list { display: grid; gap: 14px; }
+    .topic-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      box-shadow: 0 4px 12px rgba(47,51,38,0.06);
+      border-left: 5px solid var(--green);
+    }
+    .topic-card.hot {
+      border-left-color: var(--accent);
+    }
+    .topic-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+    .tag {
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--green-dark);
+    }
+    .views {
+      flex-shrink: 0;
+      background: #f3f6ec;
+      color: var(--green-dark);
+      font-size: 12px;
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+    .views.hot {
+      background: #fdf0ea;
+      color: var(--accent);
+    }
+    .trend {
+      margin-top: 6px;
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .angle {
+      margin-top: 8px;
+      font-size: 14px;
+      color: var(--text-light);
+    }
+
+    .music-grid {
+      display: grid;
+      gap: 12px;
+    }
+    .music-item {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 14px 16px;
+      box-shadow: 0 4px 10px rgba(47,51,38,0.05);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .music-icon {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: #f3f6ec;
+      display: grid; place-items: center;
+      color: var(--green-dark); font-size: 18px;
+    }
+    .music-info h4 { margin: 0; font-size: 15px; }
+    .music-info p { margin: 2px 0 0; font-size: 12px; color: var(--text-light); }
+
+    .shoot-list { display: grid; gap: 16px; }
+    .shoot-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 6px 16px rgba(47,51,38,0.07);
+    }
+    .shoot-card h3 {
+      margin: 0 0 6px;
+      font-size: 16px;
+      color: var(--green-dark);
+    }
+    .hook {
+      background: #fdf7f3;
+      color: var(--accent);
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+    .shoot-card p { margin: 0 0 10px; font-size: 14px; color: var(--text-light); }
+    .meta {
+      display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+      font-size: 12px; color: var(--text-light);
+    }
+    .tag-pill {
+      background: #f3f6ec;
+      color: var(--green-dark);
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+
+    footer {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-light);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="badge">抖音美食热点</span>
+      <h1>2026.08.02 热点简报</h1>
+      <div class="subtitle">减脂餐 / 烘焙 / 家常菜 · 拍摄灵感</div>
+    </header>
+
+    <section class="summary">
+      <p>立秋倒计时5天 + #秋包伏双重热度：#奶奶给我做的减脂餐（8/1热搜爆发、千万级阅读）登顶当日话题榜首，"少油少盐但按斤投喂"的反差梗全网刷屏；#贴秋膘vs清补 立秋前争议升温，"中伏未过别急着贴"成健康饮食新热点；#了不起的中国菜（2.5亿+曝光）平台级活动持续推热地方菜。</p>
+    </section>
+
+    <h2 class="section-title">今日爆款标签</h2>
+    <div class="topic-list">
+      <div class="topic-card hot">
+        <div class="topic-header">
+          <div class="tag">#奶奶给我做的减脂餐</div>
+          <div class="views hot">24h千万+阅读</div>
+        </div>
+        <div class="trend">爆发期↑↑（8/1-8/2顶峰）</div>
+        <div class="angle">奶奶做了减脂餐→少油少盐做到了，但分量按斤算（一斤菜煎饼/堆成山的盖饭）。"形式到位、热量超标"的代际冲突引发全网共鸣。可做反转："我给奶奶做一份真正的400大卡减脂餐"，教长辈科学控量。</div>
+      </div>
+      <div class="topic-card hot">
+        <div class="topic-header">
+          <div class="tag">#贴秋膘vs清补 / #秋包伏</div>
+          <div class="views hot">红烧肉订单+103%</div>
+        </div>
+        <div class="trend">节气热点↑（8/7立秋倒计时）</div>
+        <div class="angle">2026立秋(8/7)仍处中伏，"秋包伏"特征明显。专家建议"清补"替代"大补"：鸭肉>猪肉、山药莲子冬瓜>红烧肘子。可拍"减脂版贴秋膘"——清蒸鲈鱼+山药小米粥+莲藕排骨汤，强调"贴对了不长胖"。</div>
+      </div>
+      <div class="topic-card">
+        <div class="topic-header">
+          <div class="tag">#了不起的中国菜</div>
+          <div class="views">曝光超2.5亿</div>
+        </div>
+        <div class="trend">平台级活动持续推热</div>
+        <div class="angle">抖音生活服务+中国烹饪协会联合推广地方招牌菜。可借势做"减脂版地方名菜"系列：如减脂版蟹粉汤包（全麦皮+蟹肉蛋白）、低脂版广东鸡煲（五指毛桃锅底+鸡胸肉）。</div>
+      </div>
+      <div class="topic-card">
+        <div class="topic-header">
+          <div class="tag">#跟着瘦子吃饭</div>
+          <div class="views">5万+讨论</div>
+        </div>
+        <div class="trend">延续高热（第三周）</div>
+        <div class="angle">"我觉得活着挺好的"名场面持续发酵。做"吃饱版瘦子食谱"反转——同样食材加量30%，热量只多150大卡但不挨饿。核心痛点：减脂≠挨饿，吃饱也能瘦。</div>
+      </div>
+      <div class="topic-card">
+        <div class="topic-header">
+          <div class="tag">#不加一滴水的南瓜锅贴</div>
+          <div class="views">7.9亿+</div>
+        </div>
+        <div class="trend">持续霸榜（第二周）</div>
+        <div class="angle">南瓜泥替代清水和面，天然增甜锁水不硬。可做减脂版：全麦面粉+鸡胸肉虾仁馅替代猪肉馅，单只热量从约180大卡降到约110大卡，兼顾"无水和面"噱头与减脂定位。</div>
+      </div>
+    </div>
+
+    <h2 class="section-title">热门背景音乐</h2>
+    <div class="music-grid">
+      <div class="music-item">
+        <div class="music-icon">♪</div>
+        <div class="music-info">
+          <h4>《茶花开了，该回家了》· 治愈抒情</h4>
+          <p>2026抖音热门BGM，王睿卓&加木演唱，适合奶奶减脂餐题材的亲情向内容、立秋回家吃饭氛围。</p>
+        </div>
+      </div>
+      <div class="music-item">
+        <div class="music-icon">♫</div>
+        <div class="music-info">
+          <h4>《乌梅子酱》· 轻快甜暖</h4>
+          <p>李荣浩作品，抖音精选APP播放量1.5亿+，"甜甜的"歌词与美食视觉天然适配，适合减脂甜品/烘焙成品展示。</p>
+        </div>
+      </div>
+      <div class="music-item">
+        <div class="music-icon">♬</div>
+        <div class="music-info">
+          <h4>《向云端》· 治愈系释然松弛</h4>
+          <p>小霞&海洋Bo演唱，播放量1.1亿+，适合减脂日常Vlog的松弛治愈基调，搭配轻食/沙拉/彩椒碗画面。</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title">本账号拍摄建议</h2>
+    <div class="shoot-list">
+      <div class="shoot-card">
+        <h3>1. 我给奶奶做减脂餐：400大卡也能吃到撑</h3>
+        <div class="hook">全网奶奶都在按斤投喂减脂餐，我反过来给奶奶做一份真正的400大卡减脂餐</div>
+        <p>蹭当日最热#奶奶给我做的减脂餐#话题做反转内容。前3秒放热搜截图+大字幕"奶奶的减脂餐一斤半，我的只要400大卡"。主体拍三道菜：杂粮菜煎饼（全麦皮+鸡胸肉+大量蔬菜，控制到150g）、水油焖菜（卫健委推荐法，少油焖西兰花虾仁）、南瓜小米粥（立秋清补）。关键拍"称重对比"——奶奶版vs科学版同框摆盘，标注热量。结尾邀请奶奶试吃+真实反应，字幕"减脂不是少吃，是吃对"。</p>
+        <div class="meta">
+          <span>BGM：</span><span class="tag-pill">《茶花开了，该回家了》</span>
+          <span>时长：</span><span class="tag-pill">60-90s</span>
+          <span class="tag-pill">#奶奶给我做的减脂餐</span>
+          <span class="tag-pill">#减脂餐</span>
+          <span class="tag-pill">#400大卡吃饱</span>
+          <span class="tag-pill">#立秋清补</span>
+        </div>
+      </div>
+      <div class="shoot-card">
+        <h3>2. 立秋别急着贴秋膘：减脂版清补三件套</h3>
+        <div class="hook">8月7日立秋但中伏没过，别急着红烧肉，3道清补菜贴秋膘不长胖</div>
+        <p>蹭#贴秋膘vs清补+#秋包伏双热点。开头痛点："立秋了该补补了？专家说中伏没过别大补"。主体拍三道清补菜：清蒸鲈鱼（高蛋白低脂，酱油葱姜蒸8分钟）、山药炒木耳（健脾养胃，立秋首选食材）、莲藕排骨汤（少排骨多藕，炖40分钟）。每道菜标注热量+"为什么适合立秋清补"。结尾大字幕"贴秋膘≠贴脂肪，清补才是2026年的打开方式"。可拍成系列第一集。</p>
+        <div class="meta">
+          <span>BGM：</span><span class="tag-pill">《向云端》</span>
+          <span>时长：</span><span class="tag-pill">45-75s</span>
+          <span class="tag-pill">#贴秋膘</span>
+          <span class="tag-pill">#立秋</span>
+          <span class="tag-pill">#秋包伏</span>
+          <span class="tag-pill">#减脂清补</span>
+          <span class="tag-pill">#低卡家常菜</span>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      数据来源于网络搜索整理 · 仅供参考 · 🍅 的工作台
+    </footer>
+  </div>
+</body>
+</html>
