@@ -118,13 +118,6 @@ body {
   border-bottom: 1px dashed var(--line);
 }
 .todo-item:last-child { border-bottom: 0; }
-.todo-item.highlight {
-  background: #fdf6f0;
-  border-radius: 10px;
-  padding: 11px 10px;
-  margin: 2px 0;
-  border-bottom: 0;
-}
 .check {
   width: 18px; height: 18px;
   border: 2px solid var(--green);
@@ -163,8 +156,8 @@ body {
 }
 .note b { color: var(--ink); }
 
-/* Badges */
-.cheat-badge {
+/* Special: review badge */
+.review-badge {
   display: inline-block;
   background: var(--accent);
   color: #fff;
@@ -175,22 +168,35 @@ body {
   margin-left: 6px;
   vertical-align: middle;
 }
-.review-badge {
-  display: inline-block;
-  background: #4a6fa5;
-  color: #fff;
-  font-size: 11px;
-  font-weight: 700;
-  padding: 2px 8px;
-  border-radius: 999px;
-  margin-left: 6px;
-  vertical-align: middle;
+
+/* Macro card */
+.macro-row {
+  display: flex;
+  gap: 8px;
+  margin: 0 14px 10px;
+}
+.macro-chip {
+  flex: 1;
+  background: #fff;
+  border: 1.5px solid var(--green-soft);
+  border-radius: 10px;
+  padding: 6px 4px;
+  text-align: center;
+}
+.macro-chip .val {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--green-deep);
+}
+.macro-chip .lbl {
+  font-size: 10px;
+  color: var(--ink-mute);
+  margin-top: 2px;
 }
 
-/* Print styles */
 @media print {
-  body { padding: 0; background: #fff; }
-  .frame { box-shadow: none; border-radius: 0; max-width: 100%; }
+  body { background: #fff; padding: 0; }
+  .frame { box-shadow: none; max-width: 100%; }
 }
 </style>
 </head>
@@ -198,10 +204,11 @@ body {
 <div class="frame">
   <div class="head">
     <div class="date">2026-08-02 <small>周日</small></div>
-    <div class="sub">MENU 19 · 8 月第 1 周 · 周日复盘日 <span class="review-badge">周复盘</span></div>
+    <div class="sub">MENU 03 · 8 月第 1 周 · 减脂日 <span class="review-badge">今晚周复盘</span></div>
     <div class="brand">🍅 的工作台 · Daily Workbench</div>
   </div>
 
+  <!-- Calendar: August 2026 -->
   <div class="cal">
     <div class="cal-cell wk">日</div>
     <div class="cal-cell wk">一</div>
@@ -217,7 +224,7 @@ body {
     <div class="cal-cell dim">29</div>
     <div class="cal-cell dim">30</div>
     <div class="cal-cell dim">31</div>
-    <div class="cal-cell event">1</div>
+    <div class="cal-cell dim">1</div>
 
     <div class="cal-cell today">2</div>
     <div class="cal-cell event">3</div>
@@ -255,86 +262,112 @@ body {
     <div class="cal-cell event">31</div>
   </div>
 
-  <div class="sec-title">明日固定行程（周日版）</div>
+  <div class="sec-title">今日固定行程（周日版）</div>
   <ul class="todo-list">
     <li class="todo-item">
       <span class="check"></span>
       <span class="todo-time">07:00</span>
       <span class="todo-tag">🥗</span>
-      <span class="todo-title">起床 / 喝水 / 简单拉伸（10min）— 昨晚火锅别赖床</span>
+      <span class="todo-title">起床 / 喝水 / 拉伸（10min）</span>
     </li>
     <li class="todo-item">
       <span class="check"></span>
       <span class="todo-time">07:30</span>
       <span class="todo-tag">🥗</span>
-      <span class="todo-title">早餐：全麦牛油果煎蛋三明治 + 黑咖啡（380 kcal）消水肿</span>
+      <span class="todo-title">早餐：红薯燕麦粥 + 茶叶蛋 + 凉拌海带丝（365 kcal）</span>
     </li>
     <li class="todo-item">
       <span class="check"></span>
       <span class="todo-time">08:30</span>
       <span class="todo-tag">📱</span>
-      <span class="todo-title">刷本周热点：#不加一滴水的南瓜锅贴# 7.9亿+ / #大暑吃凉皮# 87亿+</span>
+      <span class="todo-title">抖音热点速览 + 选题建议（#奶奶给我做的减脂餐 爆发期）</span>
     </li>
     <li class="todo-item">
       <span class="check"></span>
       <span class="todo-time">09:00</span>
       <span class="todo-tag">📖</span>
-      <span class="todo-title">英语 Day 2：30 单词 + 5 句口语 + 1 句核心（20min）</span>
+      <span class="todo-title">英语 Day 3：30 词（厨房工具 & 食材选购）+ 5 句口语（20min）</span>
     </li>
     <li class="todo-item">
       <span class="check"></span>
       <span class="todo-time">12:00</span>
       <span class="todo-tag">🥗</span>
-      <span class="todo-title">午餐：鸡丝魔芋凉面 + 蒸南瓜（~600 kcal）— 蹭 #大暑吃凉皮# 热度</span>
+      <span class="todo-title">午餐：芒果鸡胸藜麦沙拉碗 + 全麦面包 + 柠檬水（610 kcal）— 周日备餐日，多做一份明天带</span>
     </li>
     <li class="todo-item">
       <span class="check"></span>
       <span class="todo-time">15:00</span>
       <span class="todo-tag">📱</span>
-      <span class="todo-title">周复盘准备：整理本周视频素材 / 定下周选题方向</span>
+      <span class="todo-title">拍摄 / 剪辑：蹭 #奶奶给我做的减脂餐 热点做反转内容</span>
     </li>
     <li class="todo-item">
       <span class="check"></span>
-      <span class="todo-time">16:00</span>
-      <span class="todo-tag">🧘</span>
-      <span class="todo-title">拉伸 + 休息（15min）— 周日恢复日，别硬练</span>
+      <span class="todo-time">17:00</span>
+      <span class="todo-tag">🏃</span>
+      <span class="todo-title">拉伸 + 休息（15min）— 周日轻运动</span>
     </li>
     <li class="todo-item">
       <span class="check"></span>
       <span class="todo-time">18:00</span>
       <span class="todo-tag">🥗</span>
-      <span class="todo-title">晚餐：番茄豆腐鱼汤 + 凉拌黑木耳 + 糙米饭小碗（~520 kcal）</span>
+      <span class="todo-title">晚餐：番茄龙利鱼 + 蒸水蛋 + 小米粥（500 kcal）— 清淡为主，为复盘留空间</span>
     </li>
     <li class="todo-item">
       <span class="check"></span>
       <span class="todo-time">20:00</span>
       <span class="todo-tag">👛</span>
-      <span class="todo-title">录入今日开支 + 存款更新（养老基金 ¥0 / ¥30,000）</span>
+      <span class="todo-title">录入今日开支 + 存款更新（养老基金 ¥0 / 目标 ¥30,000）</span>
     </li>
-    <li class="todo-item highlight">
+    <li class="todo-item">
       <span class="check"></span>
       <span class="todo-time">21:00</span>
       <span class="todo-tag">📊</span>
-      <span class="todo-title"><b>【周复盘】</b>称重记录 + 本周视频数据复盘 + 开智汇总</span>
+      <span class="todo-title">【周日周复盘】称重 + 视频数据回顾 + 开智汇总</span>
     </li>
   </ul>
 
+  <!-- Macro overview -->
+  <div class="macro-row">
+    <div class="macro-chip">
+      <div class="val">1685</div>
+      <div class="lbl">今日大卡</div>
+    </div>
+    <div class="macro-chip">
+      <div class="val">187g</div>
+      <div class="lbl">碳水 44%</div>
+    </div>
+    <div class="macro-chip">
+      <div class="val">99g</div>
+      <div class="lbl">蛋白 24%</div>
+    </div>
+    <div class="macro-chip">
+      <div class="val">42g</div>
+      <div class="lbl">脂肪 22%</div>
+    </div>
+  </div>
+
   <div class="note">
-    <b>📌 明日重点（周日 · 复盘日 · 火锅后恢复）：</b><br>
-    🥗 早餐：<b>全麦牛油果煎蛋三明治</b>（全麦吐司2片+牛油果半个+水煮蛋1个，380 kcal）— 黑咖啡消昨晚火锅水肿<br>
-    🥗 午餐：<b>鸡丝魔芋凉面</b>（魔芋面+鸡胸丝+黄瓜丝+花生碎，~600 kcal）+ 蒸南瓜 100g — 超低卡饱腹，蹭 #大暑吃凉皮# 流量<br>
-    🥗 加餐：<b>绿豆百合汤</b>一碗 + 小番茄 5 颗（~200 kcal）— 夏末消暑<br>
-    🥗 晚餐：<b>番茄豆腐鱼汤</b>（龙利鱼+嫩豆腐+番茄）+ 凉拌黑木耳 + 糙米饭小碗（~520 kcal）— 清淡收尾<br>
-    📊 全天合计：~1700 kcal（火锅后回归正常节奏）<br><br>
-    🧘 运动：<b>拉伸 + 休息 15min</b>（周日恢复日，别硬练，给身体回血）<br>
-    📖 英语重点：Day 2 继续烹饪场景 — 核心口语待 09:00 推送<br>
-    📱 视频复盘：本周目标 2-3 条，检查已发视频数据 / 定下周选题<br>
-    👛 提醒：存款池目前 <b>¥0 / ¥30,000</b>（养老基金）— 开支连续记录中<br>
-    📱 热点速览：<b>#不加一滴水的南瓜锅贴# 7.9亿+</b>（上升中）/ <b>#大暑吃凉皮# 87亿+</b>（夏季稳定爆款）/ <b>#海胆自由挑战# 12亿+</b> / <b>#跟着瘦子吃饭#</b>（爆发期）<br><br>
-    <b>⚠️ 21:00 周复盘三件事：</b><br>
-    1️⃣ 称重 — 记录本周体重变化（上周基线 65.5kg）<br>
-    2️⃣ 视频数据 — 本周发布了几条？播放/点赞/评论数据<br>
-    3️⃣ 开智汇总 — 本周学到了什么值得记下来的
+    <b>📌 今日重点（周日 · 减脂日 · 备餐 + 周复盘）：</b><br><br>
+    <b>🥗 早餐（365 kcal）：</b>红薯燕麦粥（燕麦40g+红薯100g）+ 茶叶蛋1个 + 凉拌海带丝<br>
+    <b>🥗 午餐（610 kcal）：</b>芒果鸡胸藜麦沙拉碗 — 芒果天然甜代替沙拉酱；周日多做一份明天带饭<br>
+    <b>🥗 加餐（210 kcal）：</b>香蕉1根 + 核桃仁10g + 无糖酸奶100g（15:00 或运动前吃，补钾防抽筋）<br>
+    <b>🥗 晚餐（500 kcal）：</b>番茄龙利鱼 + 蒸水蛋 + 小米粥 — 清淡高蛋白，复盘前不撑<br>
+    <b>📊 全天合计：1685 kcal（1600-1800 区间）｜211 餐盘比例</b><br><br>
+    <b>🏃 运动：</b>拉伸 + 休息 15min（周日轻运动日）<br>
+    <b>📱 热点速览：</b><br>
+    &nbsp;&nbsp;① <b>#奶奶给我做的减脂餐</b>（爆发期↑↑，千万级阅读）— 做反转：「我给奶奶做真正的400大卡减脂餐」<br>
+    &nbsp;&nbsp;② <b>#贴秋膘vs清补 / #秋包伏</b>（立秋8/7倒计时）— 拍减脂版清补三件套<br>
+    &nbsp;&nbsp;③ <b>#不加一滴水的南瓜锅贴</b>（7.9亿+，持续第二周）— 全麦减脂版可蹭<br>
+    <b>📖 英语 Day 3（厨房工具 & 食材选购）：</b>colander / spatula / mandoline 等 30 词 + 5 句厨房实操口语<br>
+    &nbsp;&nbsp;今日金句：<b>「Fresh ingredients need less seasoning.」</b>— 食材够新鲜，调味就省心。<br>
+    <b>👛 记账：</b>养老基金 ¥0 / ¥30,000（今晚录入今日开支）<br>
+    <b>📊 今晚 21:00 周复盘重点：</b><br>
+    &nbsp;&nbsp;① 上秤称重（目标 65-66kg 区间）<br>
+    &nbsp;&nbsp;② 本周视频数据回顾（发布条数 / 播放量 / 点赞 / 涨粉）<br>
+    &nbsp;&nbsp;③ 本周开智汇总更新<br>
+    &nbsp;&nbsp;④ 下周预告：8/7 立秋 + 下周六火锅放纵餐（第 1 周轮值未用）<br>
+    <b>💧 饮水：</b>2000-2500ml — 周日可泡一壶菊花枸杞茶清热<br>
+    <b>🍽 备餐提醒：</b>周日适合批量备餐 — 藜麦一次蒸 3 天量冷藏、卤鸡腿/茶叶蛋提前做好
   </div>
 </div>
 </body>
