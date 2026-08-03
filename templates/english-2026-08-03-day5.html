@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>英语学习 · Day 5 · 烹饪科学 & 风味化学</title>
+<style>
+  :root {
+    --green: #7ba05b;
+    --green-dark: #5b8042;
+    --green-deep: #3d5a2e;
+    --bg: #eef0e0;
+    --bg-card: #ffffff;
+    --accent: #c4623a;
+    --text: #2d3e1f;
+    --text-light: #6b7a5a;
+    --radius: 18px;
+    --shadow-light: 0 2px 8px rgba(91,128,66,0.08);
+    --shadow-med: 0 6px 20px rgba(91,128,66,0.12);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 24px 16px;
+    line-height: 1.7;
+  }
+  .container { max-width: 800px; margin: 0 auto; }
+
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, var(--green-dark), var(--green));
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    box-shadow: var(--shadow-med);
+    margin-bottom: 20px;
+  }
+  .header .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .header h1 { font-size: 24px; margin-bottom: 6px; }
+  .header .subtitle { font-size: 14px; opacity: 0.85; }
+
+  /* Core Phrase Banner */
+  .core-banner {
+    background: var(--accent);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    box-shadow: var(--shadow-med);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .core-banner .label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.8;
+    margin-bottom: 8px;
+  }
+  .core-banner .en {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .core-banner .phonetic {
+    font-size: 14px;
+    opacity: 0.85;
+    margin-bottom: 6px;
+  }
+  .core-banner .zh {
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  /* Section */
+  .section {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 22px 20px;
+    box-shadow: var(--shadow-light);
+    margin-bottom: 20px;
+  }
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--green-dark);
+    margin-bottom: 16px;
+    border-bottom: 2px solid var(--bg);
+    padding-bottom: 10px;
+  }
+  .section-title .icon { font-size: 20px; }
+  .section-title .count {
+    margin-left: auto;
+    font-size: 13px;
+    color: var(--text-light);
+    font-weight: 400;
+  }
+
+  /* Word Grid */
+  .word-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+  }
+  .word-card {
+    background: #f7f9f2;
+    border: 1px solid #e8ebde;
+    border-radius: 12px;
+    padding: 12px 14px;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .word-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-light);
+    border-color: var(--green);
+  }
+  .word-card .en {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--green-deep);
+  }
+  .word-card .phonetic {
+    font-size: 12px;
+    color: var(--text-light);
+    margin: 2px 0 4px;
+    font-family: "Doulos SIL", "Charis SIL", serif;
+  }
+  .word-card .zh {
+    font-size: 13px;
+    color: var(--text);
+  }
+
+  /* Phrase List */
+  .phrase-list { display: flex; flex-direction: column; gap: 12px; }
+  .phrase-item {
+    background: #f7f9f2;
+    border: 1px solid #e8ebde;
+    border-left: 4px solid var(--green);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .phrase-item .en {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--green-deep);
+    margin-bottom: 2px;
+  }
+  .phrase-item .phonetic {
+    font-size: 12px;
+    color: var(--text-light);
+    margin-bottom: 4px;
+    font-family: "Doulos SIL", "Charis SIL", serif;
+  }
+  .phrase-item .zh {
+    font-size: 14px;
+    color: var(--text);
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-light);
+    padding: 10px 0;
+  }
+  .footer .progress {
+    display: inline-block;
+    background: var(--green);
+    color: #fff;
+    padding: 3px 12px;
+    border-radius: 999px;
+    margin-bottom: 6px;
+  }
+
+  @media (max-width: 600px) {
+    .word-grid { grid-template-columns: 1fr; }
+    .header h1 { font-size: 20px; }
+    .core-banner .en { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="badge">📖 Day 5 · 高级</div>
+    <h1>烹饪科学 & 风味化学</h1>
+    <div class="subtitle">Culinary Science &amp; Flavor Chemistry — 搞懂"为什么好吃"</div>
+  </div>
+
+  <!-- Core Phrase -->
+  <div class="core-banner">
+    <div class="label">🎯 今日核心口语</div>
+    <div class="en">Salt early, acid late, fat always.</div>
+    <div class="phonetic">/sɔːlt ˈɜːrli, ˈæsɪd leɪt, fæt ˈɔːlweɪz/</div>
+    <div class="zh">早加盐、晚加酸、脂肪不能断。</div>
+  </div>
+
+  <!-- Words: Culinary Science -->
+  <div class="section">
+    <div class="section-title">
+      <span class="icon">🔬</span> 烹饪科学 · Culinary Science
+      <span class="count">10 词</span>
+    </div>
+    <div class="word-grid">
+      <div class="word-card"><div class="en">Maillard reaction</div><div class="phonetic">/ˈmaɪjɑːrd riˈækʃən/</div><div class="zh">美拉德反应（褐变生香）</div></div>
+      <div class="word-card"><div class="en">denature</div><div class="phonetic">/dɪˈneɪtʃər/</div><div class="zh">蛋白质变性（受热变形）</div></div>
+      <div class="word-card"><div class="en">coagulate</div><div class="phonetic">/koʊˈæɡjəleɪt/</div><div class="zh">凝固（蛋白质凝结）</div></div>
+      <div class="word-card"><div class="en">gelatinize</div><div class="phonetic">/dʒəˈlætɪnaɪz/</div><div class="zh">淀粉糊化（吸水膨胀）</div></div>
+      <div class="word-card"><div class="en">crystallize</div><div class="phonetic">/ˈkrɪstəlaɪz/</div><div class="zh">结晶（糖/油脂析出）</div></div>
+      <div class="word-card"><div class="en">oxidize</div><div class="phonetic">/ˈɑːksɪdaɪz/</div><div class="zh">氧化（油脂酸败）</div></div>
+      <div class="word-card"><div class="en">ferment</div><div class="phonetic">/fərˈment/</div><div class="zh">发酵</div></div>
+      <div class="word-card"><div class="en">enzymatic</div><div class="phonetic">/ˌenzaɪˈmætɪk/</div><div class="zh">酶促的（褐变/催熟）</div></div>
+      <div class="word-card"><div class="en">collagen</div><div class="phonetic">/ˈkɑːlədʒən/</div><div class="zh">胶原蛋白（炖肉软化）</div></div>
+      <div class="word-card"><div class="en">gelatin</div><div class="phonetic">/ˈdʒɛlətɪn/</div><div class="zh">明胶（骨汤凝结）</div></div>
+    </div>
+  </div>
+
+  <!-- Words: Flavor Chemistry -->
+  <div class="section">
+    <div class="section-title">
+      <span class="icon">🧪</span> 风味化学 · Flavor Chemistry
+      <span class="count">10 词</span>
+    </div>
+    <div class="word-grid">
+      <div class="word-card"><div class="en">volatile</div><div class="phonetic">/ˈvɑːlətəl/</div><div class="zh">挥发性的（香气分子）</div></div>
+      <div class="word-card"><div class="en">compound</div><div class="phonetic">/ˈkɑːmpaʊnd/</div><div class="zh">化合物（风味物质）</div></div>
+      <div class="word-card"><div class="en">palatability</div><div class="phonetic">/ˌpælətəˈbɪləti/</div><div class="zh">适口性</div></div>
+      <div class="word-card"><div class="en">astringency</div><div class="phonetic">/əˈstrɪndʒənsi/</div><div class="zh">涩感（单宁收敛）</div></div>
+      <div class="word-card"><div class="en">pungency</div><div class="phonetic">/ˈpʌndʒənsi/</div><div class="zh">辛辣感</div></div>
+      <div class="word-card"><div class="en">flavor profile</div><div class="phonetic">/ˈfleɪvər ˈproʊfaɪl/</div><div class="zh">风味轮廓</div></div>
+      <div class="word-card"><div class="en">mouthfeel</div><div class="phonetic">/ˈmaʊθfiːl/</div><div class="zh">口感（触觉体验）</div></div>
+      <div class="word-card"><div class="en">aftertaste</div><div class="phonetic">/ˈæftərteɪst/</div><div class="zh">余味；回甘</div></div>
+      <div class="word-card"><div class="en">flavor pairing</div><div class="phonetic">/ˈfleɪvər ˈperɪŋ/</div><div class="zh">风味搭配</div></div>
+      <div class="word-card"><div class="en">extraction</div><div class="phonetic">/ɪkˈstrækʃən/</div><div class="zh">萃取（风味提取）</div></div>
+    </div>
+  </div>
+
+  <!-- Words: Advanced Nutrition -->
+  <div class="section">
+    <div class="section-title">
+      <span class="icon">🧬</span> 进阶营养 · Advanced Nutrition
+      <span class="count">10 词</span>
+    </div>
+    <div class="word-grid">
+      <div class="word-card"><div class="en">bioavailability</div><div class="phonetic">/ˌbaɪoʊəˌveɪləˈbɪləti/</div><div class="zh">生物利用度</div></div>
+      <div class="word-card"><div class="en">amino acid</div><div class="phonetic">/əˈmiːnoʊ ˈæsɪd/</div><div class="zh">氨基酸</div></div>
+      <div class="word-card"><div class="en">essential fatty acid</div><div class="phonetic">/ɪˈsɛnʃəl ˈfæti ˈæsɪd/</div><div class="zh">必需脂肪酸</div></div>
+      <div class="word-card"><div class="en">micronutrient</div><div class="phonetic">/ˌmaɪkroʊˈnuːtriənt/</div><div class="zh">微量营养素</div></div>
+      <div class="word-card"><div class="en">thermogenesis</div><div class="phonetic">/ˌθɜːrmoʊˈdʒɛnəsɪs/</div><div class="zh">产热效应（食物热效应）</div></div>
+      <div class="word-card"><div class="en">glycogen</div><div class="phonetic">/ˈɡlaɪkədʒən/</div><div class="zh">糖原（肌糖/肝糖）</div></div>
+      <div class="word-card"><div class="en">ketosis</div><div class="phonetic">/kɪˈtoʊsɪs/</div><div class="zh">生酮状态</div></div>
+      <div class="word-card"><div class="en">cortisol</div><div class="phonetic">/ˈkɔːrtɪsɔːl/</div><div class="zh">皮质醇（压力激素）</div></div>
+      <div class="word-card"><div class="en">leptin</div><div class="phonetic">/ˈlɛptɪn/</div><div class="zh">瘦素（饱腹信号）</div></div>
+      <div class="word-card"><div class="en">ghrelin</div><div class="phonetic">/ˈɡrɛlɪn/</div><div class="zh">饥饿素（食欲信号）</div></div>
+    </div>
+  </div>
+
+  <!-- Phrases -->
+  <div class="section">
+    <div class="section-title">
+      <span class="icon">💬</span> 烹饪科学口语 · Kitchen Science Talk
+      <span class="count">5 句</span>
+    </div>
+    <div class="phrase-list">
+      <div class="phrase-item">
+        <div class="en">The Maillard reaction kicks in above 150 degrees.</div>
+        <div class="phonetic">/ðə ˈmaɪjɑːrd riˈækʃən kɪks ɪn əˈbʌv ˈwʌn ˈhʌndrəd ənd ˈfɪfti ˈdɪɡriːz/</div>
+        <div class="zh">美拉德反应在 150 度以上才会发生。</div>
+      </div>
+      <div class="phrase-item">
+        <div class="en">Don't crowd the pan — give the meat room to sear.</div>
+        <div class="phonetic">/doʊnt kraʊd ðə pæn — ɡɪv ðə miːt ruːm tə sɪr/</div>
+        <div class="zh">锅别挤太满——给肉留出煎封空间。</div>
+      </div>
+      <div class="phrase-item">
+        <div class="en">Let the collagen break down — that's what makes it tender.</div>
+        <div class="phonetic">/let ðə ˈkɑːlədʒən breɪk daʊn — ðæts wʌt meɪks ɪt ˈtɛndər/</div>
+        <div class="zh">让胶原蛋白分解——这才是嫩的关键。</div>
+      </div>
+      <div class="phrase-item">
+        <div class="en">Heat kills the bitterness, cold dulls the sweetness.</div>
+        <div class="phonetic">/hiːt kɪlz ðə ˈbɪtərnəs, koʊld dʌlz ðə ˈswiːtnəs/</div>
+        <div class="zh">加热去苦味，冷则减甜味。</div>
+      </div>
+      <div class="phrase-item">
+        <div class="en">Acid brightens everything — a squeeze of lemon at the end.</div>
+        <div class="phonetic">/ˈæsɪd ˈbraɪtənz ˈɛvriθɪŋ — ə skwiːz ʌv ˈlɛmən ət ði ɛnd/</div>
+        <div class="zh">酸味提鲜——出锅挤点柠檬。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="progress">Day 5 / 30</div>
+    <div>🍅 的工作台 · 2026-08-03 · 难度：高级</div>
+    <div>累计词汇量：150 词 · 累计口语：25 句 · 累计核心句：5 句</div>
+  </div>
+
+</div>
+</body>
+</html>
