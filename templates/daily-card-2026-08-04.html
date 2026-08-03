@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<title>🍅 今日固定行程 · 2026-08-04</title>
+<style>
+/* ===========================
+   🍅 今日行程卡 · 内联样式
+   打印友好 + 移动端适配
+   =========================== */
+:root {
+  --bg: #eef0e0;
+  --bg-2: #e3e8d0;
+  --card: #ffffff;
+  --ink: #2b3a2c;
+  --ink-soft: #5e6b59;
+  --ink-mute: #8a9585;
+  --green: #7ba05b;
+  --green-deep: #5b8042;
+  --green-soft: #c8d8b0;
+  --line: #d8dec6;
+  --accent: #c4623a;
+  --warn: #d68a3c;
+  --shadow: 0 1px 3px rgba(60, 70, 30, 0.06), 0 8px 24px rgba(60, 70, 30, 0.06);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 13.5px;
+  line-height: 1.55;
+  min-height: 100vh;
+  padding: 16px;
+}
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ===== 头部品牌 ===== */
+.brand-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.brand-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand-emoji { font-size: 26px; line-height: 1; }
+.brand-title { font-weight: 700; font-size: 15px; }
+.brand-sub { font-size: 11px; color: var(--ink-mute); }
+.date-pill {
+  background: var(--green);
+  color: #fff;
+  border-radius: 999px;
+  padding: 4px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* ===== 卡片通用 ===== */
+.card {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 16px 18px;
+  box-shadow: var(--shadow);
+  margin-bottom: 14px;
+}
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 8px;
+}
+.card-head h2 { font-size: 14px; margin: 0; font-weight: 600; }
+.head-tip { font-size: 11px; color: var(--ink-mute); }
+
+/* ===== 行程时间轴 ===== */
+.timeline { list-style: none; margin: 0; padding: 0; }
+.timeline-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 4px;
+  border-bottom: 1px dashed var(--line);
+}
+.timeline-item:last-child { border-bottom: 0; }
+.timeline-time {
+  font-family: "SF Mono", monospace;
+  font-size: 12px;
+  color: var(--green-deep);
+  font-weight: 700;
+  min-width: 42px;
+}
+.timeline-tag { font-size: 15px; min-width: 20px; text-align: center; }
+.timeline-title { flex: 1; font-size: 13px; }
+.timeline-dur {
+  font-size: 10.5px;
+  color: var(--ink-mute);
+  background: var(--bg-2);
+  padding: 2px 6px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+/* ===== 数据摘要条 ===== */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.summary-cell {
+  background: linear-gradient(135deg, #fafbf6 0%, #eef2e0 100%);
+  border: 1px solid var(--green-soft);
+  border-radius: 12px;
+  padding: 12px 10px;
+  text-align: center;
+}
+.summary-cell .lbl { font-size: 10.5px; color: var(--ink-mute); }
+.summary-cell .val { font-size: 18px; font-weight: 800; color: var(--accent); margin-top: 2px; }
+.summary-cell .sub { font-size: 10.5px; color: var(--ink-soft); margin-top: 2px; }
+
+/* ===== 餐卡 ===== */
+.meal-strip {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.meal-chip {
+  background: var(--bg-2);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 12px;
+  flex: 1;
+  min-width: 120px;
+}
+.meal-chip .slot { font-weight: 700; color: var(--green-deep); font-size: 11px; }
+.meal-chip .name { color: var(--ink); margin-top: 2px; }
+.meal-chip .cal { font-size: 11px; color: var(--accent); font-weight: 700; margin-top: 2px; }
+
+/* ===== 热量仪表盘 ===== */
+.gauge-bar {
+  background: #e9ece0;
+  border-radius: 8px;
+  height: 8px;
+  margin: 10px 0 6px;
+  overflow: hidden;
+}
+.gauge-fill {
+  height: 100%;
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--green) 0%, var(--green-deep) 100%);
+  transition: width 0.5s;
+}
+.gauge-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10.5px;
+  color: var(--ink-mute);
+  margin-bottom: 8px;
+}
+
+/* ===== 热点 ===== */
+.hot-list { list-style: none; margin: 0; padding: 0; }
+.hot-list li {
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--line);
+  font-size: 12px;
+}
+.hot-list li:last-child { border-bottom: 0; }
+.hot-tag { color: var(--accent); font-weight: 700; font-size: 12px; }
+.hot-meta { font-size: 10.5px; color: var(--ink-mute); margin: 2px 0; }
+.hot-angle { color: var(--ink-soft); font-size: 11.5px; }
+
+/* ===== 英语 ===== */
+.english-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+.word-pill {
+  background: #fafbf6;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 3px 8px;
+  font-size: 11.5px;
+}
+.word-pill b { color: var(--green-deep); }
+.word-pill i { color: var(--ink-mute); font-style: normal; font-size: 10.5px; }
+.core-box {
+  background: linear-gradient(135deg, #c8d8b0 0%, #b4c898 100%);
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+}
+.core-box .en { font-size: 16px; font-weight: 700; color: var(--ink); }
+.core-box .cn { font-size: 11.5px; color: var(--ink-soft); margin-top: 4px; }
+
+/* ===== 运动 ===== */
+.exercise-banner {
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-deep) 100%);
+  color: #fff;
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.exercise-banner .left { font-size: 12.5px; opacity: 0.9; }
+.exercise-banner .right { font-size: 20px; font-weight: 800; }
+
+/* ===== 记账提醒 ===== */
+.remind-box {
+  background: linear-gradient(135deg, #fafbf6 0%, #eef2e0 100%);
+  border: 1px dashed var(--green-soft);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 12px;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.remind-box .ico { font-size: 20px; }
+
+/* ===== 放纵餐状态条 ===== */
+.cheat-status {
+  background: #fef9f0;
+  border: 1px solid #f0d8a0;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 11.5px;
+  color: var(--warn);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+/* ===== 打印优化 ===== */
+@media print {
+  body { background: #fff; padding: 0; }
+  .card {
+    box-shadow: none;
+    border: 1px solid var(--line);
+    page-break-inside: avoid;
+  }
+  .no-print { display: none !important; }
+  .page { max-width: 100%; }
+}
+
+/* ===== 移动端 ===== */
+@media (max-width: 600px) {
+  body { padding: 10px; }
+  .card { border-radius: 14px; padding: 14px; }
+  .summary-grid { grid-template-columns: repeat(2, 1fr); }
+  .timeline-time { min-width: 38px; font-size: 11px; }
+  .timeline-title { font-size: 12px; }
+  .brand-title { font-size: 14px; }
+}
+@media (max-width: 380px) {
+  .summary-grid { grid-template-columns: 1fr; }
+  .exercise-banner { flex-direction: column; text-align: center; gap: 4px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 头部 -->
+  <div class="brand-bar">
+    <div class="brand-left">
+      <div class="brand-emoji">🍅</div>
+      <div>
+        <div class="brand-title">今日固定行程</div>
+        <div class="brand-sub">Daily Workbench · 周二 · 力量训练日</div>
+      </div>
+    </div>
+    <div class="date-pill">2026-08-04</div>
+  </div>
+
+  <!-- 数据摘要 -->
+  <div class="card">
+    <div class="summary-grid">
+      <div class="summary-cell">
+        <div class="lbl">今日热量</div>
+        <div class="val">1698</div>
+        <div class="sub">kcal 目标（1600-1800）</div>
+      </div>
+      <div class="summary-cell">
+        <div class="lbl">今日运动</div>
+        <div class="val">20min</div>
+        <div class="sub">力量训练</div>
+      </div>
+      <div class="summary-cell">
+        <div class="lbl">英语学习</div>
+        <div class="val">20min</div>
+        <div class="sub">30 词 + 5 句 + 1 核心</div>
+      </div>
+    </div>
+    <!-- 热量仪表盘 -->
+    <div style="font-size:11px;font-weight:600;color:var(--ink-soft);margin-bottom:6px;">🔥 今日热量仪表盘 · 碳水 186g / 蛋白质 102g / 脂肪 44g</div>
+    <div class="gauge-bar"><div class="gauge-fill" style="width:67%;background:linear-gradient(90deg,#c8d8b0 0%,var(--green) 60%,var(--warn) 100%);"></div></div>
+    <div class="gauge-labels"><span>0 kcal</span><span style="color:var(--green-deep);font-weight:700;">1698 kcal</span><span>2000 kcal</span></div>
+  </div>
+
+  <!-- 放纵餐状态 -->
+  <div class="cheat-status">
+    <span style="font-size:16px;">🍲</span>
+    <div>
+      <b>放纵餐轮值：第2周 · 烧烤周</b>（上次火锅周未使用，顺延至本周六可用）
+      <br><span style="font-size:10.5px;">Tips：多烤蔬菜串+鸡腿肉串+烤茄子；少五花肉；少刷油</span>
+    </div>
+  </div>
+
+  <!-- 今日固定行程 -->
+  <div class="card">
+    <div class="card-head">
+      <h2>📋 今日固定行程</h2>
+      <span class="head-tip">周二 · 力量训练日</span>
+    </div>
+    <ul class="timeline" id="timeline">
+      <li class="timeline-item">
+        <span class="timeline-time">07:00</span>
+        <span class="timeline-tag">🥗</span>
+        <span class="timeline-title">起床 / 喝水 / 拉伸</span>
+        <span class="timeline-dur">10min</span>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-time">07:30</span>
+        <span class="timeline-tag">🥗</span>
+        <span class="timeline-title">今日三餐减脂餐灵感（早/午/晚，1698 kcal）</span>
+        <span class="timeline-dur">30min</span>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-time">08:30</span>
+        <span class="timeline-tag">📱</span>
+        <span class="timeline-title">抖音美食热点 + 选题建议</span>
+        <span class="timeline-dur">10min</span>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-time">09:00</span>
+        <span class="timeline-tag">📖</span>
+        <span class="timeline-title">英语学习任务</span>
+        <span class="timeline-dur">20min</span>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-time">12:00</span>
+        <span class="timeline-tag">🥗</span>
+        <span class="timeline-title">午餐打卡（上传/备注）</span>
+        <span class="timeline-dur">5min</span>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-time">15:00</span>
+        <span class="timeline-tag">📱</span>
+        <span class="timeline-title">拍摄 / 剪辑今日视频</span>
+        <span class="timeline-dur">60min</span>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-time">18:00</span>
+        <span class="timeline-tag">🥗</span>
+        <span class="timeline-title">晚餐打卡 + 力量训练提醒</span>
+        <span class="timeline-dur">5min</span>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-time">20:00</span>
+        <span class="timeline-tag">👛</span>
+        <span class="timeline-title">录入今日开支 + 存款更新</span>
+        <span class="timeline-dur">5min</span>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-time">21:00</span>
+        <span class="timeline-tag">📱</span>
+        <span class="timeline-title">发布今日视频（按计划）</span>
+        <span class="timeline-dur">10min</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 减脂餐概览 -->
+  <div class="card">
+    <div class="card-head">
+      <h2>🥗 今日减脂餐（1698 kcal）</h2>
+      <span class="head-tip">碳水 186g / 蛋白质 102g / 脂肪 44g · 211餐盘</span>
+    </div>
+    <div class="meal-strip">
+      <div class="meal-chip">
+        <div class="slot">🌅 早餐 · 07:30</div>
+        <div class="name">南瓜小米糊 + 温泉蛋 + 凉拌秋葵 + 蓝莓</div>
+        <div class="cal">378 kcal</div>
+      </div>
+      <div class="meal-chip">
+        <div class="slot">☀️ 午餐 · 12:00</div>
+        <div class="name">照烧鸡腿杂粮饭 + 白灼芥蓝 + 凉拌木耳莲藕</div>
+        <div class="cal">620 kcal</div>
+      </div>
+      <div class="meal-chip">
+        <div class="slot">🍎 加餐 · 15:00</div>
+        <div class="name">木瓜希腊酸奶 + 南瓜籽</div>
+        <div class="cal">200 kcal</div>
+      </div>
+      <div class="meal-chip">
+        <div class="slot">🌙 晚餐 · 18:00</div>
+        <div class="name">丝瓜蛤蜊汤 + 蒸红薯 + 蒜蓉蒸茄子</div>
+        <div class="cal">500 kcal</div>
+      </div>
+    </div>
+    <div style="margin-top:10px;font-size:11px;color:var(--ink-mute);background:#fafbf6;border-radius:8px;padding:8px 12px;">
+      <b>🍳 快手提示：</b>南瓜前一晚蒸好冷藏，早晨直接打糊2分钟；杂粮饭周末一次蒸3天量；丝瓜蛤蜊入锅3分钟即熟，晚餐15分钟搞定。
+    </div>
+  </div>
+
+  <!-- 运动提醒 -->
+  <div class="card no-print">
+    <div class="exercise-banner">
+      <div class="left">💪 周二力量训练<br><span style="font-size:11px;opacity:.75">哑铃/自重 · 建议 19:00 晚餐后 40 分钟进行</span></div>
+      <div class="right">20 min</div>
+    </div>
+  </div>
+
+  <!-- 抖音热点 -->
+  <div class="card">
+    <div class="card-head">
+      <h2>📱 今日抖音美食热点</h2>
+      <span class="head-tip">08:30 更新 · 基于 08-03 数据</span>
+    </div>
+    <ul class="hot-list">
+      <li>
+        <div class="hot-tag">#奶奶给我做的减脂餐</div>
+        <div class="hot-meta">微博热搜TOP3 / 抖音全域发酵 / 第三日延续高热</div>
+        <div class="hot-angle">📌 升级方向：带奶奶逛超市选减脂食材 / 教奶奶做低卡网红菜</div>
+      </li>
+      <li>
+        <div class="hot-tag">#三伏黄金减脂期</div>
+        <div class="hot-meta">3万+网友打卡 / 活动至8/7 · 最后4天冲刺</div>
+        <div class="hot-angle">📌 末伏冲刺 400 大卡快手菜系列，强调「错过等一年」</div>
+      </li>
+      <li>
+        <div class="hot-tag">#离谱美食挑战赛</div>
+        <div class="hot-meta">上青杰哥引爆 / 正式挑战 8/17-21 · 提前入局良机</div>
+        <div class="hot-angle">📌 减脂版离谱美食：豆腐芝士布朗尼（280大卡高蛋白）</div>
+      </li>
+      <li>
+        <div class="hot-tag">#立秋 / #贴秋膘vs清补</div>
+        <div class="hot-meta">8/7 立秋倒计时 3 天 · 清补三宝（山药/莲子/冬瓜）</div>
+        <div class="hot-angle">📌 减脂版贴秋膘：荷叶蒸鸡腿 / 冬瓜蛤蜊汤 / 山药鸡肉丸</div>
+      </li>
+      <li>
+        <div class="hot-tag">#永昌拉条子</div>
+        <div class="hot-meta">全网 8.7亿+ 播放 · 非遗面食出圈黑马</div>
+        <div class="hot-angle">📌 借鉴「工序仪式感」：三醒三揉全麦馒头 / 手打鸡胸丸十八下</div>
+      </li>
+    </ul>
+    <div style="margin-top:10px;font-size:11.5px;color:var(--ink-soft);background:#fafbf6;border-radius:8px;padding:10px 12px;border:1px solid var(--line);">
+      <b>🎵 音频建议：</b>《茶花开了，该回家了》治愈乡愁感（#奶奶减脂餐#亲情向）；《人生路漫漫》叙事感（做菜过程记录）；《牛奶面包》俏皮轻快（减脂烘焙/早餐摆盘）。前 3 秒大字幕反差 hook——「这碗 280 大卡，离谱搭配但好吃」。
+    </div>
+  </div>
+
+  <!-- 英语学习 -->
+  <div class="card">
+    <div class="card-head">
+      <h2>📖 英语学习（09:00 推送）</h2>
+      <span class="head-tip">Day 5 · 烹饪科学 & 风味化学 · 高级</span>
+    </div>
+    <div style="font-size:12px;font-weight:600;color:var(--green-deep);margin-bottom:8px;">🧪 烹饪科学口语 5 句</div>
+    <ul class="hot-list">
+      <li>The Maillard reaction kicks in above 150 degrees. <span style="color:var(--ink-mute)">美拉德反应在 150 度以上才会发生。</span></li>
+      <li>Don't crowd the pan — give the meat room to sear. <span style="color:var(--ink-mute)">锅别挤太满——给肉留出煎封空间。</span></li>
+      <li>Let the collagen break down — that's what makes it tender. <span style="color:var(--ink-mute)">让胶原蛋白分解——这才是嫩的关键。</span></li>
+      <li>Heat kills the bitterness, cold dulls the sweetness. <span style="color:var(--ink-mute)">加热去苦味，冷则减甜味。</span></li>
+      <li>Acid brightens everything — a squeeze of lemon at the end. <span style="color:var(--ink-mute)">酸味提鲜——出锅挤点柠檬。</span></li>
+    </ul>
+    <div style="font-size:12px;font-weight:600;color:var(--green-deep);margin:12px 0 8px;">📚 今日单词（精选 10 个）</div>
+    <div class="english-strip">
+      <span class="word-pill"><b>Maillard reaction</b> <i>/ˈmaɪjɑːrd/</i> 美拉德反应</span>
+      <span class="word-pill"><b>denature</b> <i>/dɪˈneɪtʃər/</i> 蛋白质变性</span>
+      <span class="word-pill"><b>coagulate</b> <i>/koʊˈæɡjəleɪt/</i> 凝固</span>
+      <span class="word-pill"><b>gelatinize</b> <i>/dʒəˈlætɪnaɪz/</i> 淀粉糊化</span>
+      <span class="word-pill"><b>ferment</b> <i>/fərˈment/</i> 发酵</span>
+      <span class="word-pill"><b>collagen</b> <i>/ˈkɑːlədʒən/</i> 胶原蛋白</span>
+      <span class="word-pill"><b>mouthfeel</b> <i>/ˈmaʊθfiːl/</i> 口感</span>
+      <span class="word-pill"><b>umami</b> <i>/uːˈmɑːmi/</i> 鲜味</span>
+      <span class="word-pill"><b>aftertaste</b> <i>/ˈæftərteɪst/</i> 余味</span>
+      <span class="word-pill"><b>flavor profile</b> <i>/ˈfleɪvər/</i> 风味轮廓</span>
+    </div>
+    <div class="core-box">
+      <div style="font-size:11px;color:var(--green-deep);font-weight:600;letter-spacing:1px;margin-bottom:4px;">今日核心口语</div>
+      <div class="en">"Salt early, acid late, fat always."</div>
+      <div class="cn">早加盐、晚加酸、脂肪不能断。</div>
+    </div>
+  </div>
+
+  <!-- 记账提醒 -->
+  <div class="card">
+    <div class="remind-box">
+      <span class="ico">👛</span>
+      <div>
+        <div style="font-weight:600;color:var(--ink);">20:00 记账提醒</div>
+        <div>录入今日开支 + 更新存款池（养老基金 · 目标 ¥30,000 · 当前 ¥0）</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 底部 -->
+  <div style="text-align:center;font-size:11px;color:var(--ink-mute);padding:8px 0 20px;">
+    🍅 的工作台 · v1.0 · 每日 07:00 自动生成<br>
+    <span class="no-print">手机访问：<a href="https://2974858874.github.io/workbench/" style="color:var(--green-deep);">https://2974858874.github.io/workbench/</a></span>
+  </div>
+
+</div>
+</body>
+</html>
