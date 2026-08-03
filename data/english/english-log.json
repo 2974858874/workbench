@@ -198,5 +198,55 @@
       "phonetic": "/ju kænt aʊt-treɪn ə bæd ˈdaɪət/",
       "zh": "训练再猛，也抵不过乱吃。"
     }
+  },
+  {
+    "date": "2026-08-03",
+    "day": 5,
+    "level": "高级",
+    "topic": "烹饪科学 & 风味化学",
+    "words": [
+      { "en": "Maillard reaction", "phonetic": "/ˈmaɪjɑːrd riˈækʃən/", "zh": "美拉德反应（褐变生香）" },
+      { "en": "denature", "phonetic": "/dɪˈneɪtʃər/", "zh": "蛋白质变性（受热变形）" },
+      { "en": "coagulate", "phonetic": "/koʊˈæɡjəleɪt/", "zh": "凝固（蛋白质凝结）" },
+      { "en": "gelatinize", "phonetic": "/dʒəˈlætɪnaɪz/", "zh": "淀粉糊化（吸水膨胀）" },
+      { "en": "crystallize", "phonetic": "/ˈkrɪstəlaɪz/", "zh": "结晶（糖/油脂析出）" },
+      { "en": "oxidize", "phonetic": "/ˈɑːksɪdaɪz/", "zh": "氧化（油脂酸败）" },
+      { "en": "ferment", "phonetic": "/fərˈment/", "zh": "发酵" },
+      { "en": "enzymatic", "phonetic": "/ˌenzaɪˈmætɪk/", "zh": "酶促的（褐变/催熟）" },
+      { "en": "collagen", "phonetic": "/ˈkɑːlədʒən/", "zh": "胶原蛋白（炖肉软化）" },
+      { "en": "gelatin", "phonetic": "/ˈdʒɛlətɪn/", "zh": "明胶（骨汤凝结）" },
+      { "en": "volatile", "phonetic": "/ˈvɑːlətəl/", "zh": "挥发性的（香气分子）" },
+      { "en": "compound", "phonetic": "/ˈkɑːmpaʊnd/", "zh": "化合物（风味物质）" },
+      { "en": "palatability", "phonetic": "/ˌpælətəˈbɪləti/", "zh": "适口性" },
+      { "en": "astringency", "phonetic": "/əˈstrɪndʒənsi/", "zh": "涩感（单宁收敛）" },
+      { "en": "pungency", "phonetic": "/ˈpʌndʒənsi/", "zh": "辛辣感" },
+      { "en": "flavor profile", "phonetic": "/ˈfleɪvər ˈproʊfaɪl/", "zh": "风味轮廓" },
+      { "en": "mouthfeel", "phonetic": "/ˈmaʊθfiːl/", "zh": "口感（触觉体验）" },
+      { "en": "aftertaste", "phonetic": "/ˈæftərteɪst/", "zh": "余味；回甘" },
+      { "en": "flavor pairing", "phonetic": "/ˈfleɪvər ˈperɪŋ/", "zh": "风味搭配" },
+      { "en": "extraction", "phonetic": "/ɪkˈstrækʃən/", "zh": "萃取（风味提取）" },
+      { "en": "bioavailability", "phonetic": "/ˌbaɪoʊəˌveɪləˈbɪləti/", "zh": "生物利用度" },
+      { "en": "amino acid", "phonetic": "/əˈmiːnoʊ ˈæsɪd/", "zh": "氨基酸" },
+      { "en": "essential fatty acid", "phonetic": "/ɪˈsɛnʃəl ˈfæti ˈæsɪd/", "zh": "必需脂肪酸" },
+      { "en": "micronutrient", "phonetic": "/ˌmaɪkroʊˈnuːtriənt/", "zh": "微量营养素" },
+      { "en": "thermogenesis", "phonetic": "/ˌθɜːrmoʊˈdʒɛnəsɪs/", "zh": "产热效应（食物热效应）" },
+      { "en": "glycogen", "phonetic": "/ˈɡlaɪkədʒən/", "zh": "糖原（肌糖/肝糖）" },
+      { "en": "ketosis", "phonetic": "/kɪˈtoʊsɪs/", "zh": "生酮状态" },
+      { "en": "cortisol", "phonetic": "/ˈkɔːrtɪsɔːl/", "zh": "皮质醇（压力激素）" },
+      { "en": "leptin", "phonetic": "/ˈlɛptɪn/", "zh": "瘦素（饱腹信号）" },
+      { "en": "ghrelin", "phonetic": "/ˈɡrɛlɪn/", "zh": "饥饿素（食欲信号）" }
+    ],
+    "phrases": [
+      { "en": "The Maillard reaction kicks in above 150 degrees.", "phonetic": "/ðə ˈmaɪjɑːrd riˈækʃən kɪks ɪn əˈbʌv ˈwʌn ˈhʌndrəd ənd ˈfɪfti ˈdɪɡriːz/", "zh": "美拉德反应在 150 度以上才会发生。" },
+      { "en": "Don't crowd the pan — give the meat room to sear.", "phonetic": "/doʊnt kraʊd ðə pæn — ɡɪv ðə miːt ruːm tə sɪr/", "zh": "锅别挤太满——给肉留出煎封空间。" },
+      { "en": "Let the collagen break down — that's what makes it tender.", "phonetic": "/let ðə ˈkɑːlədʒən breɪk daʊn — ðæts wʌt meɪks ɪt ˈtɛndər/", "zh": "让胶原蛋白分解——这才是嫩的关键。" },
+      { "en": "Heat kills the bitterness, cold dulls the sweetness.", "phonetic": "/hiːt kɪlz ðə ˈbɪtərnəs, koʊld dʌlz ðə ˈswiːtnəs/", "zh": "加热去苦味，冷则减甜味。" },
+      { "en": "Acid brightens everything — a squeeze of lemon at the end.", "phonetic": "/ˈæsɪd ˈbraɪtənz ˈɛvriθɪŋ — ə skwiːz ʌv ˈlɛmən ət ði ɛnd/", "zh": "酸味提鲜——出锅挤点柠檬。" }
+    ],
+    "core_phrase": {
+      "en": "Salt early, acid late, fat always.",
+      "phonetic": "/sɔːlt ˈɜːrli, ˈæsɪd leɪt, fæt ˈɔːlweɪz/",
+      "zh": "早加盐、晚加酸、脂肪不能断。"
+    }
   }
 ]
