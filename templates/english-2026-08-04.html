@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<title>英语学习 · Day 6 · 世界料理 & 异域风味</title>
+<style>
+  :root {
+    --green: #7ba05b;
+    --green-dark: #5b8042;
+    --green-deep: #3d5a2e;
+    --bg: #eef0e0;
+    --bg-card: #ffffff;
+    --accent: #c4623a;
+    --text: #2d3e1f;
+    --text-light: #6b7a5a;
+    --radius: 18px;
+    --shadow-light: 0 2px 8px rgba(91,128,66,0.08);
+    --shadow-med: 0 6px 20px rgba(91,128,66,0.12);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 24px 16px;
+    line-height: 1.7;
+  }
+  .container { max-width: 800px; margin: 0 auto; }
+
+  .header {
+    background: linear-gradient(135deg, var(--green-dark), var(--green));
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    box-shadow: var(--shadow-med);
+    margin-bottom: 20px;
+  }
+  .header .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 4px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .header h1 { font-size: 24px; margin-bottom: 6px; }
+  .header .subtitle { font-size: 14px; opacity: 0.85; }
+
+  .core-banner {
+    background: var(--accent);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    box-shadow: var(--shadow-med);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .core-banner .label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.8;
+    margin-bottom: 8px;
+  }
+  .core-banner .en {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .core-banner .phonetic {
+    font-size: 14px;
+    opacity: 0.85;
+    margin-bottom: 6px;
+  }
+  .core-banner .zh {
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  .section {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 22px 20px;
+    box-shadow: var(--shadow-light);
+    margin-bottom: 20px;
+  }
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--green-dark);
+    margin-bottom: 16px;
+    border-bottom: 2px solid var(--bg);
+    padding-bottom: 10px;
+  }
+  .section-title .icon { font-size: 20px; }
+  .section-title .count {
+    margin-left: auto;
+    font-size: 13px;
+    color: var(--text-light);
+    font-weight: 400;
+  }
+
+  .word-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+  }
+  .word-card {
+    background: #f7f9f2;
+    border: 1px solid #e8ebde;
+    border-radius: 12px;
+    padding: 12px 14px;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .word-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-light);
+    border-color: var(--green);
+  }
+  .word-card .en {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--green-deep);
+  }
+  .word-card .phonetic {
+    font-size: 12px;
+    color: var(--text-light);
+    margin: 2px 0 4px;
+    font-family: "Doulos SIL", "Charis SIL", serif;
+  }
+  .word-card .zh {
+    font-size: 13px;
+    color: var(--text);
+  }
+
+  .phrase-list { display: flex; flex-direction: column; gap: 12px; }
+  .phrase-item {
+    background: #f7f9f2;
+    border: 1px solid #e8ebde;
+    border-left: 4px solid var(--green);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .phrase-item .en {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--green-deep);
+    margin-bottom: 2px;
+  }
+  .phrase-item .phonetic {
+    font-size: 12px;
+    color: var(--text-light);
+    margin-bottom: 4px;
+    font-family: "Doulos SIL", "Charis SIL", serif;
+  }
+  .phrase-item .zh {
+    font-size: 14px;
+    color: var(--text);
+  }
+
+  .footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-light);
+    padding: 10px 0;
+  }
+  .footer .progress {
+    display: inline-block;
+    background: var(--green);
+    color: #fff;
+    padding: 3px 12px;
+    border-radius: 999px;
+    margin-bottom: 6px;
+  }
+
+  @media (max-width: 600px) {
+    .word-grid { grid-template-columns: 1fr; }
+    .header h1 { font-size: 20px; }
+    .core-banner .en { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="badge">📖 Day 6 · 高级</div>
+    <h1>世界料理 &amp; 异域风味</h1>
+    <div class="subtitle">World Cuisine &amp; International Flavors — 不出国门，吃遍世界</div>
+  </div>
+
+  <!-- Core Phrase -->
+  <div class="core-banner">
+    <div class="label">🎯 今日核心口语</div>
+    <div class="en">One good spice carries the whole dish.</div>
+    <div class="phonetic">/wʌn ɡʊd spaɪs ˈkæriz ðə hoʊl dɪʃ/</div>
+    <div class="zh">一味好香料，撑起一整道菜。</div>
+  </div>
+
+  <!-- Words: World Cuisine Techniques -->
+  <div class="section">
+    <div class="section-title">
+      <span class="icon">🌍</span> 世界料理技法 · World Cuisine Techniques
+      <span class="count">10 词</span>
+    </div>
+    <div class="word-grid">
+      <div class="word-card"><div class="en">confit</div><div class="phonetic">/kənˈfiː/</div><div class="zh">油封（法式低温油浸）</div></div>
+      <div class="word-card"><div class="en">sous vide</div><div class="phonetic">/suː viːd/</div><div class="zh">真空低温慢煮</div></div>
+      <div class="word-card"><div class="en">tempura</div><div class="phonetic">/ˈtɛmpərə/</div><div class="zh">天妇罗（日式挂糊炸）</div></div>
+      <div class="word-card"><div class="en">ceviche</div><div class="phonetic">/səˈviːtʃeɪ/</div><div class="zh">酸橘汁腌鱼（拉美生食）</div></div>
+      <div class="word-card"><div class="en">tagine</div><div class="phonetic">/təˈʒiːn/</div><div class="zh">塔吉锅炖（北非锥形锅）</div></div>
+      <div class="word-card"><div class="en">risotto</div><div class="phonetic">/rɪˈzɒtoʊ/</div><div class="zh">意式烩饭</div></div>
+      <div class="word-card"><div class="en">paella</div><div class="phonetic">/paɪˈeɪə/</div><div class="zh">西班牙海鲜饭</div></div>
+      <div class="word-card"><div class="en">biryani</div><div class="phonetic">/bɪrˈjɑːni/</div><div class="zh">印度香饭（香料层叠饭）</div></div>
+      <div class="word-card"><div class="en">roux</div><div class="phonetic">/ruː/</div><div class="zh">面糊（法式浓汤底）</div></div>
+      <div class="word-card"><div class="en">gastrique</div><div class="phonetic">/ɡæsˈtriːk/</div><div class="zh">焦糖醋汁（法式调味底）</div></div>
+    </div>
+  </div>
+
+  <!-- Words: International Ingredients & Spices -->
+  <div class="section">
+    <div class="section-title">
+      <span class="icon">🌶️</span> 异域食材 &amp; 香料 · International Ingredients
+      <span class="count">10 词</span>
+    </div>
+    <div class="word-grid">
+      <div class="word-card"><div class="en">miso</div><div class="phonetic">/ˈmiːsoʊ/</div><div class="zh">味噌（日式发酵豆酱）</div></div>
+      <div class="word-card"><div class="en">gochujang</div><div class="phonetic">/ˈɡoʊtʃuˌdʒɑːŋ/</div><div class="zh">韩式辣椒酱</div></div>
+      <div class="word-card"><div class="en">harissa</div><div class="phonetic">/həˈrɪsə/</div><div class="zh">哈里萨辣酱（北非）</div></div>
+      <div class="word-card"><div class="en">za'atar</div><div class="phonetic">/ˈzɑːtər/</div><div class="zh">扎塔耳（中东混合香料）</div></div>
+      <div class="word-card"><div class="en">sumac</div><div class="phonetic">/ˈsuːmæk/</div><div class="zh">苏马克粉（中东酸味香料）</div></div>
+      <div class="word-card"><div class="en">tamarind</div><div class="phonetic">/ˈtæmərɪnd/</div><div class="zh">罗望子（酸角）</div></div>
+      <div class="word-card"><div class="en">saffron</div><div class="phonetic">/ˈsæfrən/</div><div class="zh">藏红花</div></div>
+      <div class="word-card"><div class="en">turmeric</div><div class="phonetic">/ˈtɜːrmərɪk/</div><div class="zh">姜黄</div></div>
+      <div class="word-card"><div class="en">lemongrass</div><div class="phonetic">/ˈlɛmənˌɡræs/</div><div class="zh">香茅</div></div>
+      <div class="word-card"><div class="en">fish sauce</div><div class="phonetic">/fɪʃ sɔːs/</div><div class="zh">鱼露</div></div>
+    </div>
+  </div>
+
+  <!-- Words: Food Culture & Critique -->
+  <div class="section">
+    <div class="section-title">
+      <span class="icon">🍽️</span> 饮食文化 &amp; 料理评价 · Food Culture &amp; Critique
+      <span class="count">10 词</span>
+    </div>
+    <div class="word-grid">
+      <div class="word-card"><div class="en">authentic</div><div class="phonetic">/ɔːˈθɛntɪk/</div><div class="zh">正宗的；地道的</div></div>
+      <div class="word-card"><div class="en">fusion</div><div class="phonetic">/ˈfjuːʒən/</div><div class="zh">融合（菜系混搭）</div></div>
+      <div class="word-card"><div class="en">comfort food</div><div class="phonetic">/ˈkʌmfərt fuːd/</div><div class="zh">治愈系食物（家常安慰）</div></div>
+      <div class="word-card"><div class="en">delicacy</div><div class="phonetic">/ˈdɛlɪkəsi/</div><div class="zh">美味佳肴；珍馐</div></div>
+      <div class="word-card"><div class="en">heirloom</div><div class="phonetic">/ˈɛrluːm/</div><div class="zh">传家宝品种（传统蔬果）</div></div>
+      <div class="word-card"><div class="en">artisanal</div><div class="phonetic">/ˌɑːrtɪˈzænl/</div><div class="zh">手工的；匠人级的</div></div>
+      <div class="word-card"><div class="en">terroir</div><div class="phonetic">/tɛrˈwɑːr/</div><div class="zh">风土（产地赋予的特质）</div></div>
+      <div class="word-card"><div class="en">staple</div><div class="phonetic">/ˈsteɪpəl/</div><div class="zh">主食；日常必需</div></div>
+      <div class="word-card"><div class="en">condiment</div><div class="phonetic">/ˈkɑːndɪmənt/</div><div class="zh">调味佐料</div></div>
+      <div class="word-card"><div class="en">palate</div><div class="phonetic">/ˈpælət/</div><div class="zh">味觉；品味</div></div>
+    </div>
+  </div>
+
+  <!-- Phrases -->
+  <div class="section">
+    <div class="section-title">
+      <span class="icon">💬</span> 世界料理口语 · Global Kitchen Talk
+      <span class="count">5 句</span>
+    </div>
+    <div class="phrase-list">
+      <div class="phrase-item">
+        <div class="en">This dish needs a splash of fish sauce for depth.</div>
+        <div class="phonetic">/ðɪs dɪʃ niːdz ə splæʃ ʌv fɪʃ sɔːs fɔːr dɛpθ/</div>
+        <div class="zh">这道菜淋点鱼露才有层次感。</div>
+      </div>
+      <div class="phrase-item">
+        <div class="en">Toast the spices to wake up the oils.</div>
+        <div class="phonetic">/toʊst ðə ˈspaɪsɪz tə ˈweɪk ʌp ði ɔɪlz/</div>
+        <div class="zh">干焙香料激发精油香气。</div>
+      </div>
+      <div class="phrase-item">
+        <div class="en">Let the risotto rest a minute before plating.</div>
+        <div class="phonetic">/let ðə rɪˈzɒtoʊ rɛst ə ˈmɪnɪt bɪˈfɔːr ˈpleɪtɪŋ/</div>
+        <div class="zh">烩饭装盘前静置一分钟。</div>
+      </div>
+      <div class="phrase-item">
+        <div class="en">A pinch of saffron goes a long way.</div>
+        <div class="phonetic">/ə pɪntʃ ʌv ˈsæfrən ɡoʊz ə lɔːŋ weɪ/</div>
+        <div class="zh">一小撮藏红花就够提味了。</div>
+      </div>
+      <div class="phrase-item">
+        <div class="en">Toast the sesame seeds until golden and fragrant.</div>
+        <div class="phonetic">/toʊst ðə ˈsɛsəmi siːdz ənˈtɪl ˈɡoʊldən ənd ˈfreɪɡrənt/</div>
+        <div class="zh">芝麻炒至金黄飘香即可。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="progress">Day 6 / 30</div>
+    <div>🍅 的工作台 · 2026-08-04 · 难度：高级</div>
+    <div>累计词汇量：180 词 · 累计口语：30 句 · 累计核心句：6 句</div>
+  </div>
+
+</div>
+</body>
+</html>
