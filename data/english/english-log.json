@@ -248,5 +248,55 @@
       "phonetic": "/sɔːlt ˈɜːrli, ˈæsɪd leɪt, fæt ˈɔːlweɪz/",
       "zh": "早加盐、晚加酸、脂肪不能断。"
     }
+  },
+  {
+    "date": "2026-08-04",
+    "day": 6,
+    "level": "高级",
+    "topic": "世界料理 & 异域风味",
+    "words": [
+      { "en": "confit", "phonetic": "/kənˈfiː/", "zh": "油封（法式低温油浸）" },
+      { "en": "sous vide", "phonetic": "/suː viːd/", "zh": "真空低温慢煮" },
+      { "en": "tempura", "phonetic": "/ˈtɛmpərə/", "zh": "天妇罗（日式挂糊炸）" },
+      { "en": "ceviche", "phonetic": "/səˈviːtʃeɪ/", "zh": "酸橘汁腌鱼（拉美生食）" },
+      { "en": "tagine", "phonetic": "/təˈʒiːn/", "zh": "塔吉锅炖（北非锥形锅）" },
+      { "en": "risotto", "phonetic": "/rɪˈzɒtoʊ/", "zh": "意式烩饭" },
+      { "en": "paella", "phonetic": "/paɪˈeɪə/", "zh": "西班牙海鲜饭" },
+      { "en": "biryani", "phonetic": "/bɪrˈjɑːni/", "zh": "印度香饭（香料层叠饭）" },
+      { "en": "roux", "phonetic": "/ruː/", "zh": "面糊（法式浓汤底）" },
+      { "en": "gastrique", "phonetic": "/ɡæsˈtriːk/", "zh": "焦糖醋汁（法式调味底）" },
+      { "en": "miso", "phonetic": "/ˈmiːsoʊ/", "zh": "味噌（日式发酵豆酱）" },
+      { "en": "gochujang", "phonetic": "/ˈɡoʊtʃuˌdʒɑːŋ/", "zh": "韩式辣椒酱" },
+      { "en": "harissa", "phonetic": "/həˈrɪsə/", "zh": "哈里萨辣酱（北非）" },
+      { "en": "za'atar", "phonetic": "/ˈzɑːtər/", "zh": "扎塔耳（中东混合香料）" },
+      { "en": "sumac", "phonetic": "/ˈsuːmæk/", "zh": "苏马克粉（中东酸味香料）" },
+      { "en": "tamarind", "phonetic": "/ˈtæmərɪnd/", "zh": "罗望子（酸角）" },
+      { "en": "saffron", "phonetic": "/ˈsæfrən/", "zh": "藏红花" },
+      { "en": "turmeric", "phonetic": "/ˈtɜːrmərɪk/", "zh": "姜黄" },
+      { "en": "lemongrass", "phonetic": "/ˈlɛmənˌɡræs/", "zh": "香茅" },
+      { "en": "fish sauce", "phonetic": "/fɪʃ sɔːs/", "zh": "鱼露" },
+      { "en": "authentic", "phonetic": "/ɔːˈθɛntɪk/", "zh": "正宗的；地道的" },
+      { "en": "fusion", "phonetic": "/ˈfjuːʒən/", "zh": "融合（菜系混搭）" },
+      { "en": "comfort food", "phonetic": "/ˈkʌmfərt fuːd/", "zh": "治愈系食物（家常安慰）" },
+      { "en": "delicacy", "phonetic": "/ˈdɛlɪkəsi/", "zh": "美味佳肴；珍馐" },
+      { "en": "heirloom", "phonetic": "/ˈɛrluːm/", "zh": "传家宝品种（传统蔬果）" },
+      { "en": "artisanal", "phonetic": "/ˌɑːrtɪˈzænl/", "zh": "手工的；匠人级的" },
+      { "en": "terroir", "phonetic": "/tɛrˈwɑːr/", "zh": "风土（产地赋予的特质）" },
+      { "en": "staple", "phonetic": "/ˈsteɪpəl/", "zh": "主食；日常必需" },
+      { "en": "condiment", "phonetic": "/ˈkɑːndɪmənt/", "zh": "调味佐料" },
+      { "en": "palate", "phonetic": "/ˈpælət/", "zh": "味觉；品味" }
+    ],
+    "phrases": [
+      { "en": "This dish needs a splash of fish sauce for depth.", "phonetic": "/ðɪs dɪʃ niːdz ə splæʃ ʌv fɪʃ sɔːs fɔːr dɛpθ/", "zh": "这道菜淋点鱼露才有层次感。" },
+      { "en": "Toast the spices to wake up the oils.", "phonetic": "/toʊst ðə ˈspaɪsɪz tə ˈweɪk ʌp ði ɔɪlz/", "zh": "干焙香料激发精油香气。" },
+      { "en": "Let the risotto rest a minute before plating.", "phonetic": "/let ðə rɪˈzɒtoʊ rɛst ə ˈmɪnɪt bɪˈfɔːr ˈpleɪtɪŋ/", "zh": "烩饭装盘前静置一分钟。" },
+      { "en": "A pinch of saffron goes a long way.", "phonetic": "/ə pɪntʃ ʌv ˈsæfrən ɡoʊz ə lɔːŋ weɪ/", "zh": "一小撮藏红花就够提味了。" },
+      { "en": "Toast the sesame seeds until golden and fragrant.", "phonetic": "/toʊst ðə ˈsɛsəmi siːdz ənˈtɪl ˈɡoʊldən ənd ˈfreɪɡrənt/", "zh": "芝麻炒至金黄飘香即可。" }
+    ],
+    "core_phrase": {
+      "en": "One good spice carries the whole dish.",
+      "phonetic": "/wʌn ɡʊd spaɪs ˈkæriz ðə hoʊl dɪʃ/",
+      "zh": "一味好香料，撑起一整道菜。"
+    }
   }
 ]
