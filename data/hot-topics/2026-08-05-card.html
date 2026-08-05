@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>抖音美食热点 · 2026-08-05</title>
+  <style>
+    :root {
+      --green: #7ba05b;
+      --green-dark: #5b8042;
+      --bg: #eef0e0;
+      --card: #ffffff;
+      --accent: #c4623a;
+      --text: #2f3326;
+      --text-light: #5c6152;
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    h1 {
+      margin: 10px 0 6px;
+      font-size: 26px;
+      color: var(--green-dark);
+    }
+    .subtitle { color: var(--text-light); font-size: 14px; }
+
+    .summary {
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+      color: #fff;
+      padding: 18px 20px;
+      border-radius: var(--radius);
+      margin-bottom: 20px;
+      box-shadow: 0 8px 20px rgba(91,128,66,0.18);
+    }
+    .summary p { margin: 0; font-size: 15px; }
+
+    .section-title {
+      font-size: 17px;
+      font-weight: 700;
+      margin: 26px 0 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title::before {
+      content: "";
+      width: 5px;
+      height: 20px;
+      background: var(--green);
+      border-radius: 3px;
+    }
+
+    .topic-list { display: grid; gap: 14px; }
+    .topic-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      box-shadow: 0 4px 12px rgba(47,51,38,0.06);
+      border-left: 5px solid var(--green);
+    }
+    .topic-card.hot {
+      border-left-color: var(--accent);
+    }
+    .topic-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+    .tag {
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--green-dark);
+    }
+    .views {
+      flex-shrink: 0;
+      background: #f3f6ec;
+      color: var(--green-dark);
+      font-size: 12px;
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+    .views.hot {
+      background: #fdf0ea;
+      color: var(--accent);
+    }
+    .trend {
+      margin-top: 6px;
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .angle {
+      margin-top: 8px;
+      font-size: 14px;
+      color: var(--text-light);
+    }
+
+    .music-grid {
+      display: grid;
+      gap: 12px;
+    }
+    .music-item {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 14px 16px;
+      box-shadow: 0 4px 10px rgba(47,51,38,0.05);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .music-icon {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: #f3f6ec;
+      display: grid; place-items: center;
+      color: var(--green-dark); font-size: 18px;
+    }
+    .music-info h4 { margin: 0; font-size: 15px; }
+    .music-info p { margin: 2px 0 0; font-size: 12px; color: var(--text-light); }
+
+    .shoot-list { display: grid; gap: 16px; }
+    .shoot-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 6px 16px rgba(47,51,38,0.07);
+    }
+    .shoot-card h3 {
+      margin: 0 0 6px;
+      font-size: 16px;
+      color: var(--green-dark);
+    }
+    .hook {
+      background: #fdf7f3;
+      color: var(--accent);
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+    .shoot-card p { margin: 0 0 10px; font-size: 14px; color: var(--text-light); }
+    .meta {
+      display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+      font-size: 12px; color: var(--text-light);
+    }
+    .tag-pill {
+      background: #f3f6ec;
+      color: var(--green-dark);
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+
+    footer {
+      margin-top: 28px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-light);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="badge">抖音美食热点</span>
+      <h1>2026.08.05 热点简报</h1>
+      <div class="subtitle">减脂餐 / 烘焙 / 家常菜 · 拍摄灵感</div>
+    </header>
+
+    <section class="summary">
+      <p>8月5日美食热点：#外婆红糖流心饼 8月初全网爆火，小红书话题8.2亿阅读、抖音单条点赞437万，"可控的失控"情绪解压成核心驱动力；#香酥牛肉条 携#味觉记忆 话题（累计87亿播放）持续霸榜，反预制菜+怀旧经济双引擎；抖音新流量密码#电子榨菜 / #剩饭改造 崛起，便当类/教程类内容窗口期打开；#立秋3宝 延续高热，8/7立秋倒计时2天；#公瑾爆蛋 16亿播放长尾效应仍在。</p>
+    </section>
+
+    <h2 class="section-title">今日爆款标签</h2>
+    <div class="topic-list">
+      <div class="topic-card hot">
+        <div class="topic-header">
+          <div class="tag">#外婆红糖流心饼 / #流心红糖饼</div>
+          <div class="views hot">小红书8.2亿 / 抖音437万赞</div>
+        </div>
+        <div class="trend">8月初爆发↑↑↑（8/3-8/5持续升温）</div>
+        <div class="angle">情绪解压"舌尖镇静剂"：面粉+红糖+温水三样家常物，"可控的失控"（面团不匀、饼鼓歪、糖淌指尖）是对算法精准投喂的温柔反叛。与账号烘焙定位高度契合，可做"减脂版"——全麦面皮+低GI黑糖+空气炸锅/平底锅少油版，单饼热量控制在180大卡以内，蹭爆款同时守住低卡人设。</div>
+      </div>
+      <div class="topic-card hot">
+        <div class="topic-header">
+          <div class="tag">#香酥牛肉条 / #味觉记忆</div>
+          <div class="views hot">87亿播放 / 手工现炸订单+218%</div>
+        </div>
+        <div class="trend">2026全年现象级↑↑</div>
+        <div class="angle">怀旧经济+反预制菜情绪双驱动。李国成式"每天现切现炸、拒绝半成品"成为信任符号。对减脂账号启示：强调"手工感"和"真食材"——可拍"减脂版香酥牛肉条"：牛里脊逆纹切条、烤箱/空气炸锅替代油炸、自制五香粉调味，突出"吃起来有魂"的健康版本。</div>
+      </div>
+      <div class="topic-card hot">
+        <div class="topic-header">
+          <div class="tag">#电子榨菜 / #剩饭改造 / #解压厨房</div>
+          <div class="views hot">抖音新流量密码</div>
+        </div>
+        <div class="trend">新流量密码↑↑</div>
+        <div class="angle">"电子榨菜"替代过时的#沉浸式做饭，成为便当类/教程类新宠；#剩饭改造 强调周二峰值（上班族带饭日）。与账号减脂餐定位天然契合：拍"减脂便当一周备餐"或"昨日剩菜变身今日低卡便当"，实用价值+追更属性双驱动。</div>
+      </div>
+      <div class="topic-card">
+        <div class="topic-header">
+          <div class="tag">#立秋3宝 / #立秋 / #咬秋</div>
+          <div class="views">健康类话题TOP3</div>
+        </div>
+        <div class="trend">节气预热延续↑（8/7倒计时2天）</div>
+        <div class="angle">山药青椒、西芹百合、清炒莲藕的"一润二清三收"持续发酵。今年"咬秋"强调"常温应季、浅尝止燥、心态安稳"三原则。可延续"减脂版立秋3宝"选题，或新增"咬秋减脂版"——常温西瓜/脆梨+低卡银耳羹，强调"安稳换季不囤肉"。</div>
+      </div>
+      <div class="topic-card">
+        <div class="topic-header">
+          <div class="tag">#公瑾爆蛋</div>
+          <div class="views">16亿+播放 / 鸡蛋销量+25%</div>
+        </div>
+        <div class="trend">长尾延续（第三周）</div>
+        <div class="angle">"十分钟出锅、零失败复刻"仍是核心密码。低油版/素食版等变种陆续出现。可做"减脂高蛋白版公瑾爆蛋"：少油水炒蛋+零卡糖醋汁+搭配全麦吐司，早餐场景切入，强调"16亿人的选择，减脂也能吃"。</div>
+      </div>
+    </div>
+
+    <h2 class="section-title">热门背景音乐</h2>
+    <div class="music-grid">
+      <div class="music-item">
+        <div class="music-icon">♪</div>
+        <div class="music-info">
+          <h4>《尕连手》· 西北花儿+电音</h4>
+          <p>抖音"尕连手"话题播放量已超5.9亿，2026年8月4日刷屏爆发。传统与流行结合，旋律上头记忆点强，适合外婆红糖流心饼等温情/手工感内容。</p>
+        </div>
+      </div>
+      <div class="music-item">
+        <div class="music-icon">♫</div>
+        <div class="music-info">
+          <h4>《烟火人间》· 市井民谣 / 温暖治愈</h4>
+          <p>讲述早餐摊、夜市、老胡同的平凡温暖。抖音精选站内话题热度突破180万，分享率比同类作品高12%，生活类博主高频使用。适合电子榨菜/便当备餐/日常记录类内容。</p>
+        </div>
+      </div>
+      <div class="music-item">
+        <div class="music-icon">♬</div>
+        <div class="music-info">
+          <h4>《晚风吹》· 流行抒情 / 城市思念</h4>
+          <p>抖音精选讨论热度超12.6亿，二创互动量占全网58%。旋律舒缓适合较长视频（45-60s），完播率高。适合立秋晚餐、一人食治愈系内容。</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title">本账号拍摄建议</h2>
+    <div class="shoot-list">
+      <div class="shoot-card">
+        <h3>1. 减脂版外婆红糖流心饼（空气炸锅/平底锅少油版）</h3>
+        <div class="hook">8月全网爆火的外婆红糖流心饼，我改成了减脂版，一口爆浆</div>
+        <p>蹭#外婆红糖流心饼 / #流心红糖饼 爆款热度。前3秒：掰开饼身，红糖浆缓缓流出，大字幕"全麦+低糖，180大卡"。主体：①全麦面粉200g+温水110g揉团醒15分钟②馅料：低GI黑糖/赤藓糖醇混合30g+全麦粉10g（防爆浆锚点）③包馅、压扁、表面刷薄油④空气炸锅180度12分钟或平底锅少油煎至两面金黄。关键点：标注单饼热量约180大卡，对比传统版（约320大卡），强调"治愈和解馋可以并存"。结尾试吃+字幕"减脂期也能吃的爆浆红糖饼"。</p>
+        <div class="meta">
+          <span>BGM：</span><span class="tag-pill">《尕连手》</span>
+          <span>时长：</span><span class="tag-pill">40-55s</span>
+          <span class="tag-pill">#外婆红糖流心饼</span>
+          <span class="tag-pill">#减脂版</span>
+          <span class="tag-pill">#全麦红糖饼</span>
+          <span class="tag-pill">#低卡烘焙</span>
+          <span class="tag-pill">#爆浆</span>
+        </div>
+      </div>
+      <div class="shoot-card">
+        <h3>2. 电子榨菜·减脂便当一周备餐（周二剩饭改造日）</h3>
+        <div class="hook">我的电子榨菜来了：周日2小时，搞定一周减脂便当</div>
+        <p>蹭#电子榨菜 / #剩饭改造 / #解压厨房 新流量密码。开头大字幕"周日电饭锅一锅出，5天便当不重样"。主体展示备餐流程（快速剪辑，ASMR收音）：①杂粮饭批量煮（糙米+燕麦米+藜麦）②蛋白质批量烤（鸡胸肉、虾仁、豆腐，烤箱一次出）③蔬菜预处理（西兰花、胡萝卜、彩椒分装）。重点展示"周二剩饭改造"：周一剩的烤鸡胸切片+周二新炒青椒+杂粮饭=新便当。每盒标注热量（约400-450大卡）。统一视觉：玻璃便当盒+木质托盘+手写标签。结尾："周二改造日，评论区交作业"。</p>
+        <div class="meta">
+          <span>BGM：</span><span class="tag-pill">《烟火人间》</span>
+          <span>时长：</span><span class="tag-pill">60-80s</span>
+          <span class="tag-pill">#电子榨菜</span>
+          <span class="tag-pill">#剩饭改造</span>
+          <span class="tag-pill">#减脂便当</span>
+          <span class="tag-pill">#一周备餐</span>
+          <span class="tag-pill">#解压厨房</span>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      数据来源于网络搜索整理 · 仅供参考 · 🍅 的工作台
+    </footer>
+  </div>
+</body>
+</html>
