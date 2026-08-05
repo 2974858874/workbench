@@ -1,11 +1,4 @@
 {
-  "total": 0,
-  "currency": "CNY",
   "deposits": [],
-  "goal": {
-    "name": "养老基金",
-    "target": 30000,
-    "deadline": "TODO"
-  },
-  "updatedAt": "2026-07-30"
+  "goal": { "name": "养老基金", "target": 30000 }
 }
