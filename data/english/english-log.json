@@ -5,43 +5,183 @@
     "level": "初级",
     "topic": "烹饪基础 & 食材处理",
     "words": [
-      { "en": "sauté", "phonetic": "/soʊˈteɪ/", "zh": "翻炒；嫩煎" },
-      { "en": "simmer", "phonetic": "/ˈsɪmər/", "zh": "小火慢炖" },
-      { "en": "marinate", "phonetic": "/ˈmærɪneɪt/", "zh": "腌制（肉/菜）" },
-      { "en": "chop", "phonetic": "/tʃɑːp/", "zh": "切碎；剁" },
-      { "en": "dice", "phonetic": "/daɪs/", "zh": "切成丁" },
-      { "en": "mince", "phonetic": "/mɪns/", "zh": "剁碎（蒜/肉末）" },
-      { "en": "whisk", "phonetic": "/wɪsk/", "zh": "搅打；打蛋器" },
-      { "en": "knead", "phonetic": "/niːd/", "zh": "揉（面团）" },
-      { "en": "season", "phonetic": "/ˈsiːzən/", "zh": "调味；加调料" },
-      { "en": "garnish", "phonetic": "/ˈɡɑːrnɪʃ/", "zh": "装饰；点缀（摆盘）" },
-      { "en": "blanch", "phonetic": "/blæntʃ/", "zh": "焯水；汆烫" },
-      { "en": "roast", "phonetic": "/roʊst/", "zh": "烘烤（肉/蔬菜）" },
-      { "en": "grill", "phonetic": "/ɡrɪl/", "zh": "烧烤；炙烤" },
-      { "en": "steam", "phonetic": "/stiːm/", "zh": "蒸" },
-      { "en": "stir-fry", "phonetic": "/ˈstɜːr fraɪ/", "zh": "爆炒；翻炒" },
-      { "en": "poach", "phonetic": "/poʊtʃ/", "zh": "水煮（低温慢煮）" },
-      { "en": "braise", "phonetic": "/breɪz/", "zh": "红烧；焖炖" },
-      { "en": "broil", "phonetic": "/brɔɪl/", "zh": "上火烤；炙烤" },
-      { "en": "fillet", "phonetic": "/fɪˈleɪ/", "zh": "去骨鱼柳；肉片" },
-      { "en": "zest", "phonetic": "/zest/", "zh": "柑橘皮屑（调味用）" },
-      { "en": "protein", "phonetic": "/ˈproʊtiːn/", "zh": "蛋白质" },
-      { "en": "fiber", "phonetic": "/ˈfaɪbər/", "zh": "膳食纤维" },
-      { "en": "calorie", "phonetic": "/ˈkæləri/", "zh": "卡路里；热量" },
-      { "en": "portion", "phonetic": "/ˈpɔːrʃən/", "zh": "份量；食量控制" },
-      { "en": "lean", "phonetic": "/liːn/", "zh": "瘦的（瘦肉/低脂）" },
-      { "en": "leafy greens", "phonetic": "/ˈliːfi ɡriːnz/", "zh": "绿叶蔬菜" },
-      { "en": "whole grain", "phonetic": "/hoʊl ɡreɪn/", "zh": "全谷物" },
-      { "en": "seasoning", "phonetic": "/ˈsiːzənɪŋ/", "zh": "调味料；佐料" },
-      { "en": "texture", "phonetic": "/ˈtekstʃər/", "zh": "口感；质地" },
-      { "en": "drizzle", "phonetic": "/ˈdrɪzəl/", "zh": "淋（油/酱汁）" }
+      {
+        "en": "sauté",
+        "phonetic": "/soʊˈteɪ/",
+        "zh": "翻炒；嫩煎"
+      },
+      {
+        "en": "simmer",
+        "phonetic": "/ˈsɪmər/",
+        "zh": "小火慢炖"
+      },
+      {
+        "en": "marinate",
+        "phonetic": "/ˈmærɪneɪt/",
+        "zh": "腌制（肉/菜）"
+      },
+      {
+        "en": "chop",
+        "phonetic": "/tʃɑːp/",
+        "zh": "切碎；剁"
+      },
+      {
+        "en": "dice",
+        "phonetic": "/daɪs/",
+        "zh": "切成丁"
+      },
+      {
+        "en": "mince",
+        "phonetic": "/mɪns/",
+        "zh": "剁碎（蒜/肉末）"
+      },
+      {
+        "en": "whisk",
+        "phonetic": "/wɪsk/",
+        "zh": "搅打；打蛋器"
+      },
+      {
+        "en": "knead",
+        "phonetic": "/niːd/",
+        "zh": "揉（面团）"
+      },
+      {
+        "en": "season",
+        "phonetic": "/ˈsiːzən/",
+        "zh": "调味；加调料"
+      },
+      {
+        "en": "garnish",
+        "phonetic": "/ˈɡɑːrnɪʃ/",
+        "zh": "装饰；点缀（摆盘）"
+      },
+      {
+        "en": "blanch",
+        "phonetic": "/blæntʃ/",
+        "zh": "焯水；汆烫"
+      },
+      {
+        "en": "roast",
+        "phonetic": "/roʊst/",
+        "zh": "烘烤（肉/蔬菜）"
+      },
+      {
+        "en": "grill",
+        "phonetic": "/ɡrɪl/",
+        "zh": "烧烤；炙烤"
+      },
+      {
+        "en": "steam",
+        "phonetic": "/stiːm/",
+        "zh": "蒸"
+      },
+      {
+        "en": "stir-fry",
+        "phonetic": "/ˈstɜːr fraɪ/",
+        "zh": "爆炒；翻炒"
+      },
+      {
+        "en": "poach",
+        "phonetic": "/poʊtʃ/",
+        "zh": "水煮（低温慢煮）"
+      },
+      {
+        "en": "braise",
+        "phonetic": "/breɪz/",
+        "zh": "红烧；焖炖"
+      },
+      {
+        "en": "broil",
+        "phonetic": "/brɔɪl/",
+        "zh": "上火烤；炙烤"
+      },
+      {
+        "en": "fillet",
+        "phonetic": "/fɪˈleɪ/",
+        "zh": "去骨鱼柳；肉片"
+      },
+      {
+        "en": "zest",
+        "phonetic": "/zest/",
+        "zh": "柑橘皮屑（调味用）"
+      },
+      {
+        "en": "protein",
+        "phonetic": "/ˈproʊtiːn/",
+        "zh": "蛋白质"
+      },
+      {
+        "en": "fiber",
+        "phonetic": "/ˈfaɪbər/",
+        "zh": "膳食纤维"
+      },
+      {
+        "en": "calorie",
+        "phonetic": "/ˈkæləri/",
+        "zh": "卡路里；热量"
+      },
+      {
+        "en": "portion",
+        "phonetic": "/ˈpɔːrʃən/",
+        "zh": "份量；食量控制"
+      },
+      {
+        "en": "lean",
+        "phonetic": "/liːn/",
+        "zh": "瘦的（瘦肉/低脂）"
+      },
+      {
+        "en": "leafy greens",
+        "phonetic": "/ˈliːfi ɡriːnz/",
+        "zh": "绿叶蔬菜"
+      },
+      {
+        "en": "whole grain",
+        "phonetic": "/hoʊl ɡreɪn/",
+        "zh": "全谷物"
+      },
+      {
+        "en": "seasoning",
+        "phonetic": "/ˈsiːzənɪŋ/",
+        "zh": "调味料；佐料"
+      },
+      {
+        "en": "texture",
+        "phonetic": "/ˈtekstʃər/",
+        "zh": "口感；质地"
+      },
+      {
+        "en": "drizzle",
+        "phonetic": "/ˈdrɪzəl/",
+        "zh": "淋（油/酱汁）"
+      }
     ],
     "phrases": [
-      { "en": "Can you pass me the salt?", "phonetic": "/kæn ju pæs mi ðə sɔːlt/", "zh": "能把盐递给我吗？" },
-      { "en": "Let it simmer for about ten minutes.", "phonetic": "/let ɪt ˈsɪmər fɔːr əˈbaʊt ten ˈmɪnɪts/", "zh": "小火炖十分钟左右。" },
-      { "en": "Don't overcook the vegetables.", "phonetic": "/doʊnt ˌoʊvərˈkʊk ðə ˈvedʒtəbəlz/", "zh": "别把蔬菜煮过头了。" },
-      { "en": "This could use a little more seasoning.", "phonetic": "/ðɪs kʊd juːz ə ˈlɪtəl mɔːr ˈsiːzənɪŋ/", "zh": "这个还可以再加点调味。" },
-      { "en": "I'll prep the ingredients while you preheat the pan.", "phonetic": "/aɪl prep ði ɪnˈɡriːdiənts waɪl ju priːˈhiːt ðə pæn/", "zh": "你预热锅，我来备菜。" }
+      {
+        "en": "Can you pass me the salt?",
+        "phonetic": "/kæn ju pæs mi ðə sɔːlt/",
+        "zh": "能把盐递给我吗？"
+      },
+      {
+        "en": "Let it simmer for about ten minutes.",
+        "phonetic": "/let ɪt ˈsɪmər fɔːr əˈbaʊt ten ˈmɪnɪts/",
+        "zh": "小火炖十分钟左右。"
+      },
+      {
+        "en": "Don't overcook the vegetables.",
+        "phonetic": "/doʊnt ˌoʊvərˈkʊk ðə ˈvedʒtəbəlz/",
+        "zh": "别把蔬菜煮过头了。"
+      },
+      {
+        "en": "This could use a little more seasoning.",
+        "phonetic": "/ðɪs kʊd juːz ə ˈlɪtəl mɔːr ˈsiːzənɪŋ/",
+        "zh": "这个还可以再加点调味。"
+      },
+      {
+        "en": "I'll prep the ingredients while you preheat the pan.",
+        "phonetic": "/aɪl prep ði ɪnˈɡriːdiənts waɪl ju priːˈhiːt ðə pæn/",
+        "zh": "你预热锅，我来备菜。"
+      }
     ],
     "core_phrase": {
       "en": "A little less oil, a lot more flavor.",
@@ -55,43 +195,183 @@
     "level": "中级",
     "topic": "调味艺术 & 火候掌控",
     "words": [
-      { "en": "caramelize", "phonetic": "/ˈkɑːrməlaɪz/", "zh": "焦糖化；炒出焦香" },
-      { "en": "sear", "phonetic": "/sɪr/", "zh": "煎封（大火锁汁）" },
-      { "en": "deglaze", "phonetic": "/diːˈɡleɪz/", "zh": "去底汁（加酒刮锅）" },
-      { "en": "reduce", "phonetic": "/rɪˈduːs/", "zh": "收汁；熬浓" },
-      { "en": "emulsify", "phonetic": "/ɪˈmʌlsɪfaɪ/", "zh": "乳化（油水融合）" },
-      { "en": "fold", "phonetic": "/foʊld/", "zh": "翻拌（轻柔拌入）" },
-      { "en": "tenderize", "phonetic": "/ˈtendəraɪz/", "zh": "嫩化（肉）" },
-      { "en": "glaze", "phonetic": "/ɡleɪz/", "zh": "挂釉；浇亮汁" },
-      { "en": "infuse", "phonetic": "/ɪnˈfjuːz/", "zh": "浸泡入味" },
-      { "en": "cure", "phonetic": "/kjʊr/", "zh": "盐渍；风干腌制" },
-      { "en": "thicken", "phonetic": "/ˈθɪkən/", "zh": "勾芡；增稠" },
-      { "en": "julienne", "phonetic": "/ˌdʒuːliˈen/", "zh": "切丝（蔬菜/肉）" },
-      { "en": "brunoise", "phonetic": "/bruːˈnwɑːz/", "zh": "切细丁（法式切法）" },
-      { "en": "concasse", "phonetic": "/kɑːnˈkɑːseɪ/", "zh": "番茄去皮切丁" },
-      { "en": "rest", "phonetic": "/rest/", "zh": "醒（肉出锅后静置）" },
-      { "en": "herb", "phonetic": "/hɜːrb/", "zh": "香草（罗勒/迷迭香）" },
-      { "en": "spice", "phonetic": "/spaɪs/", "zh": "香料（孜然/八角）" },
-      { "en": "marinade", "phonetic": "/ˌmærɪˈneɪd/", "zh": "腌汁（名词）" },
-      { "en": "umami", "phonetic": "/uːˈmɑːmi/", "zh": "鲜味" },
-      { "en": "acidity", "phonetic": "/əˈsɪdəti/", "zh": "酸度（调味平衡）" },
-      { "en": "aroma", "phonetic": "/əˈroʊmə/", "zh": "香气" },
-      { "en": "satiety", "phonetic": "/səˈtaɪəti/", "zh": "饱腹感" },
-      { "en": "metabolism", "phonetic": "/məˈtæbəlɪzəm/", "zh": "新陈代谢" },
-      { "en": "nutrient-dense", "phonetic": "/ˈnuːtriənt dens/", "zh": "营养密集的" },
-      { "en": "macronutrient", "phonetic": "/ˌmækroʊˈnuːtriənt/", "zh": "宏量营养素" },
-      { "en": "meal prep", "phonetic": "/miːl prep/", "zh": "备餐（提前准备）" },
-      { "en": "batch cook", "phonetic": "/bætʃ kʊk/", "zh": "批量烹饪" },
-      { "en": "low-carb", "phonetic": "/loʊ ˈkɑːrb/", "zh": "低碳水" },
-      { "en": "antioxidant", "phonetic": "/ˌæntiˈɑːksɪdənt/", "zh": "抗氧化剂" },
-      { "en": "hydrate", "phonetic": "/ˈhaɪdreɪt/", "zh": "补水；补充水分" }
+      {
+        "en": "caramelize",
+        "phonetic": "/ˈkɑːrməlaɪz/",
+        "zh": "焦糖化；炒出焦香"
+      },
+      {
+        "en": "sear",
+        "phonetic": "/sɪr/",
+        "zh": "煎封（大火锁汁）"
+      },
+      {
+        "en": "deglaze",
+        "phonetic": "/diːˈɡleɪz/",
+        "zh": "去底汁（加酒刮锅）"
+      },
+      {
+        "en": "reduce",
+        "phonetic": "/rɪˈduːs/",
+        "zh": "收汁；熬浓"
+      },
+      {
+        "en": "emulsify",
+        "phonetic": "/ɪˈmʌlsɪfaɪ/",
+        "zh": "乳化（油水融合）"
+      },
+      {
+        "en": "fold",
+        "phonetic": "/foʊld/",
+        "zh": "翻拌（轻柔拌入）"
+      },
+      {
+        "en": "tenderize",
+        "phonetic": "/ˈtendəraɪz/",
+        "zh": "嫩化（肉）"
+      },
+      {
+        "en": "glaze",
+        "phonetic": "/ɡleɪz/",
+        "zh": "挂釉；浇亮汁"
+      },
+      {
+        "en": "infuse",
+        "phonetic": "/ɪnˈfjuːz/",
+        "zh": "浸泡入味"
+      },
+      {
+        "en": "cure",
+        "phonetic": "/kjʊr/",
+        "zh": "盐渍；风干腌制"
+      },
+      {
+        "en": "thicken",
+        "phonetic": "/ˈθɪkən/",
+        "zh": "勾芡；增稠"
+      },
+      {
+        "en": "julienne",
+        "phonetic": "/ˌdʒuːliˈen/",
+        "zh": "切丝（蔬菜/肉）"
+      },
+      {
+        "en": "brunoise",
+        "phonetic": "/bruːˈnwɑːz/",
+        "zh": "切细丁（法式切法）"
+      },
+      {
+        "en": "concasse",
+        "phonetic": "/kɑːnˈkɑːseɪ/",
+        "zh": "番茄去皮切丁"
+      },
+      {
+        "en": "rest",
+        "phonetic": "/rest/",
+        "zh": "醒（肉出锅后静置）"
+      },
+      {
+        "en": "herb",
+        "phonetic": "/hɜːrb/",
+        "zh": "香草（罗勒/迷迭香）"
+      },
+      {
+        "en": "spice",
+        "phonetic": "/spaɪs/",
+        "zh": "香料（孜然/八角）"
+      },
+      {
+        "en": "marinade",
+        "phonetic": "/ˌmærɪˈneɪd/",
+        "zh": "腌汁（名词）"
+      },
+      {
+        "en": "umami",
+        "phonetic": "/uːˈmɑːmi/",
+        "zh": "鲜味"
+      },
+      {
+        "en": "acidity",
+        "phonetic": "/əˈsɪdəti/",
+        "zh": "酸度（调味平衡）"
+      },
+      {
+        "en": "aroma",
+        "phonetic": "/əˈroʊmə/",
+        "zh": "香气"
+      },
+      {
+        "en": "satiety",
+        "phonetic": "/səˈtaɪəti/",
+        "zh": "饱腹感"
+      },
+      {
+        "en": "metabolism",
+        "phonetic": "/məˈtæbəlɪzəm/",
+        "zh": "新陈代谢"
+      },
+      {
+        "en": "nutrient-dense",
+        "phonetic": "/ˈnuːtriənt dens/",
+        "zh": "营养密集的"
+      },
+      {
+        "en": "macronutrient",
+        "phonetic": "/ˌmækroʊˈnuːtriənt/",
+        "zh": "宏量营养素"
+      },
+      {
+        "en": "meal prep",
+        "phonetic": "/miːl prep/",
+        "zh": "备餐（提前准备）"
+      },
+      {
+        "en": "batch cook",
+        "phonetic": "/bætʃ kʊk/",
+        "zh": "批量烹饪"
+      },
+      {
+        "en": "low-carb",
+        "phonetic": "/loʊ ˈkɑːrb/",
+        "zh": "低碳水"
+      },
+      {
+        "en": "antioxidant",
+        "phonetic": "/ˌæntiˈɑːksɪdənt/",
+        "zh": "抗氧化剂"
+      },
+      {
+        "en": "hydrate",
+        "phonetic": "/ˈhaɪdreɪt/",
+        "zh": "补水；补充水分"
+      }
     ],
     "phrases": [
-      { "en": "Turn the heat down to medium-low.", "phonetic": "/tɜːrn ðə hiːt daʊn tə ˈmiːdiəm loʊ/", "zh": "把火调到中低火。" },
-      { "en": "Let the sauce reduce until it coats a spoon.", "phonetic": "/let ðə sɔːs rɪˈduːs ənˈtɪl ɪt koʊts ə spuːn/", "zh": "把酱汁收到能挂勺。" },
-      { "en": "Rest the meat for five minutes before slicing.", "phonetic": "/rest ðə miːt fɔːr faɪv ˈmɪnɪts bɪˈfɔːr ˈslaɪsɪŋ/", "zh": "肉切之前先醒五分钟。" },
-      { "en": "You want a nice sear on both sides.", "phonetic": "/ju wɑːnt ə naɪs sɪr ɑːn boʊθ saɪdz/", "zh": "两面都要煎出焦香。" },
-      { "en": "Taste and adjust the seasoning as you go.", "phonetic": "/teɪst ənd əˈdʒʌst ðə ˈsiːzənɪŋ æz ju ɡoʊ/", "zh": "边做边尝，随时调味。" }
+      {
+        "en": "Turn the heat down to medium-low.",
+        "phonetic": "/tɜːrn ðə hiːt daʊn tə ˈmiːdiəm loʊ/",
+        "zh": "把火调到中低火。"
+      },
+      {
+        "en": "Let the sauce reduce until it coats a spoon.",
+        "phonetic": "/let ðə sɔːs rɪˈduːs ənˈtɪl ɪt koʊts ə spuːn/",
+        "zh": "把酱汁收到能挂勺。"
+      },
+      {
+        "en": "Rest the meat for five minutes before slicing.",
+        "phonetic": "/rest ðə miːt fɔːr faɪv ˈmɪnɪts bɪˈfɔːr ˈslaɪsɪŋ/",
+        "zh": "肉切之前先醒五分钟。"
+      },
+      {
+        "en": "You want a nice sear on both sides.",
+        "phonetic": "/ju wɑːnt ə naɪs sɪr ɑːn boʊθ saɪdz/",
+        "zh": "两面都要煎出焦香。"
+      },
+      {
+        "en": "Taste and adjust the seasoning as you go.",
+        "phonetic": "/teɪst ənd əˈdʒʌst ðə ˈsiːzənɪŋ æz ju ɡoʊ/",
+        "zh": "边做边尝，随时调味。"
+      }
     ],
     "core_phrase": {
       "en": "Low and slow, that's how flavor grows.",
@@ -105,43 +385,183 @@
     "level": "中级",
     "topic": "厨房工具 & 食材选购",
     "words": [
-      { "en": "colander", "phonetic": "/ˈkʌləndər/", "zh": "滤锅；沥水篮" },
-      { "en": "spatula", "phonetic": "/ˈspætʃələ/", "zh": "锅铲；刮刀" },
-      { "en": "tongs", "phonetic": "/tɔːŋz/", "zh": "食物夹" },
-      { "en": "mandoline", "phonetic": "/ˈmændəliːn/", "zh": "切片器（菜刨）" },
-      { "en": "thermometer", "phonetic": "/θərˈmɑːmɪtər/", "zh": "温度计（食品用）" },
-      { "en": "scale", "phonetic": "/skeɪl/", "zh": "厨房秤" },
-      { "en": "blender", "phonetic": "/ˈblendər/", "zh": "搅拌机" },
-      { "en": "steamer", "phonetic": "/ˈstiːmər/", "zh": "蒸锅" },
-      { "en": "grater", "phonetic": "/ˈɡreɪtər/", "zh": "擦丝器" },
-      { "en": "peeler", "phonetic": "/ˈpiːlər/", "zh": "削皮器" },
-      { "en": "fresh", "phonetic": "/freʃ/", "zh": "新鲜的" },
-      { "en": "organic", "phonetic": "/ɔːrˈɡænɪk/", "zh": "有机的" },
-      { "en": "ripe", "phonetic": "/raɪp/", "zh": "成熟的（水果）" },
-      { "en": "raw", "phonetic": "/rɔː/", "zh": "生的" },
-      { "en": "frozen", "phonetic": "/ˈfroʊzən/", "zh": "冷冻的" },
-      { "en": "canned", "phonetic": "/kænd/", "zh": "罐装的" },
-      { "en": "lean meat", "phonetic": "/liːn miːt/", "zh": "瘦肉" },
-      { "en": "free-range", "phonetic": "/friː reɪndʒ/", "zh": "散养的（鸡蛋/鸡）" },
-      { "en": "wild-caught", "phonetic": "/waɪld kɔːt/", "zh": "野生捕捞的（鱼）" },
-      { "en": "seasonal", "phonetic": "/ˈsiːzənəl/", "zh": "应季的" },
-      { "en": "pantry", "phonetic": "/ˈpæntri/", "zh": "食品储藏柜" },
-      { "en": "shelf life", "phonetic": "/ʃɛlf laɪf/", "zh": "保质期" },
-      { "en": "expiry date", "phonetic": "/ɪkˈspaɪəri deɪt/", "zh": "过期日期" },
-      { "en": "batch", "phonetic": "/bætʃ/", "zh": "一批（备餐量）" },
-      { "en": "leftover", "phonetic": "/ˈlɛftoʊvər/", "zh": "剩菜剩饭" },
-      { "en": "marinate", "phonetic": "/ˈmærɪneɪt/", "zh": "腌制" },
-      { "en": "defrost", "phonetic": "/diːˈfrɔːst/", "zh": "解冻" },
-      { "en": "portion out", "phonetic": "/ˈpɔːrʃn aʊt/", "zh": "分装（按份量）" },
-      { "en": "meal prep", "phonetic": "/miːl prep/", "zh": "备餐" },
-      { "en": "food storage", "phonetic": "/fuːd ˈstɔːrɪdʒ/", "zh": "食材储存" }
+      {
+        "en": "colander",
+        "phonetic": "/ˈkʌləndər/",
+        "zh": "滤锅；沥水篮"
+      },
+      {
+        "en": "spatula",
+        "phonetic": "/ˈspætʃələ/",
+        "zh": "锅铲；刮刀"
+      },
+      {
+        "en": "tongs",
+        "phonetic": "/tɔːŋz/",
+        "zh": "食物夹"
+      },
+      {
+        "en": "mandoline",
+        "phonetic": "/ˈmændəliːn/",
+        "zh": "切片器（菜刨）"
+      },
+      {
+        "en": "thermometer",
+        "phonetic": "/θərˈmɑːmɪtər/",
+        "zh": "温度计（食品用）"
+      },
+      {
+        "en": "scale",
+        "phonetic": "/skeɪl/",
+        "zh": "厨房秤"
+      },
+      {
+        "en": "blender",
+        "phonetic": "/ˈblendər/",
+        "zh": "搅拌机"
+      },
+      {
+        "en": "steamer",
+        "phonetic": "/ˈstiːmər/",
+        "zh": "蒸锅"
+      },
+      {
+        "en": "grater",
+        "phonetic": "/ˈɡreɪtər/",
+        "zh": "擦丝器"
+      },
+      {
+        "en": "peeler",
+        "phonetic": "/ˈpiːlər/",
+        "zh": "削皮器"
+      },
+      {
+        "en": "fresh",
+        "phonetic": "/freʃ/",
+        "zh": "新鲜的"
+      },
+      {
+        "en": "organic",
+        "phonetic": "/ɔːrˈɡænɪk/",
+        "zh": "有机的"
+      },
+      {
+        "en": "ripe",
+        "phonetic": "/raɪp/",
+        "zh": "成熟的（水果）"
+      },
+      {
+        "en": "raw",
+        "phonetic": "/rɔː/",
+        "zh": "生的"
+      },
+      {
+        "en": "frozen",
+        "phonetic": "/ˈfroʊzən/",
+        "zh": "冷冻的"
+      },
+      {
+        "en": "canned",
+        "phonetic": "/kænd/",
+        "zh": "罐装的"
+      },
+      {
+        "en": "lean meat",
+        "phonetic": "/liːn miːt/",
+        "zh": "瘦肉"
+      },
+      {
+        "en": "free-range",
+        "phonetic": "/friː reɪndʒ/",
+        "zh": "散养的（鸡蛋/鸡）"
+      },
+      {
+        "en": "wild-caught",
+        "phonetic": "/waɪld kɔːt/",
+        "zh": "野生捕捞的（鱼）"
+      },
+      {
+        "en": "seasonal",
+        "phonetic": "/ˈsiːzənəl/",
+        "zh": "应季的"
+      },
+      {
+        "en": "pantry",
+        "phonetic": "/ˈpæntri/",
+        "zh": "食品储藏柜"
+      },
+      {
+        "en": "shelf life",
+        "phonetic": "/ʃɛlf laɪf/",
+        "zh": "保质期"
+      },
+      {
+        "en": "expiry date",
+        "phonetic": "/ɪkˈspaɪəri deɪt/",
+        "zh": "过期日期"
+      },
+      {
+        "en": "batch",
+        "phonetic": "/bætʃ/",
+        "zh": "一批（备餐量）"
+      },
+      {
+        "en": "leftover",
+        "phonetic": "/ˈlɛftoʊvər/",
+        "zh": "剩菜剩饭"
+      },
+      {
+        "en": "marinate",
+        "phonetic": "/ˈmærɪneɪt/",
+        "zh": "腌制"
+      },
+      {
+        "en": "defrost",
+        "phonetic": "/diːˈfrɔːst/",
+        "zh": "解冻"
+      },
+      {
+        "en": "portion out",
+        "phonetic": "/ˈpɔːrʃn aʊt/",
+        "zh": "分装（按份量）"
+      },
+      {
+        "en": "meal prep",
+        "phonetic": "/miːl prep/",
+        "zh": "备餐"
+      },
+      {
+        "en": "food storage",
+        "phonetic": "/fuːd ˈstɔːrɪdʒ/",
+        "zh": "食材储存"
+      }
     ],
     "phrases": [
-      { "en": "Could you grab the colander from the cabinet?", "phonetic": "/kʊd ju ɡræb ðə ˈkʌləndər frʌm ðə ˈkæbɪnət/", "zh": "能把沥水篮从柜子里拿一下吗？" },
-      { "en": "Make sure the oil is hot before you add the garlic.", "phonetic": "/meɪk ʃʊr ði ɔɪl ɪz hɑːt bɪˈfɔr ju æd ðə ˈɡɑːrlɪk/", "zh": "下蒜之前确认油温够热。" },
-      { "en": "Let's portion out the rice into four containers.", "phonetic": "/lɛts ˈpɔːrʃn aʊt ðə raɪs ˈɪntu fɔːr kənˈteɪnərz/", "zh": "把米饭分装成四盒吧。" },
-      { "en": "These tomatoes are perfectly ripe.", "phonetic": "/ðiːz təˈmeɪtoʊz ɑːr ˈpɜːrfɪktli raɪp/", "zh": "这些番茄熟得正好。" },
-      { "en": "I always buy seasonal produce — it's cheaper and fresher.", "phonetic": "/aɪ ˈɔːlweɪz baɪ ˈsiːzənəl ˈprɑːduːs/", "zh": "我总买应季蔬果——又便宜又新鲜。" }
+      {
+        "en": "Could you grab the colander from the cabinet?",
+        "phonetic": "/kʊd ju ɡræb ðə ˈkʌləndər frʌm ðə ˈkæbɪnət/",
+        "zh": "能把沥水篮从柜子里拿一下吗？"
+      },
+      {
+        "en": "Make sure the oil is hot before you add the garlic.",
+        "phonetic": "/meɪk ʃʊr ði ɔɪl ɪz hɑːt bɪˈfɔr ju æd ðə ˈɡɑːrlɪk/",
+        "zh": "下蒜之前确认油温够热。"
+      },
+      {
+        "en": "Let's portion out the rice into four containers.",
+        "phonetic": "/lɛts ˈpɔːrʃn aʊt ðə raɪs ˈɪntu fɔːr kənˈteɪnərz/",
+        "zh": "把米饭分装成四盒吧。"
+      },
+      {
+        "en": "These tomatoes are perfectly ripe.",
+        "phonetic": "/ðiːz təˈmeɪtoʊz ɑːr ˈpɜːrfɪktli raɪp/",
+        "zh": "这些番茄熟得正好。"
+      },
+      {
+        "en": "I always buy seasonal produce — it's cheaper and fresher.",
+        "phonetic": "/aɪ ˈɔːlweɪz baɪ ˈsiːzənəl ˈprɑːduːs/",
+        "zh": "我总买应季蔬果——又便宜又新鲜。"
+      }
     ],
     "core_phrase": {
       "en": "Fresh ingredients need less seasoning.",
@@ -155,43 +575,183 @@
     "level": "中高级",
     "topic": "饮食搭配 & 减脂策略",
     "words": [
-      { "en": "deficit", "phonetic": "/ˈdefɪsɪt/", "zh": "热量缺口（赤字）" },
-      { "en": "surplus", "phonetic": "/ˈsɜːrpləs/", "zh": "热量盈余" },
-      { "en": "intake", "phonetic": "/ˈɪnteɪk/", "zh": "摄入量" },
-      { "en": "expenditure", "phonetic": "/ɪkˈspendɪtʃər/", "zh": "消耗量" },
-      { "en": "refeed", "phonetic": "/riːˈfiːd/", "zh": "补碳日（高碳恢复日）" },
-      { "en": "cutting", "phonetic": "/ˈkʌtɪŋ/", "zh": "减脂期" },
-      { "en": "maintenance", "phonetic": "/ˈmeɪntənəns/", "zh": "维持期" },
-      { "en": "plateau", "phonetic": "/plæˈtoʊ/", "zh": "平台期（停滞不降）" },
-      { "en": "carb cycling", "phonetic": "/kɑːrb ˈsaɪklɪŋ/", "zh": "碳水循环法" },
-      { "en": "intermittent fasting", "phonetic": "/ˌɪntərˈmɪtənt ˈfæstɪŋ/", "zh": "间歇性断食" },
-      { "en": "glycemic index", "phonetic": "/ɡlaɪˈsiːmɪk ˈɪndɛks/", "zh": "升糖指数（GI 值）" },
-      { "en": "blood sugar", "phonetic": "/blʌd ˈʃʊɡər/", "zh": "血糖" },
-      { "en": "insulin", "phonetic": "/ˈɪnsəlɪn/", "zh": "胰岛素" },
-      { "en": "cholesterol", "phonetic": "/kəˈlɛstərɔːl/", "zh": "胆固醇" },
-      { "en": "sodium", "phonetic": "/ˈsoʊdiəm/", "zh": "钠（盐分）" },
-      { "en": "potassium", "phonetic": "/pəˈtæsiəm/", "zh": "钾" },
-      { "en": "saturated fat", "phonetic": "/ˈsætʃəreɪtɪd fæt/", "zh": "饱和脂肪" },
-      { "en": "trans fat", "phonetic": "/træns fæt/", "zh": "反式脂肪" },
-      { "en": "electrolyte", "phonetic": "/ɪˈlɛktrəlaɪt/", "zh": "电解质" },
-      { "en": "probiotic", "phonetic": "/ˌproʊbaɪˈɒtɪk/", "zh": "益生菌" },
-      { "en": "craving", "phonetic": "/ˈkreɪvɪŋ/", "zh": "馋念（强烈食欲）" },
-      { "en": "binge", "phonetic": "/bɪndʒ/", "zh": "暴食" },
-      { "en": "cheat meal", "phonetic": "/tʃiːt miːl/", "zh": "放纵餐" },
-      { "en": "mindful eating", "phonetic": "/ˈmaɪndfəl ˈiːtɪŋ/", "zh": "正念饮食" },
-      { "en": "empty calories", "phonetic": "/ˈɛmpti ˈkæləriz/", "zh": "空热量（无营养高热量）" },
-      { "en": "whole food", "phonetic": "/hoʊl fuːd/", "zh": "全食物（未加工）" },
-      { "en": "ultra-processed", "phonetic": "/ˌʌltrəˈprɑːsest/", "zh": "超加工的" },
-      { "en": "refined sugar", "phonetic": "/rɪˈfaɪnd ˈʃʊɡər/", "zh": "精制糖" },
-      { "en": "serving size", "phonetic": "/ˈsɜːrvɪŋ saɪz/", "zh": "食用份量（标签上）" },
-      { "en": "gut health", "phonetic": "/ɡʌt hɛlθ/", "zh": "肠道健康" }
+      {
+        "en": "deficit",
+        "phonetic": "/ˈdefɪsɪt/",
+        "zh": "热量缺口（赤字）"
+      },
+      {
+        "en": "surplus",
+        "phonetic": "/ˈsɜːrpləs/",
+        "zh": "热量盈余"
+      },
+      {
+        "en": "intake",
+        "phonetic": "/ˈɪnteɪk/",
+        "zh": "摄入量"
+      },
+      {
+        "en": "expenditure",
+        "phonetic": "/ɪkˈspendɪtʃər/",
+        "zh": "消耗量"
+      },
+      {
+        "en": "refeed",
+        "phonetic": "/riːˈfiːd/",
+        "zh": "补碳日（高碳恢复日）"
+      },
+      {
+        "en": "cutting",
+        "phonetic": "/ˈkʌtɪŋ/",
+        "zh": "减脂期"
+      },
+      {
+        "en": "maintenance",
+        "phonetic": "/ˈmeɪntənəns/",
+        "zh": "维持期"
+      },
+      {
+        "en": "plateau",
+        "phonetic": "/plæˈtoʊ/",
+        "zh": "平台期（停滞不降）"
+      },
+      {
+        "en": "carb cycling",
+        "phonetic": "/kɑːrb ˈsaɪklɪŋ/",
+        "zh": "碳水循环法"
+      },
+      {
+        "en": "intermittent fasting",
+        "phonetic": "/ˌɪntərˈmɪtənt ˈfæstɪŋ/",
+        "zh": "间歇性断食"
+      },
+      {
+        "en": "glycemic index",
+        "phonetic": "/ɡlaɪˈsiːmɪk ˈɪndɛks/",
+        "zh": "升糖指数（GI 值）"
+      },
+      {
+        "en": "blood sugar",
+        "phonetic": "/blʌd ˈʃʊɡər/",
+        "zh": "血糖"
+      },
+      {
+        "en": "insulin",
+        "phonetic": "/ˈɪnsəlɪn/",
+        "zh": "胰岛素"
+      },
+      {
+        "en": "cholesterol",
+        "phonetic": "/kəˈlɛstərɔːl/",
+        "zh": "胆固醇"
+      },
+      {
+        "en": "sodium",
+        "phonetic": "/ˈsoʊdiəm/",
+        "zh": "钠（盐分）"
+      },
+      {
+        "en": "potassium",
+        "phonetic": "/pəˈtæsiəm/",
+        "zh": "钾"
+      },
+      {
+        "en": "saturated fat",
+        "phonetic": "/ˈsætʃəreɪtɪd fæt/",
+        "zh": "饱和脂肪"
+      },
+      {
+        "en": "trans fat",
+        "phonetic": "/træns fæt/",
+        "zh": "反式脂肪"
+      },
+      {
+        "en": "electrolyte",
+        "phonetic": "/ɪˈlɛktrəlaɪt/",
+        "zh": "电解质"
+      },
+      {
+        "en": "probiotic",
+        "phonetic": "/ˌproʊbaɪˈɒtɪk/",
+        "zh": "益生菌"
+      },
+      {
+        "en": "craving",
+        "phonetic": "/ˈkreɪvɪŋ/",
+        "zh": "馋念（强烈食欲）"
+      },
+      {
+        "en": "binge",
+        "phonetic": "/bɪndʒ/",
+        "zh": "暴食"
+      },
+      {
+        "en": "cheat meal",
+        "phonetic": "/tʃiːt miːl/",
+        "zh": "放纵餐"
+      },
+      {
+        "en": "mindful eating",
+        "phonetic": "/ˈmaɪndfəl ˈiːtɪŋ/",
+        "zh": "正念饮食"
+      },
+      {
+        "en": "empty calories",
+        "phonetic": "/ˈɛmpti ˈkæləriz/",
+        "zh": "空热量（无营养高热量）"
+      },
+      {
+        "en": "whole food",
+        "phonetic": "/hoʊl fuːd/",
+        "zh": "全食物（未加工）"
+      },
+      {
+        "en": "ultra-processed",
+        "phonetic": "/ˌʌltrəˈprɑːsest/",
+        "zh": "超加工的"
+      },
+      {
+        "en": "refined sugar",
+        "phonetic": "/rɪˈfaɪnd ˈʃʊɡər/",
+        "zh": "精制糖"
+      },
+      {
+        "en": "serving size",
+        "phonetic": "/ˈsɜːrvɪŋ saɪz/",
+        "zh": "食用份量（标签上）"
+      },
+      {
+        "en": "gut health",
+        "phonetic": "/ɡʌt hɛlθ/",
+        "zh": "肠道健康"
+      }
     ],
     "phrases": [
-      { "en": "I'm in a calorie deficit this week.", "phonetic": "/aɪm ɪn ə ˈkæləri ˈdefɪsɪt ðɪs wiːk/", "zh": "我这周在制造热量缺口。" },
-      { "en": "Let's keep the macros balanced — high protein, low fat.", "phonetic": "/lɛts kiːp ðə ˈmækroʊz ˈbælənst — haɪ ˈproʊtiːn, loʊ fæt/", "zh": "宏量保持均衡——高蛋白、低脂。" },
-      { "en": "Watch out for hidden sugars in sauces.", "phonetic": "/wɑːtʃ aʊt fɔːr ˈhɪdən ˈʃʊɡərz ɪn ˈsɔːsɪz/", "zh": "小心酱料里的隐形糖。" },
-      { "en": "Read the label before you toss it in the cart.", "phonetic": "/riːd ðə ˈleɪbəl bɪˈfɔːr ju tɔːs ɪt ɪn ðə kɑːrt/", "zh": "扔进购物车前先看配料表。" },
-      { "en": "Eating clean is 80 percent of the work.", "phonetic": "/ˈiːtɪŋ kliːn ɪz eɪti pərˈsɛnt ʌv ðə wɜːrk/", "zh": "吃得干净就完成了八成功夫。" }
+      {
+        "en": "I'm in a calorie deficit this week.",
+        "phonetic": "/aɪm ɪn ə ˈkæləri ˈdefɪsɪt ðɪs wiːk/",
+        "zh": "我这周在制造热量缺口。"
+      },
+      {
+        "en": "Let's keep the macros balanced — high protein, low fat.",
+        "phonetic": "/lɛts kiːp ðə ˈmækroʊz ˈbælənst — haɪ ˈproʊtiːn, loʊ fæt/",
+        "zh": "宏量保持均衡——高蛋白、低脂。"
+      },
+      {
+        "en": "Watch out for hidden sugars in sauces.",
+        "phonetic": "/wɑːtʃ aʊt fɔːr ˈhɪdən ˈʃʊɡərz ɪn ˈsɔːsɪz/",
+        "zh": "小心酱料里的隐形糖。"
+      },
+      {
+        "en": "Read the label before you toss it in the cart.",
+        "phonetic": "/riːd ðə ˈleɪbəl bɪˈfɔːr ju tɔːs ɪt ɪn ðə kɑːrt/",
+        "zh": "扔进购物车前先看配料表。"
+      },
+      {
+        "en": "Eating clean is 80 percent of the work.",
+        "phonetic": "/ˈiːtɪŋ kliːn ɪz eɪti pərˈsɛnt ʌv ðə wɜːrk/",
+        "zh": "吃得干净就完成了八成功夫。"
+      }
     ],
     "core_phrase": {
       "en": "You can't out-train a bad diet.",
@@ -205,43 +765,183 @@
     "level": "高级",
     "topic": "烹饪科学 & 风味化学",
     "words": [
-      { "en": "Maillard reaction", "phonetic": "/ˈmaɪjɑːrd riˈækʃən/", "zh": "美拉德反应（褐变生香）" },
-      { "en": "denature", "phonetic": "/dɪˈneɪtʃər/", "zh": "蛋白质变性（受热变形）" },
-      { "en": "coagulate", "phonetic": "/koʊˈæɡjəleɪt/", "zh": "凝固（蛋白质凝结）" },
-      { "en": "gelatinize", "phonetic": "/dʒəˈlætɪnaɪz/", "zh": "淀粉糊化（吸水膨胀）" },
-      { "en": "crystallize", "phonetic": "/ˈkrɪstəlaɪz/", "zh": "结晶（糖/油脂析出）" },
-      { "en": "oxidize", "phonetic": "/ˈɑːksɪdaɪz/", "zh": "氧化（油脂酸败）" },
-      { "en": "ferment", "phonetic": "/fərˈment/", "zh": "发酵" },
-      { "en": "enzymatic", "phonetic": "/ˌenzaɪˈmætɪk/", "zh": "酶促的（褐变/催熟）" },
-      { "en": "collagen", "phonetic": "/ˈkɑːlədʒən/", "zh": "胶原蛋白（炖肉软化）" },
-      { "en": "gelatin", "phonetic": "/ˈdʒɛlətɪn/", "zh": "明胶（骨汤凝结）" },
-      { "en": "volatile", "phonetic": "/ˈvɑːlətəl/", "zh": "挥发性的（香气分子）" },
-      { "en": "compound", "phonetic": "/ˈkɑːmpaʊnd/", "zh": "化合物（风味物质）" },
-      { "en": "palatability", "phonetic": "/ˌpælətəˈbɪləti/", "zh": "适口性" },
-      { "en": "astringency", "phonetic": "/əˈstrɪndʒənsi/", "zh": "涩感（单宁收敛）" },
-      { "en": "pungency", "phonetic": "/ˈpʌndʒənsi/", "zh": "辛辣感" },
-      { "en": "flavor profile", "phonetic": "/ˈfleɪvər ˈproʊfaɪl/", "zh": "风味轮廓" },
-      { "en": "mouthfeel", "phonetic": "/ˈmaʊθfiːl/", "zh": "口感（触觉体验）" },
-      { "en": "aftertaste", "phonetic": "/ˈæftərteɪst/", "zh": "余味；回甘" },
-      { "en": "flavor pairing", "phonetic": "/ˈfleɪvər ˈperɪŋ/", "zh": "风味搭配" },
-      { "en": "extraction", "phonetic": "/ɪkˈstrækʃən/", "zh": "萃取（风味提取）" },
-      { "en": "bioavailability", "phonetic": "/ˌbaɪoʊəˌveɪləˈbɪləti/", "zh": "生物利用度" },
-      { "en": "amino acid", "phonetic": "/əˈmiːnoʊ ˈæsɪd/", "zh": "氨基酸" },
-      { "en": "essential fatty acid", "phonetic": "/ɪˈsɛnʃəl ˈfæti ˈæsɪd/", "zh": "必需脂肪酸" },
-      { "en": "micronutrient", "phonetic": "/ˌmaɪkroʊˈnuːtriənt/", "zh": "微量营养素" },
-      { "en": "thermogenesis", "phonetic": "/ˌθɜːrmoʊˈdʒɛnəsɪs/", "zh": "产热效应（食物热效应）" },
-      { "en": "glycogen", "phonetic": "/ˈɡlaɪkədʒən/", "zh": "糖原（肌糖/肝糖）" },
-      { "en": "ketosis", "phonetic": "/kɪˈtoʊsɪs/", "zh": "生酮状态" },
-      { "en": "cortisol", "phonetic": "/ˈkɔːrtɪsɔːl/", "zh": "皮质醇（压力激素）" },
-      { "en": "leptin", "phonetic": "/ˈlɛptɪn/", "zh": "瘦素（饱腹信号）" },
-      { "en": "ghrelin", "phonetic": "/ˈɡrɛlɪn/", "zh": "饥饿素（食欲信号）" }
+      {
+        "en": "Maillard reaction",
+        "phonetic": "/ˈmaɪjɑːrd riˈækʃən/",
+        "zh": "美拉德反应（褐变生香）"
+      },
+      {
+        "en": "denature",
+        "phonetic": "/dɪˈneɪtʃər/",
+        "zh": "蛋白质变性（受热变形）"
+      },
+      {
+        "en": "coagulate",
+        "phonetic": "/koʊˈæɡjəleɪt/",
+        "zh": "凝固（蛋白质凝结）"
+      },
+      {
+        "en": "gelatinize",
+        "phonetic": "/dʒəˈlætɪnaɪz/",
+        "zh": "淀粉糊化（吸水膨胀）"
+      },
+      {
+        "en": "crystallize",
+        "phonetic": "/ˈkrɪstəlaɪz/",
+        "zh": "结晶（糖/油脂析出）"
+      },
+      {
+        "en": "oxidize",
+        "phonetic": "/ˈɑːksɪdaɪz/",
+        "zh": "氧化（油脂酸败）"
+      },
+      {
+        "en": "ferment",
+        "phonetic": "/fərˈment/",
+        "zh": "发酵"
+      },
+      {
+        "en": "enzymatic",
+        "phonetic": "/ˌenzaɪˈmætɪk/",
+        "zh": "酶促的（褐变/催熟）"
+      },
+      {
+        "en": "collagen",
+        "phonetic": "/ˈkɑːlədʒən/",
+        "zh": "胶原蛋白（炖肉软化）"
+      },
+      {
+        "en": "gelatin",
+        "phonetic": "/ˈdʒɛlətɪn/",
+        "zh": "明胶（骨汤凝结）"
+      },
+      {
+        "en": "volatile",
+        "phonetic": "/ˈvɑːlətəl/",
+        "zh": "挥发性的（香气分子）"
+      },
+      {
+        "en": "compound",
+        "phonetic": "/ˈkɑːmpaʊnd/",
+        "zh": "化合物（风味物质）"
+      },
+      {
+        "en": "palatability",
+        "phonetic": "/ˌpælətəˈbɪləti/",
+        "zh": "适口性"
+      },
+      {
+        "en": "astringency",
+        "phonetic": "/əˈstrɪndʒənsi/",
+        "zh": "涩感（单宁收敛）"
+      },
+      {
+        "en": "pungency",
+        "phonetic": "/ˈpʌndʒənsi/",
+        "zh": "辛辣感"
+      },
+      {
+        "en": "flavor profile",
+        "phonetic": "/ˈfleɪvər ˈproʊfaɪl/",
+        "zh": "风味轮廓"
+      },
+      {
+        "en": "mouthfeel",
+        "phonetic": "/ˈmaʊθfiːl/",
+        "zh": "口感（触觉体验）"
+      },
+      {
+        "en": "aftertaste",
+        "phonetic": "/ˈæftərteɪst/",
+        "zh": "余味；回甘"
+      },
+      {
+        "en": "flavor pairing",
+        "phonetic": "/ˈfleɪvər ˈperɪŋ/",
+        "zh": "风味搭配"
+      },
+      {
+        "en": "extraction",
+        "phonetic": "/ɪkˈstrækʃən/",
+        "zh": "萃取（风味提取）"
+      },
+      {
+        "en": "bioavailability",
+        "phonetic": "/ˌbaɪoʊəˌveɪləˈbɪləti/",
+        "zh": "生物利用度"
+      },
+      {
+        "en": "amino acid",
+        "phonetic": "/əˈmiːnoʊ ˈæsɪd/",
+        "zh": "氨基酸"
+      },
+      {
+        "en": "essential fatty acid",
+        "phonetic": "/ɪˈsɛnʃəl ˈfæti ˈæsɪd/",
+        "zh": "必需脂肪酸"
+      },
+      {
+        "en": "micronutrient",
+        "phonetic": "/ˌmaɪkroʊˈnuːtriənt/",
+        "zh": "微量营养素"
+      },
+      {
+        "en": "thermogenesis",
+        "phonetic": "/ˌθɜːrmoʊˈdʒɛnəsɪs/",
+        "zh": "产热效应（食物热效应）"
+      },
+      {
+        "en": "glycogen",
+        "phonetic": "/ˈɡlaɪkədʒən/",
+        "zh": "糖原（肌糖/肝糖）"
+      },
+      {
+        "en": "ketosis",
+        "phonetic": "/kɪˈtoʊsɪs/",
+        "zh": "生酮状态"
+      },
+      {
+        "en": "cortisol",
+        "phonetic": "/ˈkɔːrtɪsɔːl/",
+        "zh": "皮质醇（压力激素）"
+      },
+      {
+        "en": "leptin",
+        "phonetic": "/ˈlɛptɪn/",
+        "zh": "瘦素（饱腹信号）"
+      },
+      {
+        "en": "ghrelin",
+        "phonetic": "/ˈɡrɛlɪn/",
+        "zh": "饥饿素（食欲信号）"
+      }
     ],
     "phrases": [
-      { "en": "The Maillard reaction kicks in above 150 degrees.", "phonetic": "/ðə ˈmaɪjɑːrd riˈækʃən kɪks ɪn əˈbʌv ˈwʌn ˈhʌndrəd ənd ˈfɪfti ˈdɪɡriːz/", "zh": "美拉德反应在 150 度以上才会发生。" },
-      { "en": "Don't crowd the pan — give the meat room to sear.", "phonetic": "/doʊnt kraʊd ðə pæn — ɡɪv ðə miːt ruːm tə sɪr/", "zh": "锅别挤太满——给肉留出煎封空间。" },
-      { "en": "Let the collagen break down — that's what makes it tender.", "phonetic": "/let ðə ˈkɑːlədʒən breɪk daʊn — ðæts wʌt meɪks ɪt ˈtɛndər/", "zh": "让胶原蛋白分解——这才是嫩的关键。" },
-      { "en": "Heat kills the bitterness, cold dulls the sweetness.", "phonetic": "/hiːt kɪlz ðə ˈbɪtərnəs, koʊld dʌlz ðə ˈswiːtnəs/", "zh": "加热去苦味，冷则减甜味。" },
-      { "en": "Acid brightens everything — a squeeze of lemon at the end.", "phonetic": "/ˈæsɪd ˈbraɪtənz ˈɛvriθɪŋ — ə skwiːz ʌv ˈlɛmən ət ði ɛnd/", "zh": "酸味提鲜——出锅挤点柠檬。" }
+      {
+        "en": "The Maillard reaction kicks in above 150 degrees.",
+        "phonetic": "/ðə ˈmaɪjɑːrd riˈækʃən kɪks ɪn əˈbʌv ˈwʌn ˈhʌndrəd ənd ˈfɪfti ˈdɪɡriːz/",
+        "zh": "美拉德反应在 150 度以上才会发生。"
+      },
+      {
+        "en": "Don't crowd the pan — give the meat room to sear.",
+        "phonetic": "/doʊnt kraʊd ðə pæn — ɡɪv ðə miːt ruːm tə sɪr/",
+        "zh": "锅别挤太满——给肉留出煎封空间。"
+      },
+      {
+        "en": "Let the collagen break down — that's what makes it tender.",
+        "phonetic": "/let ðə ˈkɑːlədʒən breɪk daʊn — ðæts wʌt meɪks ɪt ˈtɛndər/",
+        "zh": "让胶原蛋白分解——这才是嫩的关键。"
+      },
+      {
+        "en": "Heat kills the bitterness, cold dulls the sweetness.",
+        "phonetic": "/hiːt kɪlz ðə ˈbɪtərnəs, koʊld dʌlz ðə ˈswiːtnəs/",
+        "zh": "加热去苦味，冷则减甜味。"
+      },
+      {
+        "en": "Acid brightens everything — a squeeze of lemon at the end.",
+        "phonetic": "/ˈæsɪd ˈbraɪtənz ˈɛvriθɪŋ — ə skwiːz ʌv ˈlɛmən ət ði ɛnd/",
+        "zh": "酸味提鲜——出锅挤点柠檬。"
+      }
     ],
     "core_phrase": {
       "en": "Salt early, acid late, fat always.",
@@ -255,48 +955,378 @@
     "level": "高级",
     "topic": "世界料理 & 异域风味",
     "words": [
-      { "en": "confit", "phonetic": "/kənˈfiː/", "zh": "油封（法式低温油浸）" },
-      { "en": "sous vide", "phonetic": "/suː viːd/", "zh": "真空低温慢煮" },
-      { "en": "tempura", "phonetic": "/ˈtɛmpərə/", "zh": "天妇罗（日式挂糊炸）" },
-      { "en": "ceviche", "phonetic": "/səˈviːtʃeɪ/", "zh": "酸橘汁腌鱼（拉美生食）" },
-      { "en": "tagine", "phonetic": "/təˈʒiːn/", "zh": "塔吉锅炖（北非锥形锅）" },
-      { "en": "risotto", "phonetic": "/rɪˈzɒtoʊ/", "zh": "意式烩饭" },
-      { "en": "paella", "phonetic": "/paɪˈeɪə/", "zh": "西班牙海鲜饭" },
-      { "en": "biryani", "phonetic": "/bɪrˈjɑːni/", "zh": "印度香饭（香料层叠饭）" },
-      { "en": "roux", "phonetic": "/ruː/", "zh": "面糊（法式浓汤底）" },
-      { "en": "gastrique", "phonetic": "/ɡæsˈtriːk/", "zh": "焦糖醋汁（法式调味底）" },
-      { "en": "miso", "phonetic": "/ˈmiːsoʊ/", "zh": "味噌（日式发酵豆酱）" },
-      { "en": "gochujang", "phonetic": "/ˈɡoʊtʃuˌdʒɑːŋ/", "zh": "韩式辣椒酱" },
-      { "en": "harissa", "phonetic": "/həˈrɪsə/", "zh": "哈里萨辣酱（北非）" },
-      { "en": "za'atar", "phonetic": "/ˈzɑːtər/", "zh": "扎塔耳（中东混合香料）" },
-      { "en": "sumac", "phonetic": "/ˈsuːmæk/", "zh": "苏马克粉（中东酸味香料）" },
-      { "en": "tamarind", "phonetic": "/ˈtæmərɪnd/", "zh": "罗望子（酸角）" },
-      { "en": "saffron", "phonetic": "/ˈsæfrən/", "zh": "藏红花" },
-      { "en": "turmeric", "phonetic": "/ˈtɜːrmərɪk/", "zh": "姜黄" },
-      { "en": "lemongrass", "phonetic": "/ˈlɛmənˌɡræs/", "zh": "香茅" },
-      { "en": "fish sauce", "phonetic": "/fɪʃ sɔːs/", "zh": "鱼露" },
-      { "en": "authentic", "phonetic": "/ɔːˈθɛntɪk/", "zh": "正宗的；地道的" },
-      { "en": "fusion", "phonetic": "/ˈfjuːʒən/", "zh": "融合（菜系混搭）" },
-      { "en": "comfort food", "phonetic": "/ˈkʌmfərt fuːd/", "zh": "治愈系食物（家常安慰）" },
-      { "en": "delicacy", "phonetic": "/ˈdɛlɪkəsi/", "zh": "美味佳肴；珍馐" },
-      { "en": "heirloom", "phonetic": "/ˈɛrluːm/", "zh": "传家宝品种（传统蔬果）" },
-      { "en": "artisanal", "phonetic": "/ˌɑːrtɪˈzænl/", "zh": "手工的；匠人级的" },
-      { "en": "terroir", "phonetic": "/tɛrˈwɑːr/", "zh": "风土（产地赋予的特质）" },
-      { "en": "staple", "phonetic": "/ˈsteɪpəl/", "zh": "主食；日常必需" },
-      { "en": "condiment", "phonetic": "/ˈkɑːndɪmənt/", "zh": "调味佐料" },
-      { "en": "palate", "phonetic": "/ˈpælət/", "zh": "味觉；品味" }
+      {
+        "en": "confit",
+        "phonetic": "/kənˈfiː/",
+        "zh": "油封（法式低温油浸）"
+      },
+      {
+        "en": "sous vide",
+        "phonetic": "/suː viːd/",
+        "zh": "真空低温慢煮"
+      },
+      {
+        "en": "tempura",
+        "phonetic": "/ˈtɛmpərə/",
+        "zh": "天妇罗（日式挂糊炸）"
+      },
+      {
+        "en": "ceviche",
+        "phonetic": "/səˈviːtʃeɪ/",
+        "zh": "酸橘汁腌鱼（拉美生食）"
+      },
+      {
+        "en": "tagine",
+        "phonetic": "/təˈʒiːn/",
+        "zh": "塔吉锅炖（北非锥形锅）"
+      },
+      {
+        "en": "risotto",
+        "phonetic": "/rɪˈzɒtoʊ/",
+        "zh": "意式烩饭"
+      },
+      {
+        "en": "paella",
+        "phonetic": "/paɪˈeɪə/",
+        "zh": "西班牙海鲜饭"
+      },
+      {
+        "en": "biryani",
+        "phonetic": "/bɪrˈjɑːni/",
+        "zh": "印度香饭（香料层叠饭）"
+      },
+      {
+        "en": "roux",
+        "phonetic": "/ruː/",
+        "zh": "面糊（法式浓汤底）"
+      },
+      {
+        "en": "gastrique",
+        "phonetic": "/ɡæsˈtriːk/",
+        "zh": "焦糖醋汁（法式调味底）"
+      },
+      {
+        "en": "miso",
+        "phonetic": "/ˈmiːsoʊ/",
+        "zh": "味噌（日式发酵豆酱）"
+      },
+      {
+        "en": "gochujang",
+        "phonetic": "/ˈɡoʊtʃuˌdʒɑːŋ/",
+        "zh": "韩式辣椒酱"
+      },
+      {
+        "en": "harissa",
+        "phonetic": "/həˈrɪsə/",
+        "zh": "哈里萨辣酱（北非）"
+      },
+      {
+        "en": "za'atar",
+        "phonetic": "/ˈzɑːtər/",
+        "zh": "扎塔耳（中东混合香料）"
+      },
+      {
+        "en": "sumac",
+        "phonetic": "/ˈsuːmæk/",
+        "zh": "苏马克粉（中东酸味香料）"
+      },
+      {
+        "en": "tamarind",
+        "phonetic": "/ˈtæmərɪnd/",
+        "zh": "罗望子（酸角）"
+      },
+      {
+        "en": "saffron",
+        "phonetic": "/ˈsæfrən/",
+        "zh": "藏红花"
+      },
+      {
+        "en": "turmeric",
+        "phonetic": "/ˈtɜːrmərɪk/",
+        "zh": "姜黄"
+      },
+      {
+        "en": "lemongrass",
+        "phonetic": "/ˈlɛmənˌɡræs/",
+        "zh": "香茅"
+      },
+      {
+        "en": "fish sauce",
+        "phonetic": "/fɪʃ sɔːs/",
+        "zh": "鱼露"
+      },
+      {
+        "en": "authentic",
+        "phonetic": "/ɔːˈθɛntɪk/",
+        "zh": "正宗的；地道的"
+      },
+      {
+        "en": "fusion",
+        "phonetic": "/ˈfjuːʒən/",
+        "zh": "融合（菜系混搭）"
+      },
+      {
+        "en": "comfort food",
+        "phonetic": "/ˈkʌmfərt fuːd/",
+        "zh": "治愈系食物（家常安慰）"
+      },
+      {
+        "en": "delicacy",
+        "phonetic": "/ˈdɛlɪkəsi/",
+        "zh": "美味佳肴；珍馐"
+      },
+      {
+        "en": "heirloom",
+        "phonetic": "/ˈɛrluːm/",
+        "zh": "传家宝品种（传统蔬果）"
+      },
+      {
+        "en": "artisanal",
+        "phonetic": "/ˌɑːrtɪˈzænl/",
+        "zh": "手工的；匠人级的"
+      },
+      {
+        "en": "terroir",
+        "phonetic": "/tɛrˈwɑːr/",
+        "zh": "风土（产地赋予的特质）"
+      },
+      {
+        "en": "staple",
+        "phonetic": "/ˈsteɪpəl/",
+        "zh": "主食；日常必需"
+      },
+      {
+        "en": "condiment",
+        "phonetic": "/ˈkɑːndɪmənt/",
+        "zh": "调味佐料"
+      },
+      {
+        "en": "palate",
+        "phonetic": "/ˈpælət/",
+        "zh": "味觉；品味"
+      }
     ],
     "phrases": [
-      { "en": "This dish needs a splash of fish sauce for depth.", "phonetic": "/ðɪs dɪʃ niːdz ə splæʃ ʌv fɪʃ sɔːs fɔːr dɛpθ/", "zh": "这道菜淋点鱼露才有层次感。" },
-      { "en": "Toast the spices to wake up the oils.", "phonetic": "/toʊst ðə ˈspaɪsɪz tə ˈweɪk ʌp ði ɔɪlz/", "zh": "干焙香料激发精油香气。" },
-      { "en": "Let the risotto rest a minute before plating.", "phonetic": "/let ðə rɪˈzɒtoʊ rɛst ə ˈmɪnɪt bɪˈfɔːr ˈpleɪtɪŋ/", "zh": "烩饭装盘前静置一分钟。" },
-      { "en": "A pinch of saffron goes a long way.", "phonetic": "/ə pɪntʃ ʌv ˈsæfrən ɡoʊz ə lɔːŋ weɪ/", "zh": "一小撮藏红花就够提味了。" },
-      { "en": "Toast the sesame seeds until golden and fragrant.", "phonetic": "/toʊst ðə ˈsɛsəmi siːdz ənˈtɪl ˈɡoʊldən ənd ˈfreɪɡrənt/", "zh": "芝麻炒至金黄飘香即可。" }
+      {
+        "en": "This dish needs a splash of fish sauce for depth.",
+        "phonetic": "/ðɪs dɪʃ niːdz ə splæʃ ʌv fɪʃ sɔːs fɔːr dɛpθ/",
+        "zh": "这道菜淋点鱼露才有层次感。"
+      },
+      {
+        "en": "Toast the spices to wake up the oils.",
+        "phonetic": "/toʊst ðə ˈspaɪsɪz tə ˈweɪk ʌp ði ɔɪlz/",
+        "zh": "干焙香料激发精油香气。"
+      },
+      {
+        "en": "Let the risotto rest a minute before plating.",
+        "phonetic": "/let ðə rɪˈzɒtoʊ rɛst ə ˈmɪnɪt bɪˈfɔːr ˈpleɪtɪŋ/",
+        "zh": "烩饭装盘前静置一分钟。"
+      },
+      {
+        "en": "A pinch of saffron goes a long way.",
+        "phonetic": "/ə pɪntʃ ʌv ˈsæfrən ɡoʊz ə lɔːŋ weɪ/",
+        "zh": "一小撮藏红花就够提味了。"
+      },
+      {
+        "en": "Toast the sesame seeds until golden and fragrant.",
+        "phonetic": "/toʊst ðə ˈsɛsəmi siːdz ənˈtɪl ˈɡoʊldən ənd ˈfreɪɡrənt/",
+        "zh": "芝麻炒至金黄飘香即可。"
+      }
     ],
     "core_phrase": {
       "en": "One good spice carries the whole dish.",
       "phonetic": "/wʌn ɡʊd spaɪs ˈkæriz ðə hoʊl dɪʃ/",
       "zh": "一味好香料，撑起一整道菜。"
+    }
+  },
+  {
+    "date": "2026-08-05",
+    "day": 7,
+    "level": "高级",
+    "topic": "实用点餐 & 饮食心理",
+    "words": [
+      {
+        "en": "takeaway",
+        "phonetic": "/ˈteɪkəweɪ/",
+        "zh": "外卖；外带（英式用法）"
+      },
+      {
+        "en": "dine-in",
+        "phonetic": "/ˈdaɪn ɪn/",
+        "zh": "堂食"
+      },
+      {
+        "en": "drive-thru",
+        "phonetic": "/ˈdraɪv θruː/",
+        "zh": "免下车取餐"
+      },
+      {
+        "en": "grab-and-go",
+        "phonetic": "/ɡræb ən ɡoʊ/",
+        "zh": "即买即食"
+      },
+      {
+        "en": "pre-order",
+        "phonetic": "/priː ˈɔːrdər/",
+        "zh": "预订下单"
+      },
+      {
+        "en": "delivery",
+        "phonetic": "/dɪˈlɪvəri/",
+        "zh": "外送"
+      },
+      {
+        "en": "tip",
+        "phonetic": "/tɪp/",
+        "zh": "小费"
+      },
+      {
+        "en": "service charge",
+        "phonetic": "/ˈsɜːrvɪs tʃɑːrdʒ/",
+        "zh": "服务费"
+      },
+      {
+        "en": "order ahead",
+        "phonetic": "/ˈɔːrdər əˈhed/",
+        "zh": "提前下单"
+      },
+      {
+        "en": "split the bill",
+        "phonetic": "/splɪt ðə bɪl/",
+        "zh": "AA 账单"
+      },
+      {
+        "en": "swap",
+        "phonetic": "/swɑːp/",
+        "zh": "替换（白米换糙米）"
+      },
+      {
+        "en": "sub",
+        "phonetic": "/sʌb/",
+        "zh": "替代品（substitute 简写）"
+      },
+      {
+        "en": "on the side",
+        "phonetic": "/ɑːn ðə saɪd/",
+        "zh": "分边摆（酱另放）"
+      },
+      {
+        "en": "dressing on the side",
+        "phonetic": "/ˈdrɛsɪŋ ɑːn ðə saɪd/",
+        "zh": "沙拉酱另放"
+      },
+      {
+        "en": "go easy on",
+        "phonetic": "/ɡoʊ ˈiːzi ɑːn/",
+        "zh": "少放（对厨子说：少油/盐）"
+      },
+      {
+        "en": "no added sugar",
+        "phonetic": "/noʊ ˈædɪd ˈʃʊɡər/",
+        "zh": "不另加糖"
+      },
+      {
+        "en": "unsweetened",
+        "phonetic": "/ʌnˈswiːtənd/",
+        "zh": "无糖的"
+      },
+      {
+        "en": "low-sodium",
+        "phonetic": "/loʊ ˈsoʊdiəm/",
+        "zh": "低钠的"
+      },
+      {
+        "en": "grilled not fried",
+        "phonetic": "/ɡrɪld nɑːt fraɪd/",
+        "zh": "烤而非炸"
+      },
+      {
+        "en": "hold the cheese",
+        "phonetic": "/hoʊld ðə tʃiːz/",
+        "zh": "不放芝士"
+      },
+      {
+        "en": "food noise",
+        "phonetic": "/fuːd nɔɪz/",
+        "zh": "食物噪音（脑中总想着吃）"
+      },
+      {
+        "en": "stress eating",
+        "phonetic": "/strɛs ˈiːtɪŋ/",
+        "zh": "压力性进食"
+      },
+      {
+        "en": "emotional eating",
+        "phonetic": "/ɪˈmoʊʃənl ˈiːtɪŋ/",
+        "zh": "情绪化进食"
+      },
+      {
+        "en": "urge",
+        "phonetic": "/ɜːrdʒ/",
+        "zh": "强烈冲动"
+      },
+      {
+        "en": "fullness",
+        "phonetic": "/ˈfʊlnəs/",
+        "zh": "饱感"
+      },
+      {
+        "en": "intuitive eating",
+        "phonetic": "/ɪnˈtuːɪtɪv ˈiːtɪŋ/",
+        "zh": "直觉饮食法"
+      },
+      {
+        "en": "habit loop",
+        "phonetic": "/ˈhæbɪt luːp/",
+        "zh": "习惯回路（提示-行为-奖赏）"
+      },
+      {
+        "en": "willpower",
+        "phonetic": "/ˈwɪlˌpaʊər/",
+        "zh": "自制力；意志力"
+      },
+      {
+        "en": "trigger",
+        "phonetic": "/ˈtrɪɡər/",
+        "zh": "触发因素"
+      },
+      {
+        "en": "consistency",
+        "phonetic": "/kənˈsɪstənsi/",
+        "zh": "一贯性；持续性"
+      }
+    ],
+    "phrases": [
+      {
+        "en": "I'll have the grilled chicken, please — and go easy on the oil.",
+        "phonetic": "/aɪl hæv ðə ɡrɪld ˈtʃɪkən, pliːz — ænd ɡoʊ ˈiːzi ɑːn ði ɔɪl/",
+        "zh": "给我来份烤鸡——油少放一些。"
+      },
+      {
+        "en": "Can you put the dressing on the side? Thanks.",
+        "phonetic": "/kæn ju pʊt ðə ˈdrɛsɪŋ ɑːn ðə saɪd? θæŋks/",
+        "zh": "沙拉酱能分开放吗？谢谢。"
+      },
+      {
+        "en": "I won't beat myself up over one meal — I just get back on track.",
+        "phonetic": "/aɪ woʊnt biːt maɪˈsɛlf ʌp ˈoʊvər wʌn miːl — aɪ dʒʌst ɡɛt bæk ɑːn træk/",
+        "zh": "一顿没吃好，我不会自责——下次回到正轨就行。"
+      },
+      {
+        "en": "We're splitting the bill, right? I'll WeChat pay my half later.",
+        "phonetic": "/wɪr ˈsplɪtɪŋ ðə bɪl, raɪt? aɪl wiːtʃæt peɪ maɪ hæf ˈleɪtər/",
+        "zh": "咱们 AA 吧？我回头微信转你那一份。"
+      },
+      {
+        "en": "I'm not hungry — I'm just bored. Let me take a walk instead.",
+        "phonetic": "/aɪm nɑːt ˈhʌŋɡri — aɪm dʒʌst bɔːrd. lɛt mi teɪk ə wɔːk ɪnˈstɛd/",
+        "zh": "我不是饿——只是有点无聊。要不我去散散步。"
+      }
+    ],
+    "core_phrase": {
+      "en": "Progress, not perfection.",
+      "phonetic": "/ˈprɑːɡrɛs, nɑːt pərˈfɛkʃən/",
+      "zh": "求进步，别求完美。"
     }
   }
 ]
