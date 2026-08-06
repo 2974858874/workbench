@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#7ba05b" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<title>🍅 今日行程卡 · 2026-08-07 周五 · 立秋</title>
+<style>
+:root {
+  --bg: #eef0e0;
+  --bg-2: #e3e8d0;
+  --card: #ffffff;
+  --ink: #2b3a2c;
+  --ink-soft: #5e6b59;
+  --ink-mute: #8a9585;
+  --green: #7ba05b;
+  --green-deep: #5b8042;
+  --green-soft: #c8d8b0;
+  --line: #d8dec6;
+  --accent: #c4623a;
+  --warn: #d68a3c;
+  --done: #b85042;
+  --autumn: #d68a3c;
+  --autumn-soft: #f5d8a8;
+  --shadow: 0 1px 3px rgba(60, 70, 30, 0.06), 0 8px 24px rgba(60, 70, 30, 0.06);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.55;
+  min-height: 100vh;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+.container { max-width: 860px; margin: 0 auto; padding: 20px; }
+
+/* ===== Solar Term Banner ===== */
+.term-banner {
+  background: linear-gradient(135deg, #d68a3c 0%, #c4623a 100%);
+  color: #fff;
+  border-radius: 18px;
+  padding: 16px 20px;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+.term-left { display: flex; align-items: center; gap: 14px; }
+.term-icon { font-size: 36px; line-height: 1; }
+.term-name { font-size: 22px; font-weight: 800; letter-spacing: 2px; }
+.term-en { font-size: 11px; opacity: 0.9; letter-spacing: 1px; margin-top: 2px; }
+.term-meta { font-size: 12px; opacity: 0.95; line-height: 1.6; }
+.term-tip { font-size: 11px; opacity: 0.95; margin-top: 4px; }
+
+/* ===== Header ===== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  padding: 14px 18px;
+  background: linear-gradient(135deg, #7ba05b 0%, #5b8042 100%);
+  border-radius: 18px;
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+.header-brand { display: flex; align-items: center; gap: 10px; }
+.header-emoji { font-size: 28px; }
+.header-title { font-weight: 700; font-size: 16px; }
+.header-sub { font-size: 11px; opacity: 0.85; }
+.header-date { text-align: right; }
+.header-date .day { font-size: 32px; font-weight: 800; line-height: 1; }
+.header-date .month { font-size: 12px; opacity: 0.85; }
+
+/* ===== Card ===== */
+.card {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 18px 20px;
+  box-shadow: var(--shadow);
+  margin-bottom: 18px;
+}
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 10px;
+}
+.card-head h2 { font-size: 15px; margin: 0; font-weight: 600; }
+.head-date { font-size: 12px; color: var(--ink-mute); }
+.head-tip { font-size: 11px; color: var(--ink-mute); }
+
+/* ===== Schedule ===== */
+.schedule-list { list-style: none; margin: 0; padding: 0; }
+.schedule-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 8px;
+  border-bottom: 1px dashed var(--line);
+  transition: all 0.2s;
+}
+.schedule-item:last-child { border-bottom: 0; }
+.schedule-item.done { opacity: 0.45; }
+.schedule-item.done .schedule-title { text-decoration: line-through; }
+.schedule-check {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--green);
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  background: #fff;
+}
+.schedule-check.checked {
+  background: var(--green);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+.schedule-time {
+  font-family: "SF Mono", monospace;
+  font-size: 12.5px;
+  color: var(--green-deep);
+  font-weight: 700;
+  min-width: 48px;
+}
+.schedule-tag { font-size: 16px; min-width: 22px; }
+.schedule-title { flex: 1; font-size: 13.5px; }
+.schedule-duration {
+  font-size: 11px;
+  color: var(--ink-mute);
+  background: var(--bg-2);
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+/* ===== Meal ===== */
+.meal-day-summary {
+  background: linear-gradient(135deg, #7ba05b 0%, #5b8042 100%);
+  color: #fff;
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.meal-day-total { display: flex; align-items: baseline; gap: 4px; }
+.meal-day-total .cal-big { font-size: 32px; font-weight: 800; }
+.meal-day-total .cal-unit { font-size: 13px; opacity: 0.85; }
+.meal-day-detail { font-size: 12px; opacity: 0.9; text-align: right; }
+.meal-card {
+  background: linear-gradient(135deg, #fafbf6 0%, #eef2e0 100%);
+  border-radius: 12px;
+  padding: 14px;
+  border: 1px solid var(--green-soft);
+  margin-bottom: 14px;
+}
+.meal-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+.meal-card h4 { margin: 0; color: var(--green-deep); font-size: 14px; }
+.meal-cal { font-size: 18px; font-weight: 800; color: var(--accent); }
+.meal-mac {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 11px;
+  color: var(--ink-mute);
+  padding-bottom: 6px;
+  border-bottom: 1px dashed var(--line);
+}
+.meal-mac .meal-time { margin-left: auto; color: var(--green-deep); font-weight: 600; }
+.meal-card ul { margin: 6px 0; padding-left: 18px; }
+.meal-card li { font-size: 12.5px; color: var(--ink-soft); }
+.meal-tip { font-size: 11px; color: var(--ink-mute); margin-top: 4px; }
+
+/* ===== Topic ===== */
+.topic-card {
+  background: #fafbf6;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+.topic-tag { color: var(--accent); font-weight: 700; font-size: 13px; }
+.topic-meta { font-size: 11px; color: var(--ink-mute); margin: 4px 0; }
+.topic-angle { font-size: 12.5px; color: var(--ink-soft); }
+
+/* ===== English ===== */
+.english-word {
+  display: inline-block;
+  background: #fafbf6;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 4px 8px;
+  margin: 2px;
+  font-size: 12px;
+}
+.english-word b { color: var(--green-deep); }
+.english-word i { color: var(--ink-mute); font-style: normal; font-size: 11px; }
+.core-sentence {
+  background: linear-gradient(135deg, #c8d8b0 0%, #b4c898 100%);
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+  margin-top: 10px;
+}
+.core-sentence .en { font-size: 18px; font-weight: 700; color: var(--ink); }
+.core-sentence .cn { font-size: 12px; color: var(--ink-soft); margin-top: 4px; }
+
+/* ===== Savings ===== */
+.savings-display {
+  background: linear-gradient(135deg, #7ba05b 0%, #5b8042 100%);
+  color: #fff;
+  border-radius: 14px;
+  padding: 18px;
+  text-align: center;
+  margin-bottom: 14px;
+}
+.savings-display .label { font-size: 12px; opacity: 0.85; }
+.savings-display .amount { font-size: 32px; font-weight: 800; margin: 4px 0; }
+.savings-display .goal { font-size: 12px; opacity: 0.85; }
+.progress-bar {
+  height: 8px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+.progress-bar > div { height: 100%; background: #fff; border-radius: 4px; }
+
+/* ===== Pocket Card (Printable) ===== */
+.pocket-card {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+  border: 2px solid var(--green);
+  margin-bottom: 18px;
+}
+.pocket-title {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed var(--line);
+}
+.pocket-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  font-size: 12px;
+}
+.pocket-col h4 { margin: 0 0 6px; font-size: 12px; color: var(--green-deep); }
+.pocket-item { display: flex; align-items: baseline; gap: 6px; margin-bottom: 4px; }
+.pocket-time { font-weight: 700; color: var(--green-deep); min-width: 36px; }
+.pocket-text { color: var(--ink-soft); }
+.pocket-meal { background: var(--bg-2); border-radius: 6px; padding: 4px 8px; margin-bottom: 4px; }
+.pocket-meal-title { font-weight: 600; color: var(--ink); }
+.pocket-meal-cal { font-size: 11px; color: var(--accent); }
+.pocket-footer {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--line);
+  text-align: center;
+  font-size: 11px;
+  color: var(--ink-mute);
+}
+
+/* ===== Footer ===== */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--ink-mute);
+  padding: 10px 6px 0;
+  border-top: 1px solid var(--line);
+  margin-top: 8px;
+}
+
+/* ===== Print ===== */
+@media print {
+  body { background: #fff; }
+  .card, .pocket-card { box-shadow: none; break-inside: avoid; }
+  .no-print { display: none !important; }
+  .container { padding: 0; max-width: 100%; }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 640px) {
+  .container { padding: 12px; }
+  .term-banner { padding: 12px 14px; flex-direction: column; align-items: flex-start; gap: 8px; }
+  .term-icon { font-size: 28px; }
+  .term-name { font-size: 18px; }
+  .header { padding: 12px 14px; }
+  .header-emoji { font-size: 22px; }
+  .header-title { font-size: 14px; }
+  .header-date .day { font-size: 24px; }
+  .card { border-radius: 14px; padding: 14px; }
+  .card-head h2 { font-size: 14px; }
+  .schedule-item { padding: 11px 2px; gap: 8px; }
+  .schedule-check { width: 24px; height: 24px; }
+  .schedule-time { font-size: 11px; min-width: 38px; }
+  .schedule-tag { font-size: 15px; min-width: 20px; }
+  .schedule-title { font-size: 12.5px; line-height: 1.4; }
+  .schedule-duration { font-size: 10px; padding: 2px 5px; }
+  .meal-day-summary { flex-direction: column; text-align: center; gap: 2px; padding: 12px; }
+  .meal-day-total .cal-big { font-size: 28px; }
+  .meal-day-detail { text-align: center; font-size: 11px; line-height: 1.4; }
+  .meal-card { padding: 12px; border-radius: 10px; }
+  .meal-card h4 { font-size: 13px; }
+  .meal-cal { font-size: 15px; }
+  .meal-mac { gap: 6px; font-size: 10px; }
+  .meal-mac .meal-time { margin-left: 0; width: 100%; text-align: right; }
+  .savings-display { padding: 14px; border-radius: 12px; }
+  .savings-display .amount { font-size: 28px; }
+  .pocket-grid { grid-template-columns: 1fr; }
+  .footer { flex-direction: column; gap: 2px; text-align: center; padding: 8px 4px 0; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- 立秋节气条幅 -->
+<div class="term-banner">
+  <div class="term-left">
+    <div class="term-icon">🍂</div>
+    <div>
+      <div class="term-name">立 秋</div>
+      <div class="term-en">START OF AUTUMN · 二十四节气·第13</div>
+    </div>
+  </div>
+  <div class="term-meta">
+    <div>2026-08-07 · 周五 · 末伏第3天</div>
+    <div class="term-tip">🌾 今日宜：润燥清补 / 养肺健脾 / 少辛增酸</div>
+    <div class="term-tip">⚠️ 忌：贴秋膘大肉 / 辛辣燥热 / 熬夜秋乏</div>
+  </div>
+</div>
+
+<!-- Header -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-emoji">🍅</div>
+    <div>
+      <div class="header-title">今日固定行程</div>
+      <div class="header-sub">Daily Schedule · 2026-08-07 · 立秋</div>
+    </div>
+  </div>
+  <div class="header-date">
+    <div class="day">07</div>
+    <div class="month">2026年8月 · 周五</div>
+  </div>
+</div>
+
+<!-- 今日行程 -->
+<div class="card">
+  <div class="card-head">
+    <h2>📋 今日行程</h2>
+    <div class="head-tip">点击复选框打勾</div>
+  </div>
+  <ul class="schedule-list" id="scheduleList">
+    <li class="schedule-item">
+      <span class="schedule-check" onclick="toggleCheck(this)"></span>
+      <span class="schedule-time">07:00</span>
+      <span class="schedule-tag">🥗</span>
+      <span class="schedule-title">起床 / 喝水 / 拉伸</span>
+      <span class="schedule-duration">10min</span>
+    </li>
+    <li class="schedule-item">
+      <span class="schedule-check" onclick="toggleCheck(this)"></span>
+      <span class="schedule-time">07:30</span>
+      <span class="schedule-tag">🥗</span>
+      <span class="schedule-title">今日三餐减脂餐灵感（早/午/晚，1700 kcal · 立秋润燥版）</span>
+      <span class="schedule-duration">30min</span>
+    </li>
+    <li class="schedule-item">
+      <span class="schedule-check" onclick="toggleCheck(this)"></span>
+      <span class="schedule-time">08:30</span>
+      <span class="schedule-tag">📱</span>
+      <span class="schedule-title">抖音美食热点 + 选题建议（立秋专题）</span>
+      <span class="schedule-duration">10min</span>
+    </li>
+    <li class="schedule-item">
+      <span class="schedule-check" onclick="toggleCheck(this)"></span>
+      <span class="schedule-time">09:00</span>
+      <span class="schedule-tag">📖</span>
+      <span class="schedule-title">英语学习任务（Day 9 · 立秋应季食材）</span>
+      <span class="schedule-duration">20min</span>
+    </li>
+    <li class="schedule-item">
+      <span class="schedule-check" onclick="toggleCheck(this)"></span>
+      <span class="schedule-time">12:00</span>
+      <span class="schedule-tag">🥗</span>
+      <span class="schedule-title">午餐打卡（上传/备注）</span>
+      <span class="schedule-duration">5min</span>
+    </li>
+    <li class="schedule-item">
+      <span class="schedule-check" onclick="toggleCheck(this)"></span>
+      <span class="schedule-time">15:00</span>
+      <span class="schedule-tag">📱</span>
+      <span class="schedule-title">拍摄 / 剪辑今日视频（<b>今日重点：立秋3宝</b>）</span>
+      <span class="schedule-duration">60min</span>
+    </li>
+    <li class="schedule-item">
+      <span class="schedule-check" onclick="toggleCheck(this)"></span>
+      <span class="schedule-time">18:00</span>
+      <span class="schedule-tag">🥗</span>
+      <span class="schedule-title">晚餐打卡 + 帕梅拉+拉伸 30min</span>
+      <span class="schedule-duration">5min</span>
+    </li>
+    <li class="schedule-item">
+      <span class="schedule-check" onclick="toggleCheck(this)"></span>
+      <span class="schedule-time">20:00</span>
+      <span class="schedule-tag">👛</span>
+      <span class="schedule-title">录入今日开支 + 存款更新</span>
+      <span class="schedule-duration">5min</span>
+    </li>
+    <li class="schedule-item">
+      <span class="schedule-check" onclick="toggleCheck(this)"></span>
+      <span class="schedule-time">21:00</span>
+      <span class="schedule-tag">📱</span>
+      <span class="schedule-title">发布今日视频（<b>立秋3宝·卡点首发</b>）</span>
+      <span class="schedule-duration">10min</span>
+    </li>
+  </ul>
+</div>
+
+<!-- 减脂餐 -->
+<div class="card">
+  <div class="card-head">
+    <h2>🥗 今日减脂餐 · 周五帕梅拉日 · 立秋润燥</h2>
+    <div class="head-date">运动：帕梅拉 + 拉伸 30min</div>
+  </div>
+
+  <div class="meal-day-summary">
+    <div class="meal-day-total">
+      <span class="cal-big">1700</span>
+      <span class="cal-unit">kcal / 天</span>
+    </div>
+    <div class="meal-day-detail">全天 1700 kcal · 碳水 178g / 蛋白质 100g / 脂肪 44g<br>211 比例 · 立秋润燥版：山药+莲藕+银耳+南瓜，养肺健脾</div>
+  </div>
+
+  <div class="meal-card">
+    <div class="meal-card-head">
+      <h4>🌅 早餐 · 银耳莲子羹 + 水波蛋 + 全麦小馒头 + 蓝莓</h4>
+      <span class="meal-cal">380 kcal</span>
+    </div>
+    <div class="meal-mac">
+      <span>碳水 56g</span>
+      <span>蛋白质 14g</span>
+      <span>脂肪 8g</span>
+      <span class="meal-time">⏰ 07:30</span>
+    </div>
+    <ul>
+      <li>银耳（干）8g + 莲子 15g + 百合 10g + 冰糖 3g（隔夜电饭煲预约）</li>
+      <li>水波蛋 1 个（温泉蛋模具或小火煮 6 分钟）</li>
+      <li>全麦小馒头 1 个（约 50g）</li>
+      <li>蓝莓 60g（约 15 颗，应季小颗甜）</li>
+    </ul>
+    <div class="meal-tip">💡 银耳前一晚预约煮烂出胶，莲子去芯防苦；蓝莓抗氧化正当时令。</div>
+  </div>
+
+  <div class="meal-card">
+    <div class="meal-card-head">
+      <h4>☀️ 午餐 · 山药青椒炒肉片 + 糙米饭 + 蒸贝贝南瓜 + 紫菜蛋花汤</h4>
+      <span class="meal-cal">620 kcal</span>
+    </div>
+    <div class="meal-mac">
+      <span>碳水 70g</span>
+      <span>蛋白质 34g</span>
+      <span>脂肪 16g</span>
+      <span class="meal-time">⏰ 12:00</span>
+    </div>
+    <ul>
+      <li>铁棍山药 150g（削皮切薄片，黏液护胃）</li>
+      <li>青椒 80g（彩椒配色更出片）</li>
+      <li>猪里脊 100g（腌少许生抽+淀粉）</li>
+      <li>糙米饭（熟重）150g</li>
+      <li>贝贝南瓜 200g（整颗蒸 20 分钟）</li>
+      <li>紫菜 3g + 鸡蛋半个 + 虾皮 5g</li>
+    </ul>
+    <div class="meal-tip">💡 「立秋3宝」第1宝：山药健脾，削皮戴手套防黏液过敏；贝贝南瓜粉糯顶饱。</div>
+  </div>
+
+  <div class="meal-card">
+    <div class="meal-card-head">
+      <h4>🍎 加餐 · 希腊酸奶 + 苹果片 + 核桃 2 颗</h4>
+      <span class="meal-cal">200 kcal</span>
+    </div>
+    <div class="meal-mac">
+      <span>碳水 22g</span>
+      <span>蛋白质 12g</span>
+      <span>脂肪 8g</span>
+      <span class="meal-time">⏰ 15:00</span>
+    </div>
+    <ul>
+      <li>无糖希腊酸奶 120g</li>
+      <li>应季苹果 100g（切薄片防氧化可滴柠檬）</li>
+      <li>原味核桃 2 颗（约 8g，Ω-3 健脑）</li>
+    </ul>
+    <div class="meal-tip">💡 「立秋增酸」原则：苹果应季酸甜，配希腊酸奶补蛋白，核桃养脑抗秋乏。</div>
+  </div>
+
+  <div class="meal-card">
+    <div class="meal-card-head">
+      <h4>🌙 晚餐 · 莲藕排骨汤（去油）+ 蒜蓉西兰花 + 杂粮饭 + 凉拌秋葵</h4>
+      <span class="meal-cal">500 kcal</span>
+    </div>
+    <div class="meal-mac">
+      <span>碳水 50g</span>
+      <span>蛋白质 32g</span>
+      <span>脂肪 12g</span>
+      <span class="meal-time">⏰ 18:00</span>
+    </div>
+    <ul>
+      <li>莲藕 200g（切滚刀块，9 孔粉糯适合煨汤）</li>
+      <li>排骨 100g（焯水后小火炖 60 分钟，撇油只取清汤）</li>
+      <li>西兰花 150g + 蒜末 10g</li>
+      <li>秋葵 80g（焯水 2 分钟切段，淋日式酱油+芥末）</li>
+      <li>杂粮饭（熟重）100g</li>
+    </ul>
+    <div class="meal-tip">💡 「立秋3宝」第2宝：莲藕润肺；排骨只取清汤热量减半，晚餐前喝汤更扛饿。</div>
+  </div>
+</div>
+
+<!-- 抖音热点 -->
+<div class="card">
+  <div class="card-head">
+    <h2>📱 抖音美食热点 · 立秋专题</h2>
+    <div class="head-date">2026-08-07 · 21:00 卡点发布</div>
+  </div>
+
+  <div class="topic-card" style="background:#fdf3e0;border-color:#d68a3c">
+    <div style="font-size:12.5px;color:var(--ink-soft);line-height:1.7">
+      <b>📌 今日趋势摘要：</b>今日立秋流量节点正式引爆！#立秋3宝# 已从「爆发前夜」升级为「全网霸榜」；#钾是十豆的10倍# 借势节气形成「应季养生」二连击；#电子榨菜# 稳定爆款持续吸量。<b>今晚 21:00 是立秋内容的黄金发布窗口</b>，建议把「减脂版立秋3宝」视频卡点首发。
+    </div>
+  </div>
+
+  <div class="topic-card" style="background:#fef9f0;border-color:#f5d8a8">
+    <div class="topic-tag">🍂 #立秋3宝# ⭐今日 TOP1</div>
+    <div class="topic-meta">今日全网霸榜 · 趋势：爆发</div>
+    <div class="topic-angle">📌 山药炒青椒 / 西芹炒百合 / 清炒莲藕 三大国民菜全网刷屏。可拍「减脂版立秋3宝（不到 400 大卡）」：少油快炒 + 标注每道热量 + 「先润燥再贴膘」金句。封面用「3 道菜合照 + 节气日历 + 数字 400」。</div>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-tag">#钾是十豆的10倍#</div>
+    <div class="topic-meta">养生食单刷屏 · 趋势：快速上升</div>
+    <div class="topic-angle">📌 毛豆炒青菜 / 紫菜蛋花汤 / 口蘑丝瓜汤「不放肉也鲜美」三件套，正中空调房乏力、小腿抽筋痛点。适合拍「出汗后补钾餐」vlog。</div>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-tag">#鸡蛋蒜#</div>
+    <div class="topic-meta">12亿+ · 趋势：稳定爆款</div>
+    <div class="topic-angle">📌 河南老味 8 分钟上桌，被网友称「黑暗料理界清流」。可改造为减脂早餐：1 个水煮蛋 + 2 瓣蒜捣碎 + 全麦馍 + 黄瓜片。</div>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-tag">#跟着瘦子吃饭#</div>
+    <div class="topic-meta">10万+网友参与 · 趋势：延续高热</div>
+    <div class="topic-angle">📌 借势立秋拍「我妈/奶奶眼中的立秋餐 vs 我眼中的立秋餐」反差，或「174cm 高个子女生真实立秋一日餐」。</div>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-tag">#电子榨菜#</div>
+    <div class="topic-meta">家常菜赛道新密码 · 趋势：稳定上升</div>
+    <div class="topic-angle">📌 替代过时的#沉浸式做饭#，适合便当/备餐/一人食场景。拍「下班 10 分钟电子榨菜：今天吃 XX」系列，强化陪伴感。</div>
+  </div>
+
+  <div class="topic-card" style="background:#eef2e0">
+    <div style="font-size:12px;line-height:1.7"><b>🎵 音频建议：</b>《晚风吹》轻快流行（夏日清爽减脂餐）/ 轻快国风卡点（立秋 3 宝出锅瞬间）/ 《尕连手》花儿+电音（乡土治愈家常）。</div>
+    <div style="font-size:12px;margin-top:8px"><b>📅 今日拍摄 & 发布计划：</b></div>
+    <ol style="margin:6px 0;padding-left:18px;font-size:12px;color:var(--ink-soft);line-height:1.7">
+      <li><b>15:00 拍摄：</b>减脂版立秋 3 宝（山药青椒 / 西芹百合 / 清炒莲藕，热量对比表打满屏幕）</li>
+      <li><b>21:00 首发：</b>卡点立秋 0 点前发布，蹭节气首波流量池</li>
+      <li><b>明日素材：</b>立秋早餐 + 立秋排骨汤（备下周内容池）</li>
+    </ol>
+  </div>
+</div>
+
+<!-- 英语学习 -->
+<div class="card">
+  <div class="card-head">
+    <h2>📖 英语学习 · Day 9 · 立秋应季食材</h2>
+    <div class="head-date">30 单词 + 5 句口语 + 1 核心句</div>
+  </div>
+
+  <h4 style="font-size:13px;margin:0 0 6px">🍂 节气养生口语（5 句）</h4>
+  <ul style="list-style:none;padding:0;margin:0 0 14px">
+    <li style="padding:10px 0;border-bottom:1px dashed var(--line);display:flex;flex-direction:column;gap:2px">
+      <div><b>Stew the lotus root until it turns tender.</b> · <span style="color:var(--ink-mute)">/stuː ðə ˈloʊtəs roʊd ənˈtɪl ɪt tɜːrnz ˈtɛndər/</span></div>
+      <div style="font-size:12px;color:var(--ink-soft)">把莲藕炖到软糯。</div>
+    </li>
+    <li style="padding:10px 0;border-bottom:1px dashed var(--line);display:flex;flex-direction:column;gap:2px">
+      <div><b>Peel the yam with gloves — the slime can irritate your skin.</b> · <span style="color:var(--ink-mute)">/piːl ðə jæm wɪð ɡlʌvz/</span></div>
+      <div style="font-size:12px;color:var(--ink-soft)">山药戴手套削皮——黏液会刺激皮肤。</div>
+    </li>
+    <li style="padding:10px 0;border-bottom:1px dashed var(--line);display:flex;flex-direction:column;gap:2px">
+      <div><b>Simmer the white fungus for 40 minutes until silky.</b> · <span style="color:var(--ink-mute)">/ˈsɪmər ðə waɪt ˈfʌŋɡəs fɔr ˈfɔːrti ˈmɪnɪts/</span></div>
+      <div style="font-size:12px;color:var(--ink-soft)">银耳小火煮 40 分钟煮到出胶。</div>
+    </li>
+    <li style="padding:10px 0;border-bottom:1px dashed var(--line);display:flex;flex-direction:column;gap:2px">
+      <div><b>Cut the pumpkin into wedges and steam for 15 minutes.</b> · <span style="color:var(--ink-mute)">/kʌt ðə ˈpʌmpkɪn ˈɪntu ˈwɛdʒəz/</span></div>
+      <div style="font-size:12px;color:var(--ink-soft)">南瓜切块蒸 15 分钟。</div>
+    </li>
+    <li style="padding:10px 0;display:flex;flex-direction:column;gap:2px">
+      <div><b>Skim the fat off the surface before serving.</b> · <span style="color:var(--ink-mute)">/skɪm ðə fæt ɔf ðə ˈsɜːrfɪs/</span></div>
+      <div style="font-size:12px;color:var(--ink-soft)">上桌前撇去表面油脂。</div>
+    </li>
+  </ul>
+
+  <h4 style="font-size:13px;margin:14px 0 6px">📚 今日 30 单词</h4>
+  <div>
+    <span class="english-word"><b>lotus root</b> <i>/ˈloʊtəs ruːd/</i> 莲藕</span>
+    <span class="english-word"><b>yam</b> <i>/jæm/</i> 山药</span>
+    <span class="english-word"><b>white fungus</b> <i>/waɪt ˈfʌŋɡəs/</i> 银耳</span>
+    <span class="english-word"><b>lotus seed</b> <i>/ˈloʊtəs siːd/</i> 莲子</span>
+    <span class="english-word"><b>lily bulb</b> <i>/ˈlɪli bʌlb/</i> 百合</span>
+    <span class="english-word"><b>wolfberry</b> <i>/ˈwʊlfˌbɛri/</i> 枸杞</span>
+    <span class="english-word"><b>goji berry</b> <i>/ˈɡoʊdʒi ˈbɛri/</i> 枸杞</span>
+    <span class="english-word"><b>jujube</b> <i>/ˈdʒuːdʒuːb/</i> 红枣</span>
+    <span class="english-word"><b>red date</b> <i>/rɛd deɪt/</i> 红枣</span>
+    <span class="english-word"><b>pear</b> <i>/pɛr/</i> 梨</span>
+    <span class="english-word"><b>Asian pear</b> <i>/ˈeɪʒən pɪr/</i> 鸭梨</span>
+    <span class="english-word"><b>pumpkin</b> <i>/ˈpʌmpkɪn/</i> 南瓜</span>
+    <span class="english-word"><b>kabocha</b> <i>/kəˈboʊtʃə/</i> 贝贝南瓜</span>
+    <span class="english-word"><b>okra</b> <i>/ˈoʊkrə/</i> 秋葵</span>
+    <span class="english-word"><b>broccoli</b> <i>/ˈbrɑːkəli/</i> 西兰花</span>
+    <span class="english-word"><b>bell pepper</b> <i>/bɛl ˈpɛpər/</i> 彩椒</span>
+    <span class="english-word"><b>celery</b> <i>/ˈsɛləri/</i> 西芹</span>
+    <span class="english-word"><b>apple</b> <i>/ˈæpəl/</i> 苹果</span>
+    <span class="english-word"><b>blueberry</b> <i>/ˈbluːˌbɛri/</i> 蓝莓</span>
+    <span class="english-word"><b>walnut</b> <i>/ˈwɔːlnʌt/</i> 核桃</span>
+    <span class="english-word"><b>hydrate</b> <i>/ˈhaɪdreɪt/</i> 补水</span>
+    <span class="english-word"><b>moisturize</b> <i>/ˈmɔɪstʃəraɪz/</i> 润燥</span>
+    <span class="english-word"><b>nourish</b> <i>/ˈnɜːrɪʃ/</i> 滋养</span>
+    <span class="english-word"><b>lung</b> <i>/lʌŋ/</i> 肺</span>
+    <span class="english-word"><b>spleen</b> <i>/spliːn/</i> 脾</span>
+    <span class="english-word"><b>stomach</b> <i>/ˈstʌmək/</i> 胃</span>
+    <span class="english-word"><b>appetite</b> <i>/ˈæpɪtaɪt/</i> 食欲</span>
+    <span class="english-word"><b>detox</b> <i>/ˈdiːtɑːks/</i> 排毒</span>
+    <span class="english-word"><b>light meal</b> <i>/laɪt miːl/</i> 清淡餐</span>
+    <span class="english-word"><b>comfort food</b> <i>/ˈkʌmfərt fuːd/</i> 治愈食物</span>
+  </div>
+
+  <div class="core-sentence">
+    <div style="font-size:11px;color:var(--green-deep);font-weight:600;letter-spacing:1px">今日核心句 · 立秋专属</div>
+    <div class="en">"The first autumn meal should be gentle, not heavy."</div>
+    <div class="cn">入秋第一餐，宜清润，不宜厚重。</div>
+  </div>
+</div>
+
+<!-- 账户 -->
+<div class="card">
+  <div class="card-head">
+    <h2>👛 我的账户 · 20:00</h2>
+    <div class="head-date">养老基金</div>
+  </div>
+
+  <div class="savings-display">
+    <div class="label">存款池 · 养老基金</div>
+    <div class="amount">¥0.00</div>
+    <div class="goal">目标 ¥30,000 · 0.0%</div>
+    <div class="progress-bar"><div style="width:0%"></div></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+    <div style="display:flex;flex-direction:column;background:var(--bg-2);border-radius:10px;padding:10px 14px">
+      <span style="font-size:11px;color:var(--ink-mute)">今日支出</span>
+      <span style="font-size:20px;font-weight:700;color:var(--ink)">¥0.00</span>
+    </div>
+    <div style="display:flex;flex-direction:column;background:var(--bg-2);border-radius:10px;padding:10px 14px">
+      <span style="font-size:11px;color:var(--ink-mute)">本月支出</span>
+      <span style="font-size:20px;font-weight:700;color:var(--ink)">¥0.00</span>
+    </div>
+    <div style="display:flex;flex-direction:column;background:var(--bg-2);border-radius:10px;padding:10px 14px">
+      <span style="font-size:11px;color:var(--ink-mute)">已存笔数</span>
+      <span style="font-size:20px;font-weight:700;color:var(--ink)">0</span>
+    </div>
+  </div>
+
+  <div style="margin-top:12px;padding:10px 14px;background:#fdf3e0;border-radius:10px;font-size:12px;color:var(--ink-soft);line-height:1.7">
+    💡 <b>小提示：</b>明日（8/8 周六）= <b>烧烤放纵餐周</b>（week 2，火锅周未用顺延已结算）。今日立秋宜"润燥清补"，可考虑先把烧烤预算（¥100-150）从日常基金里划出，明日单笔记录避免与日常开支混淆。
+  </div>
+</div>
+
+<!-- Pocket Card (Printable) -->
+<div class="pocket-card no-print">
+  <div class="pocket-title">🍅 口袋行程卡 · 2026-08-07 周五 · 立秋</div>
+  <div class="pocket-grid">
+    <div class="pocket-col">
+      <h4>📋 行程</h4>
+      <div class="pocket-item"><span class="pocket-time">07:00</span><span class="pocket-text">起床拉伸</span></div>
+      <div class="pocket-item"><span class="pocket-time">07:30</span><span class="pocket-text">立秋润燥减脂餐</span></div>
+      <div class="pocket-item"><span class="pocket-time">08:30</span><span class="pocket-text">立秋热点</span></div>
+      <div class="pocket-item"><span class="pocket-time">09:00</span><span class="pocket-text">英语 Day 9</span></div>
+      <div class="pocket-item"><span class="pocket-time">12:00</span><span class="pocket-text">午餐打卡</span></div>
+      <div class="pocket-item"><span class="pocket-time">15:00</span><span class="pocket-text">拍立秋3宝</span></div>
+      <div class="pocket-item"><span class="pocket-time">18:00</span><span class="pocket-text">晚餐+帕梅拉</span></div>
+      <div class="pocket-item"><span class="pocket-time">20:00</span><span class="pocket-text">记账</span></div>
+      <div class="pocket-item"><span class="pocket-time">21:00</span><span class="pocket-text">⭐首发立秋3宝</span></div>
+    </div>
+    <div class="pocket-col">
+      <h4>🥗 三餐</h4>
+      <div class="pocket-meal">
+        <div class="pocket-meal-title">🌅 早餐</div>
+        <div class="pocket-meal-cal">银耳莲子羹+水波蛋+全麦馒头+蓝莓 · 380 kcal</div>
+      </div>
+      <div class="pocket-meal">
+        <div class="pocket-meal-title">☀️ 午餐</div>
+        <div class="pocket-meal-cal">山药青椒炒肉+糙米饭+蒸南瓜+紫菜蛋花汤 · 620 kcal</div>
+      </div>
+      <div class="pocket-meal">
+        <div class="pocket-meal-title">🍎 加餐</div>
+        <div class="pocket-meal-cal">希腊酸奶+苹果+核桃 · 200 kcal</div>
+      </div>
+      <div class="pocket-meal">
+        <div class="pocket-meal-title">🌙 晚餐</div>
+        <div class="pocket-meal-cal">莲藕排骨汤+蒜蓉西兰花+杂粮饭+凉拌秋葵 · 500 kcal</div>
+      </div>
+      <h4 style="margin-top:8px">📖 核心句</h4>
+      <div style="font-size:11px;color:var(--ink-soft);line-height:1.5">"The first autumn meal should be gentle, not heavy."<br>入秋第一餐，宜清润，不宜厚重。</div>
+      <h4 style="margin-top:8px">📱 热点</h4>
+      <div style="font-size:11px;color:var(--ink-soft);line-height:1.5">⭐#立秋3宝# · #钾是十豆10倍# · #电子榨菜#<br>🎯 21:00 卡点首发立秋 3 宝</div>
+    </div>
+  </div>
+  <div class="pocket-footer">🍅 的工作台 · 立秋 · 1700 kcal · 帕梅拉 30min · 养老基金 ¥0/30,000</div>
+</div>
+
+<div class="footer">
+  <span>🍅 的工作台 · v1.0</span>
+  <span>每日 07:00 推送 · 手机打开 https://2974858874.github.io/workbench/</span>
+</div>
+
+</div>
+
+<script>
+function toggleCheck(el) {
+  const item = el.closest('.schedule-item');
+  const isChecked = el.classList.toggle('checked');
+  if (isChecked) {
+    el.textContent = '✓';
+    item.classList.add('done');
+  } else {
+    el.textContent = '';
+    item.classList.remove('done');
+  }
+  const idx = Array.from(document.querySelectorAll('.schedule-item')).indexOf(item);
+  const key = '2026-08-07_' + idx;
+  const todos = JSON.parse(localStorage.getItem('wb_todos') || '{}');
+  todos[key] = isChecked;
+  localStorage.setItem('wb_todos', JSON.stringify(todos));
+}
+(function restore() {
+  const todos = JSON.parse(localStorage.getItem('wb_todos') || '{}');
+  document.querySelectorAll('.schedule-item').forEach((item, idx) => {
+    const key = '2026-08-07_' + idx;
+    if (todos[key]) {
+      const check = item.querySelector('.schedule-check');
+      check.classList.add('checked');
+      check.textContent = '✓';
+      item.classList.add('done');
+    }
+  });
+})();
+</script>
+</body>
+</html>
