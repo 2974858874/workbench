@@ -44,5 +44,55 @@
       "en": "Cook once, eat all week.",
       "zh": "一次备餐，吃一整周。"
     }
+  },
+  {
+    "date": "2026-08-06",
+    "day": 8,
+    "difficulty": "高级",
+    "theme": "刀工精进 & 摆盘美学",
+    "theme_en": "Knife Skills & Food Presentation",
+    "phrases": [
+      { "en": "Julienne the carrots — thin as matchsticks.", "phonetic": "/ˌdʒuːliˈɛn ðə ˈkærəts — θɪn æz ˈmætʃstɪks/", "zh": "胡萝卜切丝——像火柴棍一样细。" },
+      { "en": "Don't overcrowd the plate — less is more.", "phonetic": "/doʊnt ˌoʊvərˈkraʊd ðə pleɪt — lɛs ɪz mɔːr/", "zh": "盘面别塞太满——少即是多。" },
+      { "en": "A pop of color makes the shot pop.", "phonetic": "/ə pɑːp ʌv ˈkʌlər meɪks ðə ʃɑːt pɑːp/", "zh": "一抹亮色，画面立刻出彩。" },
+      { "en": "Start plating from the center and build outward.", "phonetic": "/stɑːrt ˈpleɪtɪŋ frʌm ðə ˈsɛntər ænd bɪld ˈaʊtwərd/", "zh": "从盘中心开始摆，向外延伸。" },
+      { "en": "Wipe the rim — a clean plate tells the story.", "phonetic": "/waɪp ðə rɪm — ə kliːn pleɪt tɛlz ðə ˈstɔːri/", "zh": "擦净盘沿——干净的盘子会讲故事。" }
+    ],
+    "words": [
+      { "en": "julienne", "phonetic": "/ˌdʒuːliˈɛn/", "zh": "切丝（火柴棍细条）" },
+      { "en": "brunoise", "phonetic": "/bruːˈnwɑːz/", "zh": "细丁（3mm小方块）" },
+      { "en": "chiffonade", "phonetic": "/ˌʃɪfəˈneɪd/", "zh": "切细丝（叶菜卷切法）" },
+      { "en": "batonnet", "phonetic": "/ˌbætəˈneɪ/", "zh": "粗条（6mm方柱）" },
+      { "en": "mince", "phonetic": "/mɪns/", "zh": "剁碎；细末" },
+      { "en": "supreme", "phonetic": "/suːˈpriːm/", "zh": "剔瓣（柑橘去膜取净肉）" },
+      { "en": "crosshatch", "phonetic": "/ˈkrɒsˌhætʃ/", "zh": "十字花刀（鱿鱼/茄子）" },
+      { "en": "shave", "phonetic": "/ʃeɪv/", "zh": "刨薄片（用削皮器）" },
+      { "en": "segment", "phonetic": "/ˈseɡmənt/", "zh": "分瓣（橙子/柚子）" },
+      { "en": "fillet", "phonetic": "/ˈfɪlɪt/", "zh": "剔骨取净肉" },
+      { "en": "quenelle", "phonetic": "/kəˈnɛl/", "zh": "椭圆勺挖造型（法式经典）" },
+      { "en": "smear", "phonetic": "/smɪr/", "zh": "抹酱拖痕（一笔划过）" },
+      { "en": "tuile", "phonetic": "/twiːl/", "zh": "瓦片薄脆（装饰用）" },
+      { "en": "microgreen", "phonetic": "/ˈmaɪkroʊɡriːn/", "zh": "微型菜苗（点缀用）" },
+      { "en": "edible flower", "phonetic": "/ˈedɪbəl ˈflaʊər/", "zh": "食用花（三色堇/金盏花）" },
+      { "en": "negative space", "phonetic": "/ˈneɡətɪv speɪs/", "zh": "留白（盘面刻意留空）" },
+      { "en": "swoosh", "phonetic": "/swʊʃ/", "zh": "一划成型（酱汁弧形拖）" },
+      { "en": "height", "phonetic": "/haɪt/", "zh": "立体堆高（层次感）" },
+      { "en": "rim", "phonetic": "/rɪm/", "zh": "盘沿（保持干净是底线）" },
+      { "en": "focal point", "phonetic": "/ˈfoʊkəl pɔɪnt/", "zh": "视觉焦点（主角放C位）" },
+      { "en": "vibrant", "phonetic": "/ˈvaɪbrənt/", "zh": "鲜亮夺目的（色彩）" },
+      { "en": "deconstructed", "phonetic": "/ˌdiːkənˈstrʌktɪd/", "zh": "解构式的（拆开重组）" },
+      { "en": "composed", "phonetic": "/kəmˈpoʊzd/", "zh": "精心构图的" },
+      { "en": "rustic", "phonetic": "/ˈrʌstɪk/", "zh": "质朴乡村风" },
+      { "en": "camera-ready", "phonetic": "/ˈkæmərə ˈrɛdi/", "zh": "上镜的；适合拍摄的" },
+      { "en": "color contrast", "phonetic": "/ˈkʌlər ˈkɑːntræst/", "zh": "色彩对比度" },
+      { "en": "nap", "phonetic": "/næp/", "zh": "薄淋酱汁（轻覆一层）" },
+      { "en": "dollop", "phonetic": "/ˈdɑːləp/", "zh": "一坨（奶油/酸奶油点缀）" },
+      { "en": "scatter", "phonetic": "/ˈskætər/", "zh": "撒落点缀（香草/坚果碎）" },
+      { "en": "finish", "phonetic": "/ˈfɪnɪʃ/", "zh": "最后润色；收尾点睛" }
+    ],
+    "core_phrase": {
+      "en": "Sharp knife, clean plate, happy cook.",
+      "zh": "刀快、盘净、人开心。"
+    }
   }
 ]
