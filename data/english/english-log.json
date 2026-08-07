@@ -94,5 +94,55 @@
       "en": "Sharp knife, clean plate, happy cook.",
       "zh": "刀快、盘净、人开心。"
     }
+  },
+  {
+    "date": "2026-08-07",
+    "day": 9,
+    "difficulty": "高级",
+    "theme": "厨房黑话 & 地道口语俚语",
+    "theme_en": "Kitchen Slang & Idiomatic Expressions",
+    "phrases": [
+      { "en": "I'm in the weeds — can you fire table six?", "phonetic": "/aɪm ɪn ðə wiːdz — kæn jʊ ˈfaɪər ˈteɪbəl sɪks/", "zh": "我忙不过来了——六号桌能先下锅吗？（后厨高峰期经典求救）" },
+      { "en": "Don't scarf it down — savor every bite.", "phonetic": "/doʊnt skɑːrf ɪt daʊn — ˈseɪvər ˈɛvri baɪt/", "zh": "别狼吞虎咽——每一口都要细品。" },
+      { "en": "This dish is spot on — perfectly seasoned.", "phonetic": "/ðɪs dɪʃ ɪz spɑːt ɑːn — ˈpɜːrfɪktli ˈsiːzənd/", "zh": "这道菜恰到好处——调味完美。" },
+      { "en": "We're 86 on the salmon — swap it for cod.", "phonetic": "/wɪr ˌeɪti sɪks ɑːn ðə ˈsæmən — swɑːp ɪt fɔːr kɑːd/", "zh": "三文鱼卖完了——换成鳕鱼吧。" },
+      { "en": "I'll whip up a quick omelet — five minutes tops.", "phonetic": "/aɪl wɪp ʌp ə kwɪk ˈɑːmlət — faɪv ˈmɪnɪts tɑːps/", "zh": "我速煎个蛋饼——最多五分钟。" }
+    ],
+    "words": [
+      { "en": "on the fly", "phonetic": "/ɑːn ðə flaɪ/", "zh": "临时应急做（现场即兴发挥）" },
+      { "en": "behind", "phonetic": "/bɪˈhaɪnd/", "zh": "借过（后厨通行口令）" },
+      { "en": "86", "phonetic": "/ˌeɪti ˈsɪks/", "zh": "售罄；没货了（后厨暗号）" },
+      { "en": "in the weeds", "phonetic": "/ɪn ðə wiːdz/", "zh": "忙疯了（后厨高峰期手忙脚乱）" },
+      { "en": "fire", "phonetic": "/ˈfaɪər/", "zh": "下锅开做（主厨下令开始烹饪）" },
+      { "en": "all day", "phonetic": "/ɔːl deɪ/", "zh": "全单合计（各桌同菜汇总）" },
+      { "en": "pick up", "phonetic": "/pɪk ʌp/", "zh": "出菜（服务员端走；菜好了）" },
+      { "en": "line", "phonetic": "/laɪn/", "zh": "出��线；灶台线（主战场）" },
+      { "en": "mise en place", "phonetic": "/ˌmiːz ɒn ˈplæs/", "zh": "备料到位（法式厨房铁律）" },
+      { "en": "call out", "phonetic": "/kɔːl aʊt/", "zh": "大声报单（后厨传菜沟通）" },
+      { "en": "piece of cake", "phonetic": "/piːs ʌv keɪk/", "zh": "小菜一碟；易如反掌" },
+      { "en": "spill the beans", "phonetic": "/spɪl ðə biːnz/", "zh": "泄密；说漏嘴" },
+      { "en": "butter someone up", "phonetic": "/ˈbʌtər ˈsʌmwʌn ʌp/", "zh": "讨好；拍马屁" },
+      { "en": "go bananas", "phonetic": "/ɡoʊ bəˈnænəz/", "zh": "发疯；激动到失控" },
+      { "en": "cool as a cucumber", "phonetic": "/kuːl æz ə ˈkjuːkʌmbər/", "zh": "极其冷静；泰然自若" },
+      { "en": "in a pickle", "phonetic": "/ɪn ə ˈpɪkəl/", "zh": "陷入困境；左右为难" },
+      { "en": "full of beans", "phonetic": "/fʊl ʌv biːnz/", "zh": "精力充沛；活力满满" },
+      { "en": "chew the fat", "phonetic": "/tʃuː ðə fæt/", "zh": "闲聊；侃大山" },
+      { "en": "not my cup of tea", "phonetic": "/nɑːt maɪ kʌp ʌv tiː/", "zh": "不是我的菜；不合我口味" },
+      { "en": "the icing on the cake", "phonetic": "/ðə ˈaɪsɪŋ ɑːn ðə keɪk/", "zh": "锦上添花；好上加好" },
+      { "en": "piping hot", "phonetic": "/ˈpaɪpɪŋ hɑːt/", "zh": "滚烫的；冒热气的" },
+      { "en": "room temperature", "phonetic": "/ruːm ˈtɛmprətʃər/", "zh": "室温（牛排回温等关键步骤）" },
+      { "en": "soggy", "phonetic": "/ˈsɑːɡi/", "zh": "湿软的；泡烂的（沙拉/炸物大忌）" },
+      { "en": "burnt", "phonetic": "/bɜːrnt/", "zh": "烧焦的；糊了的" },
+      { "en": "undercooked", "phonetic": "/ˌʌndərˈkʊkt/", "zh": "夹生的；没熟透的" },
+      { "en": "overdone", "phonetic": "/ˌoʊvərˈdʌn/", "zh": "��火的；过熟的" },
+      { "en": "spot on", "phonetic": "/spɑːt ɑːn/", "zh": "恰到好处；完美" },
+      { "en": "bland", "phonetic": "/blænd/", "zh": "寡淡的；没味的" },
+      { "en": "finger-licking good", "phonetic": "/ˈfɪŋɡər ˌlɪkɪŋ ɡʊd/", "zh": "好吃到舔手指" },
+      { "en": "store-bought", "phonetic": "/stɔːr bɔːt/", "zh": "买的现成的（非自制）" }
+    ],
+    "core_phrase": {
+      "en": "How you cook is how you live.",
+      "zh": "你怎么做饭，就怎么生活。"
+    }
   }
 ]
