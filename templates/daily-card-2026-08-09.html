@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#7ba05b" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<title>🍅 今日行程卡 · 2026-08-09 周日 · 周复盘日</title>
+<style>
+:root {
+  --bg: #eef0e0;
+  --bg-2: #e3e8d0;
+  --card: #ffffff;
+  --ink: #2b3a2c;
+  --ink-soft: #5e6b59;
+  --ink-mute: #8a9585;
+  --green: #7ba05b;
+  --green-deep: #5b8042;
+  --green-soft: #c8d8b0;
+  --line: #d8dec6;
+  --accent: #c4623a;
+  --warn: #d68a3c;
+  --done: #b85042;
+  --review: #5b8042;
+  --review-soft: #c8d8b0;
+  --shadow: 0 1px 3px rgba(60, 70, 30, 0.06), 0 8px 24px rgba(60, 70, 30, 0.06);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.55;
+  min-height: 100vh;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+.container { max-width: 860px; margin: 0 auto; padding: 20px; }
+
+/* ===== Review Banner ===== */
+.review-banner {
+  background: linear-gradient(135deg, #5b8042 0%, #7ba05b 100%);
+  color: #fff;
+  border-radius: 18px;
+  padding: 16px 20px;
+  margin-bottom: 18px;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+.review-left { display: flex; align-items: center; gap: 14px; }
+.review-icon { font-size: 36px; line-height: 1; }
+.review-name { font-size: 20px; font-weight: 800; letter-spacing: 2px; }
+.review-en { font-size: 11px; opacity: 0.9; letter-spacing: 1px; margin-top: 2px; }
+.review-meta { font-size: 12px; opacity: 0.95; line-height: 1.6; }
+.review-tip { font-size: 11px; opacity: 0.95; margin-top: 4px; }
+
+/* ===== Header ===== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  padding: 14px 18px;
+  background: linear-gradient(135deg, #7ba05b 0%, #5b8042 100%);
+  border-radius: 18px;
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+.header-brand { display: flex; align-items: center; gap: 10px; }
+.header-emoji { font-size: 28px; }
+.header-title { font-weight: 700; font-size: 16px; }
+.header-sub { font-size: 11px; opacity: 0.85; }
+.header-date { text-align: right; }
+.header-date .day { font-size: 32px; font-weight: 800; line-height: 1; }
+.header-date .month { font-size: 12px; opacity: 0.85; }
+
+/* ===== Card ===== */
+.card {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 18px 20px;
+  box-shadow: var(--shadow);
+  margin-bottom: 18px;
+}
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 10px;
+}
+.card-head h2 { font-size: 15px; margin: 0; font-weight: 600; }
+.head-date { font-size: 12px; color: var(--ink-mute); }
+.head-tip { font-size: 11px; color: var(--ink-mute); }
+
+/* ===== Schedule ===== */
+.schedule-list { list-style: none; margin: 0; padding: 0; }
+.schedule-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 8px;
+  border-bottom: 1px dashed var(--line);
+  transition: all 0.2s;
+}
+.schedule-item:last-child { border-bottom: 0; }
+.schedule-item.done { opacity: 0.45; }
+.schedule-item.done .schedule-title { text-decoration: line-through; }
+.schedule-item.review-row { background: #f3f7e8; border-radius: 8px; padding: 12px 8px; margin: 4px 0; }
+.schedule-check {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--green);
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  background: #fff;
+}
+.schedule-check.checked {
+  background: var(--green);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+.schedule-time {
+  font-family: "SF Mono", monospace;
+  font-size: 12.5px;
+  color: var(--green-deep);
+  font-weight: 700;
+  min-width: 48px;
+}
+.schedule-tag { font-size: 16px; min-width: 22px; }
+.schedule-title { flex: 1; font-size: 13.5px; }
+.schedule-duration {
+  font-size: 11px;
+  color: var(--ink-mute);
+  background: var(--bg-2);
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+/* ===== Meal ===== */
+.meal-day-summary {
+  background: linear-gradient(135deg, #7ba05b 0%, #5b8042 100%);
+  color: #fff;
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.meal-day-total { display: flex; align-items: baseline; gap: 4px; }
+.meal-day-total .cal-big { font-size: 32px; font-weight: 800; }
+.meal-day-total .cal-unit { font-size: 13px; opacity: 0.85; }
+.meal-day-detail { font-size: 12px; opacity: 0.9; text-align: right; }
+.meal-card {
+  background: linear-gradient(135deg, #fafbf6 0%, #eef2e0 100%);
+  border-radius: 12px;
+  padding: 14px;
+  border: 1px solid var(--green-soft);
+  margin-bottom: 14px;
+}
+.meal-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+.meal-card h4 { margin: 0; color: var(--green-deep); font-size: 14px; }
+.meal-cal { font-size: 18px; font-weight: 800; color: var(--accent); }
+.meal-mac {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 11px;
+  color: var(--ink-mute);
+  padding-bottom: 6px;
+  border-bottom: 1px dashed var(--line);
+}
+.meal-mac .meal-time { margin-left: auto; color: var(--green-deep); font-weight: 600; }
+.meal-card ul { margin: 6px 0; padding-left: 18px; }
+.meal-card li { font-size: 12.5px; color: var(--ink-soft); }
+.meal-tip { font-size: 11px; color: var(--ink-mute); margin-top: 4px; }
+
+/* ===== Topic ===== */
+.topic-card {
+  background: #fafbf6;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+.topic-tag { color: var(--accent); font-weight: 700; font-size: 13px; }
+.topic-meta { font-size: 11px; color: var(--ink-mute); margin: 4px 0; }
+.topic-angle { font-size: 12.5px; color: var(--ink-soft); }
+
+/* ===== English ===== */
+.english-word {
+  display: inline-block;
+  background: #fafbf6;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 4px 8px;
+  margin: 2px;
+  font-size: 12px;
+}
+.english-word b { color: var(--green-deep); }
+.english-word i { color: var(--ink-mute); font-style: normal; font-size: 11px; }
+.core-sentence {
+  background: linear-gradient(135deg, #c8d8b0 0%, #b4c898 100%);
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+  margin-top: 10px;
+}
+.core-sentence .en { font-size: 18px; font-weight: 700; color: var(--ink); }
+.core-sentence .cn { font-size: 12px; color: var(--ink-soft); margin-top: 4px; }
+
+/* ===== Savings ===== */
+.savings-display {
+  background: linear-gradient(135deg, #7ba05b 0%, #5b8042 100%);
+  color: #fff;
+  border-radius: 14px;
+  padding: 18px;
+  text-align: center;
+  margin-bottom: 14px;
+}
+.savings-display .label { font-size: 12px; opacity: 0.85; }
+.savings-display .amount { font-size: 32px; font-weight: 800; margin: 4px 0; }
+.savings-display .goal { font-size: 12px; opacity: 0.85; }
+.progress-bar {
+  height: 8px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+.progress-bar > div { height: 100%; background: #fff; border-radius: 4px; }
+
+/* ===== Review Block ===== */
+.review-block {
+  background: linear-gradient(135deg, #f3f7e8 0%, #e8eed4 100%);
+  border-radius: 12px;
+  padding: 14px;
+  border: 1px solid var(--green-soft);
+  margin-top: 10px;
+}
+.review-checklist { list-style: none; margin: 8px 0 0; padding: 0; }
+.review-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--line);
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+.review-checklist li:last-child { border-bottom: 0; }
+.review-checklist .check-box {
+  width: 16px; height: 16px;
+  border: 2px solid var(--green-deep);
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  cursor: pointer;
+}
+.review-checklist .check-box.checked {
+  background: var(--green-deep);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 700;
+}
+
+/* ===== Pocket Card (Printable) ===== */
+.pocket-card {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+  border: 2px solid var(--green);
+  margin-bottom: 18px;
+}
+.pocket-title {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed var(--line);
+}
+.pocket-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  font-size: 12px;
+}
+.pocket-col h4 { margin: 0 0 6px; font-size: 12px; color: var(--green-deep); }
+.pocket-item { display: flex; align-items: baseline; gap: 6px; margin-bottom: 4px; }
+.pocket-time { font-weight: 700; color: var(--green-deep); min-width: 36px; }
+.pocket-text { color: var(--ink-soft); }
+.pocket-meal { background: var(--bg-2); border-radius: 6px; padding: 4px 8px; margin-bottom: 4px; }
+.pocket-meal-title { font-weight: 600; color: var(--ink); }
+.pocket-meal-cal { font-size: 11px; color: var(--accent); }
+.pocket-footer {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--line);
+  text-align: center;
+  font-size: 11px;
+  color: var(--ink-mute);
+}
+
+/* ===== Footer ===== */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--ink-mute);
+  padding: 10px 6px 0;
+  border-top: 1px solid var(--line);
+  margin-top: 8px;
+}
+
+/* ===== Print ===== */
+@media print {
+  body { background: #fff; }
+  .card, .pocket-card { box-shadow: none; break-inside: avoid; }
+  .no-print { display: none !important; }
+  .container { padding: 0; max-width: 100%; }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 640px) {
+  .container { padding: 12px; }
+  .review-banner { padding: 12px 14px; flex-direction: column; align-items: flex-start; gap: 8px; }
+  .review-icon { font-size: 28px; }
+  .review-name { font-size: 18px; }
+  .header { padding: 12px 14px; }
+  .header-emoji { font-size: 22px; }
+  .header-title { font-size: 14px; }
+  .header-date .day { font-size: 24px; }
+  .card { border-radius: 14px; padding: 14px; }
+  .card-head h2 { font-size: 14px; }
+  .schedule-item { padding: 11px 2px; gap: 8px; }
+  .schedule-check { width: 24px; height: 24px; }
+  .schedule-time { font-size: 11px; min-width: 38px; }
+  .schedule-tag { font-size: 15px; min-width: 20px; }
+  .schedule-title { font-size: 12.5px; line-height: 1.4; }
+  .schedule-duration { font-size: 10px; padding: 2px 5px; }
+  .meal-day-summary { flex-direction: column; text-align: center; gap: 2px; padding: 12px; }
+  .meal-day-total .cal-big { font-size: 28px; }
+  .meal-day-detail { text-align: center; font-size: 11px; line-height: 1.4; }
+  .meal-card { padding: 12px; border-radius: 10px; }
+  .meal-card h4 { font-size: 13px; }
+  .meal-cal { font-size: 15px; }
+  .meal-mac { gap: 6px; font-size: 10px; }
+  .meal-mac .meal-time { margin-left: 0; width: 100%; text-align: right; }
+  .savings-display { padding: 14px; border-radius: 12px; }
+  .savings-display .amount { font-size: 28px; }
+  .pocket-grid { grid-template-columns: 1fr; }
+  .footer { flex-direction: column; gap: 2px; text-align: center; padding: 8px 4px 0; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- 周日复盘日条幅 -->
+<div class="review-banner">
+  <div class="review-left">
+    <div class="review-icon">📊</div>
+    <div>
+      <div class="review-name">周日 · 周复盘日</div>
+      <div class="review-en">WEEKLY REVIEW · 立秋第3天 · 烧烤后恢复日</div>
+    </div>
+  </div>
+  <div class="review-meta">
+    <div>2026-08-09 · 拉伸+休息 15min · 清肠解腻 1700 kcal</div>
+    <div class="review-tip">✅ 今日宜：清淡解腻饮食 / 拉伸恢复 / 21:00 周复盘</div>
+    <div class="review-tip">⭐ 今晚复盘三件套：上秤称重 + 本周视频数据 + 开智汇总</div>
+  </div>
+</div>
+
+<!-- Header -->
+<div class="header">
+  <div class="header-brand">
+    <div class="header-emoji">🍅</div>
+    <div>
+      <div class="header-title">今日固定行程</div>
+      <div class="header-sub">Daily Schedule · 2026-08-09 · 周日 · 周复盘</div>
+    </div>
+  </div>
+  <div class="header-date">
+    <div class="day">09</div>
+    <div class="month">2026年8月 · 周日</div>
+  </div>
+</div>
+
+<!-- 今日行程 -->
+<div class="card">
+  <div class="card-head">
+    <h2>📋 今日行程 · 恢复日轻量版</h2>
+    <div class="head-tip">点击复选框打勾</div>
+  </div>
+  <ul class="schedule-list" id="scheduleList">
+    <li class="schedule-item">
+      <span class="schedule-check" onclick="toggleCheck(this)"></span>
+      <span class="schedule-time">07:00</span>
+      <span class="schedule-tag">🥗</span>
+      <span class="schedule-title">起床 / 喝水 / 晨间拉伸</span>
+      <span class="schedule-duration">10min</span>
+    </li>
+    <li class="schedule-item">
+      <span class="schedule-check" onclick="toggleCheck(this)"></span>
+      <span class="schedule-time">07:30</span>
+      <span class="schedule-tag">🥗</span>
+      <span class="schedule-title">今日减脂餐（烧烤后清肠解腻 · 1700 kcal）</span>
+      <span class="schedule-duration">30min</span>
+    </li>
+    <li class="schedule-item">
+      <span class="schedule-check" onclick="toggleCheck(this)"></span>
+      <span class="schedule-time">08:30</span>
+      <span class="schedule-tag">📱</span>
+      <span class="schedule-title">抖音美食热点 + 周日选题建议</span>
+      <span class="schedule-duration">10min</span>
+    </li>
+    <li class="schedule-item">
+      <span class="schedule-check" onclick="toggleCheck(this)"></span>
+      <span class="schedule-time">09:00</span>
+      <span class="schedule-tag">📖</span>
+      <span class="schedule-title">英语学习任务（Day 11 · 食物营养&健康饮食）</span>
+      <span class="schedule-duration">20min</span>
+    </li>
+    <li class="schedule-item">
+      <span class="schedule-check" onclick="toggleCheck(this)"></span>
+      <span class="schedule-time">10:00</span>
+      <span class="schedule-tag">🥗</span>
+      <span class="schedule-title">拉伸 + 休息（恢复日 · 烧烤后身体修复）</span>
+      <span class="schedule-duration">15min</span>
+    </li>
+    <li class="schedule-item">
+      <span class="schedule-check" onclick="toggleCheck(this)"></span>
+      <span class="schedule-time">12:00</span>
+      <span class="schedule-tag">🥗</span>
+      <span class="schedule-title">午餐打卡（清蒸鲈鱼 + 蒜蓉空心菜）</span>
+      <span class="schedule-duration">5min</span>
+    </li>
+    <li class="schedule-item">
+      <span class="schedule-check" onclick="toggleCheck(this)"></span>
+      <span class="schedule-time">15:00</span>
+      <span class="schedule-tag">📱</span>
+      <span class="schedule-title">整理本周视频素材 / 轻松剪辑（可选，周日不强求）</span>
+      <span class="schedule-duration">40min</span>
+    </li>
+    <li class="schedule-item">
+      <span class="schedule-check" onclick="toggleCheck(this)"></span>
+      <span class="schedule-time">18:00</span>
+      <span class="schedule-tag">🥗</span>
+      <span class="schedule-title">晚餐打卡 + 番茄豆腐煲</span>
+      <span class="schedule-duration">5min</span>
+    </li>
+    <li class="schedule-item">
+      <span class="schedule-check" onclick="toggleCheck(this)"></span>
+      <span class="schedule-time">20:00</span>
+      <span class="schedule-tag">👛</span>
+      <span class="schedule-title">录入今日开支 + 本周支出汇总 + 存款更新</span>
+      <span class="schedule-duration">5min</span>
+    </li>
+    <li class="schedule-item review-row">
+      <span class="schedule-check" onclick="toggleCheck(this)" style="border-color:var(--review)"></span>
+      <span class="schedule-time">21:00</span>
+      <span class="schedule-tag">📊</span>
+      <span class="schedule-title"><b>周复盘三件套</b>：① 上秤称重记录 ② 本周视频数据复盘 ③ 开智汇总</span>
+      <span class="schedule-duration">30min</span>
+    </li>
+  </ul>
+</div>
+
+<!-- 减脂餐 -->
+<div class="card">
+  <div class="card-head">
+    <h2>🥗 今日减脂餐 · 周日恢复日 · 烧烤后清肠解腻</h2>
+    <div class="head-date">运动：拉伸+休息 15min</div>
+  </div>
+
+  <div class="meal-day-summary">
+    <div class="meal-day-total">
+      <span class="cal-big">1700</span>
+      <span class="cal-unit">kcal / 天</span>
+    </div>
+    <div class="meal-day-detail">全天 1700 kcal · 碳水 180g / 蛋白质 98g / 脂肪 46g · 211 比例<br>恢复策略：高纤维清肠 + 优质蛋白修复 + 低脂清淡，给肠胃放假</div>
+  </div>
+
+  <div class="meal-card">
+    <div class="meal-card-head">
+      <h4>🌅 早餐 · 山药红枣小米粥 + 茶叶蛋 + 凉拌秋葵 + 蓝莓</h4>
+      <span class="meal-cal">380 kcal</span>
+    </div>
+    <div class="meal-mac">
+      <span>碳水 52g</span>
+      <span>蛋白质 16g</span>
+      <span>脂肪 9g</span>
+      <span class="meal-time">⏰ 07:30</span>
+    </div>
+    <ul>
+      <li>小米 30g + 白米 15g（提前浸泡 20 分钟，加水 500ml 熬 25 分钟）</li>
+      <li>铁棍山药 80g（去皮切丁，粥快好时加入煮 5 分钟）</li>
+      <li>红枣 3 颗（去核剪碎，与粥同煮）</li>
+      <li>鸡蛋 1 个（加茶叶+八角+桂皮+盐煮 8 分钟成茶叶蛋）</li>
+      <li>秋葵 80g（整根焯水 1 分钟，过冰水后切段，加生抽+醋凉拌）</li>
+      <li>蓝莓 50g（洗净摆盘）</li>
+    </ul>
+    <div class="meal-tip">💡 山药健脾养胃、红枣补气、小米安神——烧烤后第二天最养胃的早餐；秋葵黏液保护胃黏膜，蓝莓抗氧化清除烧烤产生的自由基。</div>
+  </div>
+
+  <div class="meal-card">
+    <div class="meal-card-head">
+      <h4>☀️ 午餐 · 清蒸鲈鱼 + 蒜蓉空心菜 + 凉拌木耳 + 糙米饭 + 冬瓜虾米汤</h4>
+      <span class="meal-cal">620 kcal</span>
+    </div>
+    <div class="meal-mac">
+      <span>碳水 68g</span>
+      <span>蛋白质 42g</span>
+      <span>脂肪 14g</span>
+      <span class="meal-time">⏰ 12:00</span>
+    </div>
+    <ul>
+      <li>鲈鱼 150g（处理干净划刀，铺姜丝，水开上锅大火蒸 8 分钟，淋蒸鱼豉油浇热油）</li>
+      <li>空心菜 200g（切段，蒜末爆香快炒 1 分钟，加少许盐出锅）</li>
+      <li>泡发黑木耳 80g（焯水 1 分钟，加醋+蒜蓉+香油凉拌）</li>
+      <li>糙米饭（熟重）150g</li>
+      <li>冬瓜 150g + 虾皮 5g（冬瓜煮软加虾皮煮 3 分钟，利尿消水肿）</li>
+    </ul>
+    <div class="meal-tip">💡 鲈鱼是烧烤后最佳修复蛋白——低脂高蛋白易消化；木耳被称为"肠道清道夫"吸附油脂排出；冬瓜利尿消烧烤后水肿。三者搭配 = 完美清肠组合。</div>
+  </div>
+
+  <div class="meal-card">
+    <div class="meal-card-head">
+      <h4>🍎 加餐 · 希腊酸奶 + 火龙果 + 核桃</h4>
+      <span class="meal-cal">200 kcal</span>
+    </div>
+    <div class="meal-mac">
+      <span>碳水 22g</span>
+      <span>蛋白质 12g</span>
+      <span>脂肪 8g</span>
+      <span class="meal-time">⏰ 15:30</span>
+    </div>
+    <ul>
+      <li>希腊酸奶 150g（蛋白质 >5g/100g，选无糖款）</li>
+      <li>红心火龙果 120g（切块拌入酸奶）</li>
+      <li>核桃 2 个（约 8g，掰碎撒顶）</li>
+    </ul>
+    <div class="meal-tip">💡 火龙果富含膳食纤维和花青素，通便解烧烤油腻立竿见影；希腊酸奶益生菌修复肠道菌群；核桃 Omega-3 抗炎。下午茶时光，清肠又解馋。</div>
+  </div>
+
+  <div class="meal-card">
+    <div class="meal-card-head">
+      <h4>🌙 晚餐 · 番茄豆腐煲 + 蒜蓉西兰花 + 杂粮饭 + 凉拌黄瓜</h4>
+      <span class="meal-cal">500 kcal</span>
+    </div>
+    <div class="meal-mac">
+      <span>碳水 38g</span>
+      <span>蛋白质 28g</span>
+      <span>脂肪 15g</span>
+      <span class="meal-time">⏰ 18:00</span>
+    </div>
+    <ul>
+      <li>番茄 200g（切块，热锅少油炒出红汁）</li>
+      <li>嫩豆腐 150g（切方块，加入番茄汁中煮 5 分钟入味）</li>
+      <li>西兰花 200g（掰小朵焯水 30 秒，蒜末爆香快炒 2 分钟）</li>
+      <li>杂粮饭（熟重）100g</li>
+      <li>黄瓜 100g（拍碎，加醋+蒜末+少许盐凉拌）</li>
+    </ul>
+    <div class="meal-tip">💡 番茄豆腐煲酸甜开胃又低脂，番茄红素经油炒后吸收率翻倍；西兰花是"蔬菜皇冠"高维C高纤维；黄瓜清热解腻。全天以清淡收尾，明天满血复活。</div>
+  </div>
+</div>
+
+<!-- 抖音热点 -->
+<div class="card">
+  <div class="card-head">
+    <h2>📱 抖音美食热点 · 立秋第3天</h2>
+    <div class="head-date">2026-08-08 数据 · 周日选题参考</div>
+  </div>
+
+  <div class="topic-card" style="background:#eef2e0;border-color:var(--green-soft)">
+    <div style="font-size:12.5px;color:var(--ink-soft);line-height:1.7">
+      <b>📌 今日趋势摘要：</b>立秋(8/7)后第3天，节气流量进入长尾期但仍有余温。周日是用户刷短视频的高峰日，<b>上午 10:00-12:00 和晚上 19:00-21:00 是周末最佳发布窗口</b>。本周尚未发布视频，复盘日可整理素材、规划下周 2-3 条拍摄计划。#秋天的第一杯奶茶 仍在峰值，#跟着瘦子吃饭 长尾持续，适合周日轻松向内容。
+    </div>
+  </div>
+
+  <div class="topic-card" style="background:#fef9f0;border-color:#f5d8a8">
+    <div class="topic-tag">🥤 #秋天的第一杯奶茶 · 峰值</div>
+    <div class="topic-meta">18亿+ · 趋势：爆发（峰值）· 立秋社交狂欢</div>
+    <div class="topic-angle">📌 品牌门店爆单 600%+，从情侣红包演变为全民仪式感。减脂人群也想蹭——可拍「减脂版秋天第一杯奶茶：红茶+纯牛奶+代糖，热量只有奶茶店 1/3」。</div>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-tag">#跟着瘦子吃饭</div>
+    <div class="topic-meta">15亿+ · 趋势：长尾爆款 · "我觉得活着挺好的"</div>
+    <div class="topic-angle">📌 十万+网友打卡复刻瘦子一日三餐。可拍「174cm 女生烧烤后第二天怎么吃才不胖」vlog，清肠恢复餐全记录 + 热量数字打满屏幕。</div>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-tag">#上班族备餐</div>
+    <div class="topic-meta">20亿+ · 趋势：稳定高热 · 打工人轻食对抗亚健康</div>
+    <div class="topic-angle">📌 周日是备餐搜索高峰！拍「周日备餐：下周 5 份减脂便当不重样」内容池，10 分钟搞定一周，为工作日自动播放做准备。</div>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-tag">#八刀汤</div>
+    <div class="topic-meta">5.3亿+ · 趋势：飙升 · 广东河源非遗早餐霸榜17天</div>
+    <div class="topic-angle">📌 地方非遗+烟火气早餐，"正宗""现做""非遗认证"信任感强。可拍「减脂版八刀汤：少油少盐复刻非遗早餐」蹭地方美食热度。</div>
+  </div>
+
+  <div class="topic-card">
+    <div class="topic-tag">#厨房翻车</div>
+    <div class="topic-meta">3.8亿+ · 趋势：上升 · 搞笑共鸣向</div>
+    <div class="topic-angle">📌 炸年糕上天花板、包子蒸成煤球——适合"失败→成功"反转叙事。周日轻松向内容，可拍「我的厨房翻车名场面 + 救场指南」。</div>
+  </div>
+
+  <div class="topic-card" style="background:#eef2e0">
+    <div style="font-size:12px;line-height:1.7"><b>🎵 音频建议：</b>《干饭之歌》软萌魔性（轻松向）/ 《清鲜的旋律》日料轻食清新（备餐 vlog）/ 《小燕子（减肥版）》经典改编反差搞笑（减脂向）。</div>
+    <div style="font-size:12px;margin-top:8px"><b>🔥 今日内容建议：</b></div>
+    <ol style="margin:6px 0;padding-left:18px;font-size:12px;color:var(--ink-soft);line-height:1.7">
+      <li><b>首选：</b>拍「烧烤后第二天清肠恢复餐」vlog，蹭 #跟着瘦子吃饭# + #上班族备餐#，热量数字打满，周日 19:00 发布</li>
+      <li><b>备选：</b>周日备餐系列「5 份减脂便当下周吃」，蹭 #上班族备餐 + #电子榨菜 双标签</li>
+      <li><b>储备：</b>整理本周素材，规划下周拍摄日历（工作日 2 条 + 周末 1 条）</li>
+    </ol>
+  </div>
+</div>
+
+<!-- 英语学习 -->
+<div class="card">
+  <div class="card-head">
+    <h2>📖 英语学习 · Day 11 · 食物营养 & 健康饮食</h2>
+    <div class="head-date">30 单词 + 5 句口语 + 1 核心句</div>
+  </div>
+
+  <h4 style="font-size:13px;margin:0 0 6px">🥗 健康饮食口语（5 句）</h4>
+  <ul style="list-style:none;padding:0;margin:0 0 14px">
+    <li style="padding:10px 0;border-bottom:1px dashed var(--line);display:flex;flex-direction:column;gap:2px">
+      <div><b>I'm trying to cut back on processed sugar.</b> · <span style="color:var(--ink-mute)">/aɪm ˈtraɪɪŋ tu kʌt bæk ɑːn ˈprɑːsest ˈʃʊɡər/</span></div>
+      <div style="font-size:12px;color:var(--ink-soft)">我在尽量减少加工糖的摄入。</div>
+    </li>
+    <li style="padding:10px 0;border-bottom:1px dashed var(--line);display:flex;flex-direction:column;gap:2px">
+      <div><b>This meal hits all my macros perfectly.</b> · <span style="color:var(--ink-mute)">/ðɪs miːl hɪts ɔːl maɪ ˈmækroʊz ˈpɜːrfɪktli/</span></div>
+      <div style="font-size:12px;color:var(--ink-soft)">这顿饭的宏量营养素配比刚刚好。</div>
+    </li>
+    <li style="padding:10px 0;border-bottom:1px dashed var(--line);display:flex;flex-direction:column;gap:2px">
+      <div><b>Load up on veggies — they keep you full longer.</b> · <span style="color:var(--ink-mute)">/loʊd ʌp ɑːn ˈvɛdʒiz — ðeɪ kiːp ju fʊl ˈlɒŋɡər/</span></div>
+      <div style="font-size:12px;color:var(--ink-soft)">多吃蔬菜——能让你饱得更久。</div>
+    </li>
+    <li style="padding:10px 0;border-bottom:1px dashed var(--line);display:flex;flex-direction:column;gap:2px">
+      <div><b>Watch your portion size, not just the calories.</b> · <span style="color:var(--ink-mute)">/wɒtʃ jər ˈpɔːrʃn saɪz, nɑːt dʒʌst ðə ˈkæləriz/</span></div>
+      <div style="font-size:12px;color:var(--ink-soft)">注意分量大小，别只看热量。</div>
+    </li>
+    <li style="padding:10px 0;display:flex;flex-direction:column;gap:2px">
+      <div><b>Drink water before you feel thirsty.</b> · <span style="color:var(--ink-mute)">/drɪŋk ˈwɔːtər bɪˈfɔːr ju fiːl ˈθɜːrsti/</span></div>
+      <div style="font-size:12px;color:var(--ink-soft)">在感到口渴之前就喝水。</div>
+    </li>
+  </ul>
+
+  <h4 style="font-size:13px;margin:14px 0 6px">📚 今日 30 单词</h4>
+  <div>
+    <span class="english-word"><b>nutrient</b> <i>/ˈnuːtriənt/</i> 营养素</span>
+    <span class="english-word"><b>macronutrient</b> <i>/ˌmækroʊˈnuːtriənt/</i> 宏量营养素</span>
+    <span class="english-word"><b>micronutrient</b> <i>/ˌmaɪkroʊˈnuːtriənt/</i> 微量营养素</span>
+    <span class="english-word"><b>protein</b> <i>/ˈproʊtiːn/</i> 蛋白质</span>
+    <span class="english-word"><b>carbohydrate</b> <i>/ˌkɑːrboʊˈhaɪdreɪt/</i> 碳水化合物</span>
+    <span class="english-word"><b>fat</b> <i>/fæt/</i> 脂肪</span>
+    <span class="english-word"><b>fiber</b> <i>/ˈfaɪbər/</i> 膳食纤维</span>
+    <span class="english-word"><b>vitamin</b> <i>/ˈvaɪtəmɪn/</i> 维生素</span>
+    <span class="english-word"><b>mineral</b> <i>/ˈmɪnərəl/</i> 矿物质</span>
+    <span class="english-word"><b>antioxidant</b> <i>/ˌæntiˈɒksɪdənt/</i> 抗氧化剂</span>
+    <span class="english-word"><b>metabolism</b> <i>/məˈtæbəlɪzəm/</i> 新陈代谢</span>
+    <span class="english-word"><b>calorie</b> <i>/ˈkæləri/</i> 卡路里</span>
+    <span class="english-word"><b>portion control</b> <i>/ˈpɔːrʃn kənˈtroʊl/</i> 分量控制</span>
+    <span class="english-word"><b>balanced diet</b> <i>/ˈbælənst ˈdaɪət/</i> 均衡饮食</span>
+    <span class="english-word"><b>whole grain</b> <i>/hoʊl ɡreɪn/</i> 全谷物</span>
+    <span class="english-word"><b>lean protein</b> <i>/liːn ˈproʊtiːn/</i> 瘦蛋白</span>
+    <span class="english-word"><b>saturated fat</b> <i>/ˈsætʃəreɪtɪd fæt/</i> 饱和脂肪</span>
+    <span class="english-word"><b>unsaturated fat</b> <i>/ʌnˈsætʃəreɪtɪd fæt/</i> 不饱和脂肪</span>
+    <span class="english-word"><b>trans fat</b> <i>/træns fæt/</i> 反式脂肪</span>
+    <span class="english-word"><b>cholesterol</b> <i>/kəˈlɛstərɔːl/</i> 胆固醇</span>
+    <span class="english-word"><b>blood sugar</b> <i>/blʌd ˈʃʊɡər/</i> 血糖</span>
+    <span class="english-word"><b>glycemic index</b> <i>/ɡlaɪˈsiːmɪk ˈɪndɛks/</i> 升糖指数</span>
+    <span class="english-word"><b>detox</b> <i>/ˈdiːtɒks/</i> 排毒</span>
+    <span class="english-word"><b>hydration</b> <i>/haɪˈdreɪʃn/</i> 补水</span>
+    <span class="english-word"><b>superfood</b> <i>/ˈsuːpərfuːd/</i> 超级食物</span>
+    <span class="english-word"><b>organic</b> <i>/ɔːrˈɡænɪk/</i> 有机的</span>
+    <span class="english-word"><b>processed food</b> <i>/ˈprɑːsest fuːd/</i> 加工食品</span>
+    <span class="english-word"><b>plant-based</b> <i>/plænt beɪst/</i> 植物性的</span>
+    <span class="english-word"><b>gut health</b> <i>/ɡʌt hɛlθ/</i> 肠道健康</span>
+    <span class="english-word"><b>mindful eating</b> <i>/ˈmaɪndfəl ˈiːtɪŋ/</i> 正念饮食</span>
+  </div>
+
+  <div class="core-sentence">
+    <div style="font-size:11px;color:var(--green-deep);font-weight:600;letter-spacing:1px">今日核心句 · 饮食哲学</div>
+    <div class="en">"You are what you eat."</div>
+    <div class="cn">人如其食。——你吃进去的每一口，都在塑造你。</div>
+  </div>
+</div>
+
+<!-- 账户 -->
+<div class="card">
+  <div class="card-head">
+    <h2>👛 我的账户 · 20:00</h2>
+    <div class="head-date">养老基金</div>
+  </div>
+
+  <div class="savings-display">
+    <div class="label">存款池 · 养老基金</div>
+    <div class="amount">¥0.00</div>
+    <div class="goal">目标 ¥30,000 · 0.0%</div>
+    <div class="progress-bar"><div style="width:0%"></div></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+    <div style="display:flex;flex-direction:column;background:var(--bg-2);border-radius:10px;padding:10px 14px">
+      <span style="font-size:11px;color:var(--ink-mute)">今日支出</span>
+      <span style="font-size:20px;font-weight:700;color:var(--ink)">¥0.00</span>
+    </div>
+    <div style="display:flex;flex-direction:column;background:var(--bg-2);border-radius:10px;padding:10px 14px">
+      <span style="font-size:11px;color:var(--ink-mute)">本周支出</span>
+      <span style="font-size:20px;font-weight:700;color:var(--ink)">¥0.00</span>
+    </div>
+    <div style="display:flex;flex-direction:column;background:var(--bg-2);border-radius:10px;padding:10px 14px">
+      <span style="font-size:11px;color:var(--ink-mute)">已存笔数</span>
+      <span style="font-size:20px;font-weight:700;color:var(--ink)">0</span>
+    </div>
+  </div>
+
+  <div style="margin-top:12px;padding:10px 14px;background:#fdf3e0;border-radius:10px;font-size:12px;color:var(--ink-soft);line-height:1.7">
+    💡 <b>本周记账提示：</b>本周（8/3-8/9）已结束，今晚 20:00 记账时请汇总本周全部支出（含昨日烧烤采购）。存款池仍为 ¥0，下周可尝试每日存 ¥10-20 启动养老基金。养老基金目标 ¥30,000，积少成多！
+  </div>
+</div>
+
+<!-- 周复盘预告 -->
+<div class="card">
+  <div class="card-head">
+    <h2>📊 今晚 21:00 · 周复盘三件套</h2>
+    <div class="head-date">2026-W32 · 8/3-8/9</div>
+  </div>
+
+  <div class="review-block">
+    <div style="font-size:12.5px;color:var(--ink-soft);line-height:1.7;margin-bottom:8px">
+      <b>📌 本周概况：</b>8/3(周一) ~ 8/9(周日)，工作台启用第 2 周。减脂餐执行 7/7 天全勤（含周六烧烤放纵日），英语学习推进到 Day 11，抖音热点每日追踪。体重/视频/开支/存款 4 个数据源仍待补齐。
+    </div>
+
+    <ul class="review-checklist">
+      <li>
+        <span class="check-box" onclick="toggleReviewCheck(this)"></span>
+        <div>
+          <b>① 上秤称重</b>（weight-log.json 仍为空）<br>
+          <span style="font-size:11px;color:var(--ink-mute)">本周首次称重！身高 174cm / 基线 65.5kg，记录今日晨重，作为后续周对比基准</span>
+        </div>
+      </li>
+      <li>
+        <span class="check-box" onclick="toggleReviewCheck(this)"></span>
+        <div>
+          <b>② 本周视频数据复盘</b>（video-stats.json 仍为空）<br>
+          <span style="font-size:11px;color:var(--ink-mute)">本周发布 0 条（目标 2-3 条/周），需复盘原因 + 制定下周拍摄日历</span>
+        </div>
+      </li>
+      <li>
+        <span class="check-box" onclick="toggleReviewCheck(this)"></span>
+        <div>
+          <b>③ 开智汇总</b>（open-mind-log.json 仍为空）<br>
+          <span style="font-size:11px;color:var(--ink-mute)">本周 1-2 条开智记录，可写：立秋节气饮食感悟 / 烧烤放纵后的自我觉察 / 减脂第 2 周心得</span>
+        </div>
+      </li>
+    </ul>
+
+    <div style="margin-top:10px;padding:10px 12px;background:#fff;border-radius:8px;font-size:11.5px;color:var(--ink-soft);line-height:1.6">
+      ⚡ <b>减脂餐执行回顾：</b>本周 7 天热量全部命中 1600-1800 区间（1685-1705 kcal），211 比例稳定，放纵餐烧烤控制在 900 kcal 预算内。<b>执行率 100% 🎉</b>
+    </div>
+  </div>
+</div>
+
+<!-- Pocket Card (Printable) -->
+<div class="pocket-card no-print">
+  <div class="pocket-title">🍅 口袋行程卡 · 2026-08-09 周日 · 周复盘日</div>
+  <div class="pocket-grid">
+    <div class="pocket-col">
+      <h4>📋 行程</h4>
+      <div class="pocket-item"><span class="pocket-time">07:00</span><span class="pocket-text">起床拉伸</span></div>
+      <div class="pocket-item"><span class="pocket-time">07:30</span><span class="pocket-text">清肠解腻餐</span></div>
+      <div class="pocket-item"><span class="pocket-time">08:30</span><span class="pocket-text">抖音热点</span></div>
+      <div class="pocket-item"><span class="pocket-time">09:00</span><span class="pocket-text">英语 Day 11</span></div>
+      <div class="pocket-item"><span class="pocket-time">10:00</span><span class="pocket-text">拉伸休息 15min</span></div>
+      <div class="pocket-item"><span class="pocket-time">12:00</span><span class="pocket-text">午餐打卡</span></div>
+      <div class="pocket-item"><span class="pocket-time">15:00</span><span class="pocket-text">整理素材</span></div>
+      <div class="pocket-item"><span class="pocket-time">18:00</span><span class="pocket-text">晚餐打卡</span></div>
+      <div class="pocket-item"><span class="pocket-time">20:00</span><span class="pocket-text">本周记账</span></div>
+      <div class="pocket-item"><span class="pocket-time">21:00</span><span class="pocket-text">📊周复盘</span></div>
+    </div>
+    <div class="pocket-col">
+      <h4>🥗 三餐</h4>
+      <div class="pocket-meal">
+        <div class="pocket-meal-title">🌅 早餐</div>
+        <div class="pocket-meal-cal">山药红枣小米粥+茶叶蛋+秋葵+蓝莓 · 380</div>
+      </div>
+      <div class="pocket-meal">
+        <div class="pocket-meal-title">☀️ 午餐</div>
+        <div class="pocket-meal-cal">清蒸鲈鱼+空心菜+木耳+糙米饭 · 620</div>
+      </div>
+      <div class="pocket-meal">
+        <div class="pocket-meal-title">🍎 加餐</div>
+        <div class="pocket-meal-cal">希腊酸奶+火龙果+核桃 · 200</div>
+      </div>
+      <div class="pocket-meal">
+        <div class="pocket-meal-title">🌙 晚餐</div>
+        <div class="pocket-meal-cal">番茄豆腐煲+西兰花+杂粮饭 · 500</div>
+      </div>
+      <h4 style="margin-top:8px">📖 核心句</h4>
+      <div style="font-size:11px;color:var(--ink-soft);line-height:1.5">"You are what you eat."<br>人如其食。</div>
+      <h4 style="margin-top:8px">📱 热点</h4>
+      <div style="font-size:11px;color:var(--ink-soft);line-height:1.5">⭐#秋天第一杯奶茶# 18亿+ · #跟着瘦子吃饭# 15亿+<br>🎯 烧烤后清肠vlog / 备餐系列</div>
+      <h4 style="margin-top:8px">📊 今晚复盘</h4>
+      <div style="font-size:11px;color:var(--ink-soft);line-height:1.5">21:00 称重+视频数据+开智<br>本周减脂餐执行 100% 🎉</div>
+    </div>
+  </div>
+  <div class="pocket-footer">🍅 的工作台 · 周复盘日 · 1700 kcal · 拉伸15min · 养老基金 ¥0/30,000 · 今晚21:00复盘</div>
+</div>
+
+<div class="footer">
+  <span>🍅 的工作台 · v1.0</span>
+  <span>每日 07:00 推送 · 手机打开 https://2974858874.github.io/workbench/</span>
+</div>
+
+</div>
+
+<script>
+function toggleCheck(el) {
+  const item = el.closest('.schedule-item');
+  const isChecked = el.classList.toggle('checked');
+  if (isChecked) {
+    el.textContent = '✓';
+    item.classList.add('done');
+  } else {
+    el.textContent = '';
+    item.classList.remove('done');
+  }
+  const idx = Array.from(document.querySelectorAll('.schedule-item')).indexOf(item);
+  const key = '2026-08-09_' + idx;
+  const todos = JSON.parse(localStorage.getItem('wb_todos') || '{}');
+  todos[key] = isChecked;
+  localStorage.setItem('wb_todos', JSON.stringify(todos));
+}
+function toggleReviewCheck(el) {
+  const isChecked = el.classList.toggle('checked');
+  if (isChecked) {
+    el.textContent = '✓';
+  } else {
+    el.textContent = '';
+  }
+}
+(function restore() {
+  const todos = JSON.parse(localStorage.getItem('wb_todos') || '{}');
+  document.querySelectorAll('.schedule-item').forEach((item, idx) => {
+    const key = '2026-08-09_' + idx;
+    if (todos[key]) {
+      const check = item.querySelector('.schedule-check');
+      check.classList.add('checked');
+      check.textContent = '✓';
+      item.classList.add('done');
+    }
+  });
+})();
+</script>
+</body>
+</html>
