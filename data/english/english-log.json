@@ -144,5 +144,55 @@
       "en": "How you cook is how you live.",
       "zh": "你怎么做饭，就怎么生活。"
     }
+  },
+  {
+    "date": "2026-08-08",
+    "day": 10,
+    "difficulty": "中高级",
+    "theme": "口感质地 & 美食描述词",
+    "theme_en": "Textures & Food Descriptions",
+    "phrases": [
+      { "en": "Look at that pull — perfectly stretchy cheese.", "phonetic": "/lʊk æt ðæt pʊl — ˈpɜːrfɪktli ˈstretʃi tʃiːz/", "zh": "看这拉丝——芝士弹性刚刚好。" },
+      { "en": "One bite and it literally melts in your mouth.", "phonetic": "/wʌn baɪt ænd ɪt ˈlɪtərəli mɛlts ɪn jɔːr maʊθ/", "zh": "一口下去，真的入口即化。" },
+      { "en": "The crust is shatteringly crisp, while the inside stays juicy.", "phonetic": "/ðə krʌst ɪz ˈʃætərɪŋli krɪsp waɪl ðɪ ˈɪnsaɪd steɪz ˈdʒuːsi/", "zh": "外皮酥到掉渣，里面却很多汁。" },
+      { "en": "That char adds a smoky depth you can't fake.", "phonetic": "/ðæt tʃɑːr ædz ə ˈsmoʊki dɛpθ ju kænt feɪk/", "zh": "那点焦香带来了无法伪装的烟熏层次感。" },
+      { "en": "It's light, fresh, and totally guilt-free.", "phonetic": "/ɪts laɪt frɛʃ ænd ˈtoʊtəli ɡɪlt friː/", "zh": "清淡、新鲜、完全无负担。" }
+    ],
+    "words": [
+      { "en": "juicy", "phonetic": "/ˈdʒuːsi/", "zh": "多汁的" },
+      { "en": "moist", "phonetic": "/mɔɪst/", "zh": "湿润的；不干柴的" },
+      { "en": "chewy", "phonetic": "/ˈtʃuːi/", "zh": "有嚼劲的；耐嚼的" },
+      { "en": "crunchy", "phonetic": "/ˈkrʌntʃi/", "zh": "爽脆的；嘎嘣脆的" },
+      { "en": "silky", "phonetic": "/ˈsɪlki/", "zh": "丝滑的" },
+      { "en": "velvety", "phonetic": "/ˈvelvɪti/", "zh": "天鹅绒般顺滑的" },
+      { "en": "flaky", "phonetic": "/ˈfleɪki/", "zh": "层次分明的；酥到掉渣的" },
+      { "en": "buttery", "phonetic": "/ˈbʌtəri/", "zh": "黄油香的；绵滑的" },
+      { "en": "melt-in-your-mouth", "phonetic": "/mɛlt ɪn jɔːr maʊθ/", "zh": "入口即化的" },
+      { "en": "creamy", "phonetic": "/ˈkriːmi/", "zh": "奶香浓郁的" },
+      { "en": "umami", "phonetic": "/uːˈmɑːmi/", "zh": "鲜味的（第五味觉）" },
+      { "en": "tangy", "phonetic": "/ˈtæŋi/", "zh": "酸爽的；开胃的" },
+      { "en": "zesty", "phonetic": "/ˈzesti/", "zh": "清香提神的（柠檬/柑橘香）" },
+      { "en": "smoky", "phonetic": "/ˈsmoʊki/", "zh": "烟熏的；有烟熏风味的" },
+      { "en": "earthy", "phonetic": "/ˈɜːrθi/", "zh": "泥土香的（菌菇/根茎类）" },
+      { "en": "savory", "phonetic": "/ˈseɪvəri/", "zh": "咸鲜的；香口的" },
+      { "en": "rich", "phonetic": "/rɪtʃ/", "zh": "浓郁的；厚重的" },
+      { "en": "balanced", "phonetic": "/ˈbælənst/", "zh": "味道平衡的；均衡的" },
+      { "en": "moreish", "phonetic": "/ˈmɔːrɪʃ/", "zh": "让人欲罢不能的" },
+      { "en": "guilt-free", "phonetic": "/ˈɡɪlt friː/", "zh": "无负担的（减脂友好）" },
+      { "en": "golden-brown", "phonetic": "/ˈɡoʊldən braʊn/", "zh": "金黄的；焦糖色的" },
+      { "en": "caramelized", "phonetic": "/ˈkærəməlaɪzd/", "zh": "焦糖化的" },
+      { "en": "charred", "phonetic": "/tʃɑːrd/", "zh": "焦香的；炙烤焦黑的" },
+      { "en": "vibrant", "phonetic": "/ˈvaɪbrənt/", "zh": "鲜亮夺目的；生机勃勃的" },
+      { "en": "aromatic", "phonetic": "/ˌærəˈmætɪk/", "zh": "香气扑鼻的" },
+      { "en": "fragrant", "phonetic": "/ˈfreɪɡrənt/", "zh": "芳香的" },
+      { "en": "mouthwatering", "phonetic": "/ˈmaʊθwɔːtərɪŋ/", "zh": "令人垂涎的" },
+      { "en": "appetizing", "phonetic": "/ˈæpɪtaɪzɪŋ/", "zh": "开胃的；诱人的" },
+      { "en": "hearty", "phonetic": "/ˈhɑːrti/", "zh": "扎实的；暖胃管饱的" },
+      { "en": "refreshing", "phonetic": "/rɪˈfreʃɪŋ/", "zh": "清爽的；解腻的" }
+    ],
+    "core_phrase": {
+      "en": "Good food speaks for itself.",
+      "zh": "好食物自己会说话。"
+    }
   }
 ]
