@@ -1,0 +1,279 @@
+{
+  "week_id": "2026-W32",
+  "week_label": "2026-08-03 ~ 2026-08-09",
+  "report_date": "2026-08-09",
+  "report_type": "weekly_review_v1",
+  "generated_at": "2026-08-09T21:00:00+08:00",
+  "data_completeness": {
+    "weight": false,
+    "videos": false,
+    "expenses": false,
+    "deposits": false,
+    "open_mind": false,
+    "meals": true,
+    "hot_topics": true,
+    "english": true
+  },
+  "week_summary": "本周（8/3-8/9）减脂餐与英语学习数据完整，但体重、视频、开支、存款、开智 5 个模块仍为空。与首周相比， meal-log 从 3 天增加到 4 天，且 4 天全部命中 1600-1800 kcal 目标；英语打卡同样覆盖 4 天。核心矛盾没变：执行端（吃+学）稳定，但记录端（称/拍/记/存/思）仍未补齐，导致周复盘依旧只能做「执行质量复盘」，无法做「策略效果复盘」。",
+  "sections": {
+    "1_weight": {
+      "title": "本周体重变化 + 反馈",
+      "data_status": "无数据（weight-log.json 为空）",
+      "weight_records": [],
+      "weight_change_kg": null,
+      "baseline_from_config": {
+        "height_cm": 174,
+        "weight_kg_range": [65, 66],
+        "weight_kg_baseline": 65.5,
+        "bmi": 21.6,
+        "bmi_category": "正常范围",
+        "goal": "减脂塑形（非大幅减重），重点降体脂、保留肌肉"
+      },
+      "feedback": "连续第二周没有体重记录。减脂餐执行已经稳定，但没有体重/腰围数据就无法判断 1700 kcal 的饮食方案是否产生了真实的体脂变化。",
+      "action_items": [
+        "今晚（周日）睡前或明早起床后空腹称重，作为 W33 起点写入 weight-log.json",
+        "建议记录格式：{date, weekday, weight_kg, body_fat_pct?, waist_cm?, note}",
+        "如果担心每日称重焦虑，可改为「每周日复盘前一次」，但必须有",
+        "搭配照片记录：每周日同一时间拍一张正面/侧面照，存在手机相册即可，后续可回溯"
+      ],
+      "recommended_log_format": {
+        "date": "YYYY-MM-DD",
+        "weekday": "周日",
+        "weight_kg": 0.0,
+        "body_fat_pct": null,
+        "waist_cm": null,
+        "note": "周复盘同步称重 / 早起空腹"
+      }
+    },
+    "2_videos": {
+      "title": "本周视频数据复盘（亮点 + 下期改进建议）",
+      "data_status": "无数据（video-stats.json 为空，本周未发布视频）",
+      "videos_published_this_week": 0,
+      "highlights": "本周仍未发布视频。但抖音热点抓取持续运行（8/3-8/9 共 7 天），今日（8/9）热点显示两个与账号定位高度契合的流量窗口：",
+      "hot_topics_trend": [
+        {
+          "topic": "#人粮 / #自制饲料",
+          "first_seen": "2026-08-09",
+          "views": "百万级讨论/全网破圈",
+          "lifecycle": "新爆发",
+          "angle": "减脂改良版「人粮」：周末2小时批量备餐，40块钱吃一周，每份350大卡/30g+蛋白"
+        },
+        {
+          "topic": "#粤赛粤鲜 / #我家招牌菜",
+          "first_seen": "2026-08-06",
+          "views": "5亿+（#粤赛粤鲜 3.2亿 + #我家招牌菜 1.8亿）",
+          "lifecycle": "赛事高峰（8/9 最后一天）",
+          "angle": "减脂版粤式家常菜：空气炸锅盐焗鸡腿（去皮）+ 白灼菜心 + 紫菜蛋花汤"
+        },
+        {
+          "topic": "#跟着瘦子吃饭",
+          "first_seen": "2026-07-31",
+          "views": "15亿+",
+          "lifecycle": "长尾延续（第四周）",
+          "angle": "持续可做的系列选题：吃饱版瘦子食谱/瘦子饮食习惯解析"
+        },
+        {
+          "topic": "#立秋贴秋膘",
+          "first_seen": "2026-08-07",
+          "views": "全网节气流量峰值延续",
+          "lifecycle": "延续高热",
+          "angle": "「贴秋膘vs清补」对立话题，可做减脂版红烧肉/辣椒炒肉/小炒黄牛肉"
+        }
+      ],
+      "next_week_shoot_plan": [
+        {
+          "publish_date": "2026-08-10（周一）",
+          "title": "减脂版「人粮」：40块喂自己吃一整周",
+          "hook_topic": "#人粮 / #自制饲料（新爆发，与减脂定位高度契合）",
+          "duration": "45-60s",
+          "bgm": "轻快国风/放克快剪卡点BGM",
+          "key_shots": ["热搜截图+大字幕", "周末2小时批量焯水/分装", "每日微波炉3分钟出餐", "成本核算字幕：5份不到40块"],
+          "tags": ["#人粮", "#自制饲料", "#电子榨菜", "#减脂餐", "#打工人的午饭终于有救了"]
+        },
+        {
+          "publish_date": "2026-08-12（周三）",
+          "title": "减脂版粤式招牌菜：空气炸锅盐焗鸡腿",
+          "hook_topic": "#粤赛粤鲜 / #我家招牌菜（赛事收官流量窗口）",
+          "duration": "60-75s",
+          "bgm": "《尕连手》卡点剪辑 or 《烟火人间》温暖向",
+          "key_shots": ["赛事热点截图", "鸡腿去皮锡纸包裹", "空气炸锅180°C 20分钟", "白灼菜心+紫菜蛋花汤搭配"],
+          "tags": ["#粤赛粤鲜", "#我家招牌菜", "#减脂餐", "#空气炸锅美食"]
+        },
+        {
+          "publish_date": "2026-08-14（周五）",
+          "title": "跟着瘦子吃饭·吃饱版（第四期）",
+          "hook_topic": "#跟着瘦子吃饭（15亿+长尾话题）",
+          "duration": "60-90s",
+          "bgm": "《烟火人间》",
+          "key_shots": ["瘦子原版复刻", "同食材加量30%改良版", "两版热量/饱腹感对比", "结尾「吃饱也能瘦」"],
+          "tags": ["#跟着瘦子吃饭", "#减脂餐", "#低卡家常菜", "#一天吃什么"]
+        }
+      ],
+      "improvement_suggestions": [
+        "本周是第二周 0 视频，账号活跃度持续为 0。下周必须至少发布 2 条，优先拍 #人粮（周一发）和 #粤赛粤鲜（周三发）",
+        "建立「发布 → 24h 回填数据」流程：发布后第二天把播放/点赞/评论/收藏写入 video-stats.json",
+        "建议视频数据格式：{date, title, hook_topic, views_24h, likes, comments, saves, completion_rate, publish_time}",
+        "本周 BGM 优先级：《尕连手》（烹饪卡点）、《烟火人间》（生活向温暖）、《晚风吹》（泛用 vlog）"
+      ]
+    },
+    "3_nutrition_finance": {
+      "title": "本周总热量 / 总支出 / 存款进度",
+      "nutrition": {
+        "data_status": "完整（4 天 4 条记录：8/6-8/9）",
+        "daily_breakdown": [
+          {"date": "2026-08-06", "weekday": "周四", "kcal": 1705, "carb_g": 172, "protein_g": 105, "fat_g": 43, "carb_pct": 40, "protein_pct": 25, "fat_pct": 23, "within_range": true, "note": "力量训练日"},
+          {"date": "2026-08-07", "weekday": "周五", "kcal": 1695, "carb_g": 178, "protein_g": 118, "fat_g": 53, "carb_pct": 42, "protein_pct": 28, "fat_pct": 28, "within_range": true, "note": "帕梅拉训练日"},
+          {"date": "2026-08-08", "weekday": "周六", "kcal": 1685, "carb_g": 192, "protein_g": 100, "fat_g": 47, "carb_pct": 46, "protein_pct": 24, "fat_pct": 25, "within_range": true, "note": "户外散步/瑜伽日（本周放纵餐窗口=烧烤日，但 meal-log 显示未使用）"},
+          {"date": "2026-08-09", "weekday": "周日", "kcal": 1700, "carb_g": 204, "protein_g": 114, "fat_g": 47, "carb_pct": 48, "protein_pct": 27, "fat_pct": 25, "within_range": true, "note": "拉伸休息日 · 立秋初润"}
+        ],
+        "totals": {
+          "total_kcal_4days": 6785,
+          "avg_kcal_per_day": 1696,
+          "target_range": "1600-1800",
+          "in_range_days": 4,
+          "out_of_range_days": 0,
+          "days_with_data": 4
+        },
+        "macro_averages": {
+          "carb_g_per_day": 187,
+          "protein_g_per_day": 109,
+          "fat_g_per_day": 48,
+          "protein_pct": 26,
+          "verdict": "蛋白 26% 占比优秀（目标 25-30%），碳水 48%、脂肪 25%，211 餐盘执行到位"
+        },
+        "menu_variety": {
+          "unique_proteins": ["鸡蛋", "希腊酸奶", "杏仁", "牛里脊", "猪里脊", "鸡腿肉", "鸡胸肉", "鸭胸", "带鱼", "多宝鱼", "牛肉末", "鹌鹑蛋"],
+          "unique_vegetables_fruits": ["黄瓜", "圣女果", "黑木耳", "莴笋", "芹菜", "香干", "茄子", "海带", "绿豆芽", "番茄", "芥蓝", "洋葱", "生菜", "苦瓜", "苋菜", "豇豆", "彩椒", "娃娃菜", "桃子", "芦笋", "白萝卜", "口蘑", "上海青", "冬瓜", "瑶柱", "紫米", "黑芝麻", "橙子", "草莓", "蓝莓", "荷兰豆", "鲜百合", "紫甘蓝", "胡萝卜", "红薯", "小米", "薏米", "玉米", "金针菇", "紫菜", "虾皮"],
+          "variety_score": "A+（12 种蛋白 + 40 种蔬果/菌菇/谷物，4 天主食无重复：燕麦/糙米/红豆饭/杂粮饭/紫米/小米/玉米饭/薏米）"
+        },
+        "cheat_meal_status": {
+          "rotation_week": 2,
+          "rotation_type": "烧烤",
+          "is_cheat_meal_day_used": false,
+          "carryover": "本周六(8/8)为烧烤放纵餐窗口，但 meal-log 显示当日 1685 kcal（正常减脂餐），放纵餐未使用或未记录。按 6 周轮换，下周六(8/15)进入第 3 周=奶茶日。",
+          "next_cheat_meal_window": "2026-08-15（周六）· 奶茶：三分糖鲜奶茶+小料一份，搭配一份低卡主食正餐"
+        },
+        "feedback": "4 天热量均值 1696 kcal，100% 命中 1600-1800 区间，稳定性比上周（3 天均值 1676 kcal）进一步提升。蛋白 109g/天均值，达到 65kg 体重 × 1.6g/kg = 104g 目标的 105%，减脂期保肌肉非常理想。",
+        "highlights": [
+          "连续 4 天 100% 命中热量目标，执行稳定性优秀",
+          "蛋白摄入 100-118g/天，均值 109g， muscle-preservation 充足",
+          "12 种蛋白 + 40 种蔬果菌菇，主食 8 种无重复，营养多样性极强",
+          "立秋食材已自然融入：百合、银耳、山药、鸭肉、鲈鱼、莲藕等清补元素出现",
+          "训练日与饮食匹配：力量训练日（8/6）加餐拉高蛋白，帕梅拉日（8/7）脂肪稍高但仍可控"
+        ],
+        "improvements": [
+          "8/7 脂肪 53g（28%）略高，来自白切鸡腿+坚果+酸奶，下周注意单日脂肪控制在 50g 以内",
+          "8/8 周六是烧烤放纵餐窗口，如果确实未使用，说明自律过度；建议每月至少按计划使用 1 次放纵餐，避免暴食反弹",
+          "周一到周三（8/3-8/5）没有 meal-log 记录，下周尽量保证 7 天完整记录"
+        ]
+      },
+      "expenses": {
+        "data_status": "无数据（savings-pool.json 只有 goal 配置，无 daily 记录）",
+        "daily_records": [],
+        "weekly_total_spent": null,
+        "feedback": "连续第二周没有开支记录。减脂餐执行越好，越需要知道「健康吃饭花了多少钱」，否则无法判断可持续性。",
+        "action_items": [
+          "从今天起每天 20:00 录入当日开支，建议新增文件 data/expenses/expense-log.json",
+          "建议格式：{date, category, item, amount, note}",
+          "每周日晚同步存款池（savings-pool.json 的 deposits 数组 + total）",
+          "下周复盘要看：本周总开支 + 餐饮占比（减脂期目标 < 50%）+ 存款进度（目标 ¥30000）"
+        ]
+      },
+      "savings": {
+        "data_status": "只有 goal 配置",
+        "goal_name": "养老基金",
+        "target": 30000,
+        "current": 0,
+        "progress_pct": 0,
+        "deadline": "TODO（未设置）",
+        "feedback": "养老基金进度 0%。建议：先设 deadline（如 2026-12-31 = 5 个月 = 每月存 ¥6000），然后每周日同步一次。"
+      }
+    },
+    "4_open_mind": {
+      "title": "本周开智汇总 + 推荐下周关注方向",
+      "data_status": "无数据（open-mind-log.json 为空）",
+      "entries_this_week": 0,
+      "open_mind_focus_this_week": "开智模块连续两周为空，但本周的饮食与英语学习数据足够支撑 2-3 条 AI 生成的开智洞察。以下是基于本周真实数据提炼的 4 条：",
+      "ai_generated_weekly_highlights": [
+        {
+          "title": "1696 kcal/天的稳定执行，说明减脂方案已从「靠意志力」进入「靠系统设计」",
+          "category": "减脂科学",
+          "summary": "首周 3 天均值 1676 kcal，本周 4 天均值 1696 kcal，波动仅 ±20 kcal。这种稳定性不是靠每天称食材，而是靠「211 餐盘 + 固定三餐 + 加餐模板」的系统设计。下一步应把成功经验模板化：早餐 380kcal 模板、午餐 620kcal 模板、晚餐 500kcal 模板，各准备 3 套轮换。",
+          "source": "meal-log.json 8/6-8/9 四天数据对比分析",
+          "value": "⭐⭐⭐⭐⭐（直接指导下周备餐系统）"
+        },
+        {
+          "title": "蛋白质 109g/天：减脂期「保肌肉」的隐藏杠杆",
+          "category": "减脂科学",
+          "summary": "65kg 体重 × 1.6g/kg = 104g 蛋白/天，本周均值 109g，超标 5%。高蛋白不仅提升饱腹感，更重要的是在热量缺口下保护肌肉量，让体重下降主要来自脂肪而非水分/肌肉。这也是体重秤数字可能不变、但体型变好的关键原因。",
+          "source": "meal-log.json 宏量营养素统计",
+          "value": "⭐⭐⭐⭐⭐（解释为什么体重不变但可能瘦了）"
+        },
+        {
+          "title": "英语主题从「技巧」进入「场景」：刀工、摆盘、黑话、口感、放纵餐策略",
+          "category": "自我提升",
+          "summary": "8/6 刀工精进&摆盘美学 → 8/7 厨房黑话&地道口语 → 8/8 口感质地&美食描述 → 8/9 周日放纵餐策略。主题设计是「硬技能 → 表达力 → 生活应用」的递进，与抖音内容创作（拍美食视频需要英文配音/字幕）形成潜在联动。",
+          "source": "english-log.json 8/6-8/9 主题分析",
+          "value": "⭐⭐⭐⭐（英语学习+内容创作双增益）"
+        },
+        {
+          "title": "「人粮」热点揭示：减脂内容的下一个爆款方向是「极致性价比+批量备餐」",
+          "category": "内容运营",
+          "summary": "8/9 热点 #人粮 / #自制饲料 主打「60块钱吃一整周」「打工人喂自己吃饲料」，与账号减脂定位天然契合。相比精致的单餐摆盘，「批量备餐+冷冻分装+微波炉即食」更贴合真实打工人的生活场景，也更容易引发共鸣和收藏。",
+          "source": "hot-topics/2026-08-09.json",
+          "value": "⭐⭐⭐⭐⭐（直接决定下周首条视频选题）"
+        }
+      ],
+      "next_week_recommended_topics": [
+        {
+          "topic": "把本周 4 天减脂餐提炼成 3 套固定模板（早餐/午餐/晚餐各 3 套）",
+          "category": "减脂科学",
+          "why": "当前执行稳定但依赖每天重新设计菜单，模板化可以降低决策疲劳，提高长期可持续性",
+          "suggested_action": "基于 meal-log 中 8/6-8/9 的 16 道菜，按「快手程度」和「饱腹感」筛选出 9 套模板写入 config.json 或 meal-templates.json"
+        },
+        {
+          "topic": "研究 3-5 个高赞「人粮/备餐」视频的结构：前 3 秒 hook、成本字幕、制作过程、成品展示",
+          "category": "内容运营",
+          "why": "#人粮 是新爆发话题，下周必须首发。先做竞品分析，避免拍成普通的 meal-prep",
+          "suggested_action": "抖音搜索 #人粮 #自制饲料 # MealPrep，记录 5 条高赞视频的结构和 BGM"
+        },
+        {
+          "topic": "放纵餐的心理学：为什么完全不吃放纵餐反而容易暴食？",
+          "category": "减脂心理",
+          "why": "本周烧烤日未使用，下周奶茶日如果继续不用，可能积累食欲反弹风险",
+          "suggested_read": "《饥饿的大脑》第 7 章关于「限制性饮食与暴食」的研究"
+        },
+        {
+          "topic": "开立养老基金的自动化转账：从「手动存」到「系统存」",
+          "category": "财务认知",
+          "why": "存款进度 0% 的核心原因通常是「靠意志力存钱」。设置工资到账自动转存 10%，比每周手动记更有效",
+          "suggested_action": "在手机银行设置自动转账，或把每周日 20:00 记账改为「先存后花」流程"
+        }
+      ],
+      "open_mind_building_tip": "建议每周日晚 21:00 周复盘前，手动写 1-2 条开智到 open-mind-log.json。格式：{date, category, title, summary, source, value_rating}。下周目标是 2 条起步，本月累计 4 条。"
+    }
+  },
+  "next_week_action_checklist": [
+    "☐ 今晚称重，把体重写入 weight-log.json（作为 W33 基线）",
+    "☐ 每天 20:00 录入开支到 data/expenses/expense-log.json（新增文件）",
+    "☐ 每天发布视频后 24h 回填播放/点赞/评论到 video-stats.json",
+    "☐ 下周一(8/10)发「减脂版人粮」视频，周三(8/12)发「减脂版粤式盐焗鸡腿」",
+    "☐ 下周六(8/15)奶茶放纵餐：按计划使用，不要继续顺延",
+    "☐ 下周日(8/16)复盘前写 1-2 条开智 + 同步存款池",
+    "☐ 把本周 4 天菜单提炼成 3 套早/午/晚餐模板"
+  ],
+  "key_metrics_dashboard": {
+    "calorie_adherence_4d": "100%（4/4 天命中 1600-1800 区间）",
+    "protein_pct_avg": "26%（高于目标下限 25%）",
+    "menu_variety_score": "A+（12 蛋白 + 40 蔬果菌谷）",
+    "cheat_meal_used": "未使用（本周烧烤日顺延/跳过）",
+    "weight_data": "缺",
+    "video_data": "缺",
+    "expense_data": "缺",
+    "savings_total": "¥0 / ¥30000（0%）",
+    "open_mind_entries": "0",
+    "english_days": 4,
+    "data_completeness_pct": 25
+  },
+  "verdict": "本周（W32）是工作台运行的第二周。执行端持续优秀：减脂餐 4 天 100% 命中热量目标，蛋白质 26% 占比，菜单多样性 A+；英语学习 4 天连续打卡，主题从技巧递进到场景应用。但记录端仍是短板：体重、视频、开支、存款、开智 5 个模块连续第二周为空，导致周复盘无法判断「效果」，只能判断「执行」。下周最关键的三件事：① 今晚称重建立 W33 基线；② 下周一/三各发 1 条视频（优先 #人粮、#粤赛粤鲜）；③ 每天 20:00 记账。只有把记录端补齐，周复盘才能从「执行报告」升级为「策略报告」。"
+}
